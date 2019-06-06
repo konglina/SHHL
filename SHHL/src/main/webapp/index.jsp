@@ -354,7 +354,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="jsp/staffinfo_list.jsp" target="mainframe">
+									<a href="jsp/box_test.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										数据自动保存
 									</a>
