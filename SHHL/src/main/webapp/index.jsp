@@ -342,7 +342,7 @@
 							</a>
                             <ul class="submenu">
                           		<li>
-									<a href="jsp/staffinfo_list.jsp" target="mainframe">
+									<a href="jsp/jiebohe_shishi.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										实时数据
 									</a>
