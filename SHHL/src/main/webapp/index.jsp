@@ -348,7 +348,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="jsp/staffinfo_list.jsp" target="mainframe">
+									<a href="jsp/box_history.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										历史数据查询
 									</a>
