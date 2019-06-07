@@ -372,19 +372,19 @@
 							</a>
                             <ul class="submenu">
                           		<li>
-									<a href="jsp/staffinfo_add.jsp" target="mainframe">
+									<a href="jsp/sensor_bbes.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										BBES
 									</a>
 								</li>
 								<li>
-									<a href="jsp/staffinfo_add.jsp" target="mainframe">
+									<a href="jsp/sensor_uva.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										UVA
 									</a>
 								</li>
 								<li>
-									<a href="jsp/staffinfo_add.jsp" target="mainframe">
+									<a href="jsp/sensor_ysi.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										YSI
 									</a>
