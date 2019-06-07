@@ -52,37 +52,35 @@
 			<li class="active">历史数据查询</li>
 		</ul><!-- .breadcrumb -->					
 </div>
-<!-- <div class="page-header1">
-	<h3 style="margin-top:10px;">
-		
-		<a href="#">接驳盒</a>
-		
-		<small>
-			<i class="icon-double-angle-right"></i>
-			历史数据查询
-		</small>
-	</h3>
-</div> --><!-- /.page-header -->
-
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
-    <!-- <div class="col-sm-2" style="padding-top:5px">
-    	开始时间 : <input type="text" id="test1"> &nbsp;&nbsp
-    </div>
-     <div class="col-sm-2" style="padding-top:5px">
-    	结束时间 : <input type="text" id="test1"> &nbsp;&nbsp
-    </div> -->
     <div class="col-sm-2" style="padding-top:5px">
     	<div class="input-group input-group-sm">
-		<!-- <input type="text" id="datepicker" class="form-control" /> -->
-		<input type="text" id="test1" class="form-control">
-		<span class="input-group-addon">
-			<i class="icon-calendar"></i>
-		</span>
-	</div>
+    		<span class="input-group-addon">
+				开始&nbsp;
+			</span>
+			<input type="text" id="test1" class="form-control">
+			<span class="input-group-addon">
+				<i class="icon-calendar"></i>
+			</span>
+		</div>
    </div> 
    
-    <input type="button" class="btn btn-danger" value="查询"/>
+   <div class="col-sm-2" style="padding-top:5px">
+    	<div class="input-group input-group-sm">
+    		<span class="input-group-addon">
+				结束&nbsp;
+			</span>
+			<input type="text" id="test2" class="form-control">
+			<span class="input-group-addon">
+				<i class="icon-calendar"></i>
+			</span>
+		</div>
+   </div>
+   <div class="col-sm-1" style="padding-top:5px">
+   	<input type="button" class="btn btn-danger" value="查询"/>
+   </div>
+   
 </div>
 
 <div class="row" style="padding:15px; padding-top:0px;" >
@@ -632,7 +630,9 @@
 laydate.render({
   elem: '#test1' //指定元素
 });
-
+laydate.render({
+	  elem: '#test2' //指定元素
+	});
 </script>
 </body>
 </html>
