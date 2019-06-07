@@ -47,7 +47,7 @@
 			<li>
 				<a href="#">接驳盒</a>
 			</li>
-			<li class="active">历史数据查询</li>
+			<li class="active">实时数据查询</li>
 		</ul><!-- .breadcrumb -->					
 </div>
 <div class="page-header1">
@@ -60,7 +60,7 @@
 			历史数据查询
 		</small>
 	</h3>
-</div><!-- /.page-header -->
+</div>/.page-header
 
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
