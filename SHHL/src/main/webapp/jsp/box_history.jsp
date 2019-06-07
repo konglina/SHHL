@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
+ <script src="${pageContext.request.contextPath}/static/laydate/laydate.js"></script>
+</style>
+
 </head>
 <body>
 <div style="padding:0px; margin:0px;">
@@ -18,14 +21,11 @@
 </div>
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
-    <div class="col-sm-1">
-    	<select class="form-control">
-        	<option>姓名</option>
-            <option>姓名</option>
-        </select>
+    <div class="col-sm-2" style="padding-top:5px">
+    	开始时间 : <input type="text" id="test1"> &nbsp;&nbsp
     </div>
-    <div class="col-sm-2">
-    	<input type="text" class="form-control"/>
+     <div class="col-sm-2" style="padding-top:5px">
+    	结束时间 : <input type="text" id="test1"> &nbsp;&nbsp
     </div>
     <input type="button" class="btn btn-danger" value="查询"/>
 </div>
@@ -277,5 +277,19 @@
         </tr>
     </table>
 </div>
+<!-- <div class="row" style="padding:15px; padding-top:0px;">
+	<div class="cell">
+	<span>日期周期</span>
+	<input size="16" type="text" id="datetimeStart" readonly class="form_datetime form-control">
+	<span> 至 </span>
+	<input size="16" type="text" id="datetimeEnd" readonly class="form_datetime form-control">
+</div> -->
+</div>
+<script>
+//执行一个laydate实例
+laydate.render({
+  elem: '#test1' //指定元素
+});
+</script>
 </body>
 </html>
