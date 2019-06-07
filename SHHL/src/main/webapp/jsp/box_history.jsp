@@ -7,6 +7,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/jquery-ui-1.10.3.full.min.css" />
+<script src="${pageContext.request.contextPath}/static/assets/js/ace-extra.min.js"></script>
 <%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace.min.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace-rtl.min.css" />
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace-skins.min.css" /> --%>
@@ -64,12 +66,22 @@
 
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
-    <div class="col-sm-2" style="padding-top:5px">
+    <!-- <div class="col-sm-2" style="padding-top:5px">
     	开始时间 : <input type="text" id="test1"> &nbsp;&nbsp
     </div>
      <div class="col-sm-2" style="padding-top:5px">
     	结束时间 : <input type="text" id="test1"> &nbsp;&nbsp
-    </div>
+    </div> -->
+    <div class="col-sm-2" style="padding-top:5px">
+    	<div class="input-group input-group-sm">
+		<!-- <input type="text" id="datepicker" class="form-control" /> -->
+		<input type="text" id="test1" class="form-control">
+		<span class="input-group-addon">
+			<i class="icon-calendar"></i>
+		</span>
+	</div>
+   </div> 
+   
     <input type="button" class="btn btn-danger" value="查询"/>
 </div>
 
@@ -595,13 +607,32 @@
     	
 </div>
 
+<script src="${pageContext.request.contextPath}/static/assets/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/js/typeahead-bs2.min.js"></script>
 
+<!-- page specific plugin scripts -->
 
+<script src="${pageContext.request.contextPath}/static/assets/js/jquery-ui-1.10.3.full.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/js/jquery.ui.touch-punch.min.js"></script>
+
+<!-- ace scripts -->
+
+<script src="${pageContext.request.contextPath}/static/assets/js/ace-elements.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/js/ace.min.js"></script>
+<script type="text/javascript">
+	jQuery(function($){
+		$("#datepicker").datepicker({
+			showOtherMonths: true,
+			selectOtherMonths: false,
+		});
+	});
+</script>
 <script>
 //执行一个laydate实例
 laydate.render({
   elem: '#test1' //指定元素
 });
+
 </script>
 </body>
 </html>

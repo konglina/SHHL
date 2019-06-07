@@ -25,7 +25,7 @@
 			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 		</script>
 
-		<ul class="breadcrumb">
+		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
 				<a href="#">Home</a>
@@ -37,17 +37,7 @@
 			<li class="active">UVA</li>
 		</ul><!-- .breadcrumb -->					
 </div>
-<div class="page-header1">
-	<h3 style="margin-top:10px;">
-		
-		<a href="#">传感器</a>
-		
-		<small>
-			<i class="icon-double-angle-right"></i>
-			UVA
-		</small>
-	</h3>
-</div><!-- /.page-header -->
+
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
 	
