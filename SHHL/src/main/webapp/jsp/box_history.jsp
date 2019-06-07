@@ -38,7 +38,7 @@
 			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 		</script>
 
-		<ul class="breadcrumb">
+		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
 				<a href="#">Home</a>
@@ -50,7 +50,7 @@
 			<li class="active">历史数据查询</li>
 		</ul><!-- .breadcrumb -->					
 </div>
-<div class="page-header1">
+<!-- <div class="page-header1">
 	<h3 style="margin-top:10px;">
 		
 		<a href="#">接驳盒</a>
@@ -60,7 +60,7 @@
 			历史数据查询
 		</small>
 	</h3>
-</div><!-- /.page-header -->
+</div> --><!-- /.page-header -->
 
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
