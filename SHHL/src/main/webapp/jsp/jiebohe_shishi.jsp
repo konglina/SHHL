@@ -18,7 +18,7 @@
 
 
 
- <div class="breadcrumbs" id="breadcrumbs">
+ <!-- <div class="breadcrumbs" id="breadcrumbs">
 		<script type="text/javascript">
 			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
 		</script>
@@ -33,13 +33,37 @@
 				<a href="#">接驳盒</a>
 			</li>
 			<li class="active">实时数据查询</li>
-		</ul><!-- .breadcrumb -->					
+		</ul>.breadcrumb					
 </div>
 
 <div class="row alert alert-info" style="margin:0px; padding:6px">
 	<div class="col-sm-2" style="padding-top:9px">环境参数</div>
+	<h3 class="header smaller lighter blue">jQuery dataTables</h3>
+</div> -->
+
+<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+
+		<ul class="breadcrumb" style="margin-bottom:0px;">
+			<li>
+				<i class="icon-home home-icon"></i>
+				<a href="#">Home</a>
+			</li>
+
+			<li>
+				<a href="#">接驳盒</a>
+			</li>
+			<li class="active">实时数据查询</li>
+		</ul><!-- .breadcrumb -->					
 </div>
 
+
+<div class="page-content">
+<div class="row alert alert-info" style="margin:0px; padding:3px">
+	<div class="col-sm-1" style="padding-top:9px">环境数据</div>  
+</div>
 
 	<div class="row">
 		<div class="col-xs-12">
@@ -72,7 +96,7 @@
 </div><!-- /row -->
 
     <div class="row alert alert-info" style="margin:0px; padding:6px">
-		<div class="col-sm-2" style="padding-top:9px">设备参数</div>
+		<div class="col-sm-2" style="padding-top:9px">设备数据</div>
 	</div>
 	
     
@@ -80,7 +104,7 @@
 		<div class="col-xs-12">
 			<div class="table-responsive">
 					<table id="sample-table-1" class="table table-striped table-bordered table-hover">
-    	<tr style="background-color:#87CEFA">
+    	<tr >
         	<th>设备</th>
             <th>第一路375V输出</th>
             <th>第二路375V输出</th>
@@ -121,7 +145,7 @@
 	</div><!-- /span -->
 </div><!-- /row -->
     
-    <!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+    <!-- Echars图 -->
     <div id="main" style="width:100%">
     	<div id="dianya" style="width: 50%;height:400px; float:left"></div>
     	<script type="text/javascript">
@@ -200,6 +224,7 @@
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
     </script>
+    </div>
     </div>
     
    
