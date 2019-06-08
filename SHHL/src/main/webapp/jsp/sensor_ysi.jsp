@@ -43,12 +43,16 @@
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
 	<!-- shishi_start -->
-	<div>
+	<div >
 		<h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:0px;">实时数据</h5>
-		<div class="row">
-		<div class="col-xs-12">
-			<div class="table-responsive">
-					<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+		<div class="row" style="margin: 0px;padding: 2px">
+		<div class="col-sm-4">
+		<div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电压
+          </div>
+              <div class="panel-body">
+             		<table id="sample-table-1" class="table table-striped table-bordered table-hover">
     	<tr >
         	<th>日期</th>
         	<td>2019-04-12</td>
@@ -102,14 +106,105 @@
             <td>123</td> 
         </tr>
         <tr>
-            <td>33.8</td>
+            <th>Deth</th>
             <td>32.5</td>      
         </tr>    
         
     </table>
-	</div><!-- /.table-responsive -->
-	</div><!-- /span -->
-</div><!-- /row -->
+              </div>
+        </div>
+		
+    </div>
+    
+    <div class="col-sm-8">
+    	<div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电压
+          </div>
+              <div class="panel-body">
+             		<div id="ysi_shishi" style="width: 100%;height:540px;"></div>
+              </div>
+        </div>
+    </div>
+    	<script type="text/javascript">
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('ysi_shishi'));
+		
+       
+        var option = {
+        	    title: {
+        	        text: '折线图堆叠'
+        	    },
+        	    tooltip: {
+        	        trigger: 'axis'
+        	    },
+        	    legend: {
+        	        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+        	    },
+        	    grid: {
+        	        left: '3%',
+        	        right: '4%',
+        	        bottom: '3%',
+        	        containLabel: true
+        	    },
+        	    toolbox: {
+        	        feature: {
+        	            saveAsImage: {}
+        	        }
+        	    },
+        	    xAxis: {
+        	        type: 'category',
+        	        boundaryGap: false,
+        	        data: ['周一','周二','周三','周四','周五','周六','周日']
+        	    },
+        	    yAxis: {
+        	        type: 'value'
+        	    },
+        	    series: [
+        	        {
+        	            name:'邮件营销',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[120, 132, 101, 134, 90, 230, 210]
+        	        },
+        	        {
+        	            name:'联盟广告',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[220, 182, 191, 234, 290, 330, 310]
+        	        },
+        	        {
+        	            name:'视频广告',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[150, 232, 201, 154, 190, 330, 410]
+        	        },
+        	        {
+        	            name:'直接访问',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[320, 332, 301, 334, 390, 330, 320]
+        	        },
+        	        {
+        	            name:'搜索引擎',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[820, 932, 901, 934, 1290, 1330, 1320]
+        	        },
+        	        {
+        	            name:'搜索引擎',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[825, 954, 985, 947, 1324, 1255, 1185]
+        	        }
+        	    ]
+        	};
+
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+    	</script>
+    	</div>
 	</div>
 	<!-- shishi_end -->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
