@@ -49,7 +49,7 @@
 			<li>
 				<a href="#">接驳盒</a>
 			</li>
-			<li class="active">实时数据查询</li>
+			<li class="active">历史数据查询</li>
 		</ul><!-- .breadcrumb -->					
 </div>
 
