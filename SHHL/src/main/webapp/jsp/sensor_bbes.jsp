@@ -253,7 +253,7 @@
               </div>
         </div>
 	</div>
-	<div class="col-sm-4" style="height: 400px;">
+	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
             <span class="glyphicon glyphicon-refresh"></span>温度
@@ -285,7 +285,7 @@
               </div>
         </div>
 	</div>
-	<div class="col-sm-4" style="height: 400px;">
+	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
             <span class="glyphicon glyphicon-refresh"></span>盐度
