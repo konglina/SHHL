@@ -206,7 +206,7 @@
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
     <div class="row alert alert-info" style="margin:0px; padding:3px">
-		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">历史数据查询</div>
+		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">数据趋势查询</div>
 		 <div class="col-sm-2" style="padding-top:5px">
 	    	<div class="input-group input-group-sm">
 	    		<span class="input-group-addon">
@@ -258,7 +258,7 @@
               </div>
         </div>
 	</div>
-	<div class="col-sm-4" style="height: 400px;">
+	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
             <span class="glyphicon glyphicon-refresh"></span>温度
@@ -290,7 +290,7 @@
               </div>
         </div>
 	</div>
-	<div class="col-sm-4" style="height: 400px;">
+	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
             <span class="glyphicon glyphicon-refresh"></span>盐度
@@ -303,7 +303,7 @@
 </div>
 
 <div class="row alert alert-info" style="margin:0px; padding:3px">
-		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">历史数据查询</div>
+		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">数据状态查询</div>
 		 <div class="col-sm-2" style="padding-top:5px">
 	    	<div class="input-group input-group-sm">
 	    		<span class="input-group-addon">
@@ -759,7 +759,8 @@
     
         </tr>
         <tfoot>
-        	<td colspan="6" align="right">
+        	<tr>
+        		<td colspan="100%" align="center">
         		 <ul class="pagination">
 				    <li>
 				      <a href="#" aria-label="Previous">
@@ -778,7 +779,9 @@
 				    </li>
 				  </ul>
         	</td>
-        </tfoot>
+        	</tr>
+        	
+        </tfoot> 
     </table>
     	
 </div>
