@@ -42,9 +42,87 @@
 
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
-	
-    <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
-	<div class="row">
+	<!-- 实时数据 -->
+	<div>
+		<h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
+		<div class="col-sm-5">
+			<label class="col-sm-2 control-label">系统时间:</label>
+            <div class="col-sm-3 control-label" >
+                	2019/6/8 15:04
+        	</div>
+        </div>
+		<!-- 电压波形 -->
+		<div id="dianya_shishi" style="width:100%;height:310px"></div>
+		<script type="text/javascript">
+        	// 基于准备好的dom，初始化echarts实例
+        	var myChart = echarts.init(document.getElementById('dianya_shishi'));
+
+        	// 指定图表的配置项和数据
+        	var option = {
+            	title: {
+                	text: '电压数据（mV nA）',
+                	left: 'center'
+            	},
+            	tooltip: {},
+            	legend: {
+                	data:['销量']
+            	},
+            	xAxis: {
+            	    type: 'category',
+            	    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            	   },
+            	yAxis: {
+            	    type: 'value'
+            	    },
+            	series: [{
+                	name: '123',
+                	data: [820, 932, 901, 934, 1290, 1330, 1320],
+                    type: 'line'
+            	}]
+        	};
+
+        	// 使用刚指定的配置项和数据显示图表。
+        	myChart.setOption(option);
+    	</script>
+    	<!-- 电压波形结束 -->
+    	
+    	<!-- 电流波形 -->
+		<div id="dianliu_shishi" style="width:100%;height:310px"></div>
+		<script type="text/javascript">
+        	// 基于准备好的dom，初始化echarts实例
+        	var myChart = echarts.init(document.getElementById('dianliu_shishi'));
+
+        	// 指定图表的配置项和数据
+        	var option = {
+            	title: {
+                	text: '电压数据（mV nA）',
+                	left: 'center'
+            	},
+            	tooltip: {},
+            	legend: {
+                	data:[]
+            	},
+            	xAxis: {
+            	    type: 'category',
+            	    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            	   },
+            	yAxis: {
+            	    type: 'value'
+            	    },
+            	series: [{
+                	data: [820, 932, 901, 934, 1290, 1330, 1320],
+                    type: 'line'
+            	}]
+        	};
+
+        	// 使用刚指定的配置项和数据显示图表。
+        	myChart.setOption(option);
+    	</script>
+    	<!-- 电流波形结束 -->
+	</div>
+	<!-- 实时数据结束 -->
+    
+	<!-- <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
             	<label class="col-sm-3 control-label">编号</label>
@@ -62,7 +140,7 @@
             </div>
         </div>
     </div>
-    <!--开始2-->
+    开始2
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -85,8 +163,8 @@
             </div>
         </div>
     </div>
-    <!--结束2-->
-     <!--开始3-->
+    结束2
+     开始3
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -105,8 +183,8 @@
             </div>
         </div>
     </div>
-    <!--结束3-->
-      <!--开始4-->
+    结束3
+      开始4
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -125,8 +203,8 @@
             </div>
         </div>
     </div>
-    <!--结束4-->
-      <!--开始5-->
+    结束4
+      开始5
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -145,8 +223,8 @@
             </div>
         </div>
     </div>
-    <!--结束5-->
-      <!--开63-->
+    结束5
+      开63
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -165,8 +243,8 @@
             </div>
         </div>
     </div>
-    <!--结束6-->
-      <!--开76-->
+    结束6
+      开76
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -189,7 +267,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
