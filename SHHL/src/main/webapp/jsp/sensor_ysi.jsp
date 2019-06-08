@@ -42,8 +42,77 @@
 
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
-	
-    <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
+	<!-- shishi_start -->
+	<div>
+		<h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:0px;">实时数据</h5>
+		<div class="row">
+		<div class="col-xs-12">
+			<div class="table-responsive">
+					<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+    	<tr >
+        	<th>日期</th>
+        	<td>2019-04-12</td>
+        </tr>
+        <tr>
+        	<th>时刻</th>
+            <td>0.429</td>    
+        </tr>    
+        <tr >
+            <th>Turbidity</th>
+            <th>123</th>
+        </tr>
+        <tr>
+            <th>TTS</th>
+            <td>32.5</td>      
+        </tr>   
+        <tr >
+            <th>Chlorophyll</th>
+            <th>123</th>
+        </tr>
+        <tr>
+            <th>BGA-PE</th>
+            <td>32.5</td>      
+        </tr>   
+        <tr >
+            <th>ODO</th> 
+            <td>123</td>
+        </tr>
+        <tr>
+            <th>Temperature</th>    
+            <td>32.5</td>    
+        </tr>      
+        <tr >
+            <th>Specific Conductance</th>
+            <td>123</td> 
+        </tr>
+        <tr>
+            <th>Salinity</th>
+            <td>376.8</td>
+        </tr>    
+        <tr >
+            <th>pH</th>
+            <td>123</td>
+        </tr>
+        <tr>
+            <th>ORP</th>
+            <td>32.5</td>      
+        </tr>    
+        <tr >
+            <th>Pressure</th>
+            <td>123</td> 
+        </tr>
+        <tr>
+            <td>33.8</td>
+            <td>32.5</td>      
+        </tr>    
+        
+    </table>
+	</div><!-- /.table-responsive -->
+	</div><!-- /span -->
+</div><!-- /row -->
+	</div>
+	<!-- shishi_end -->
+    <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
 	<div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -62,7 +131,7 @@
             </div>
         </div>
     </div>
-    <!--开始2-->
+    开始2
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -85,8 +154,8 @@
             </div>
         </div>
     </div>
-    <!--结束2-->
-     <!--开始3-->
+    结束2
+     开始3
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -105,8 +174,8 @@
             </div>
         </div>
     </div>
-    <!--结束3-->
-      <!--开始4-->
+    结束3
+      开始4
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -125,8 +194,8 @@
             </div>
         </div>
     </div>
-    <!--结束4-->
-      <!--开始5-->
+    结束4
+      开始5
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -145,8 +214,8 @@
             </div>
         </div>
     </div>
-    <!--结束5-->
-      <!--开63-->
+    结束5
+      开63
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -165,8 +234,8 @@
             </div>
         </div>
     </div>
-    <!--结束6-->
-      <!--开76-->
+    结束6
+      开76
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -189,7 +258,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
