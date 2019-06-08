@@ -29,12 +29,7 @@
 
 </head>
 <body>
-<!-- <div style="padding:0px; margin:0px;">
-	<ul class="breadcrumb" style="padding:0px; margin:0px; padding-left:20px">
-    	<li><a>接驳盒</a></li>
-        <li>历史数据查询</li>
-    </ul>
-</div> -->
+
 <div class="breadcrumbs" id="breadcrumbs">
 		<script type="text/javascript">
 			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
@@ -52,7 +47,7 @@
 			<li class="active">历史数据查询</li>
 		</ul><!-- .breadcrumb -->					
 </div>
-
+<div class="page-content">
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
     <div class="col-sm-2" style="padding-top:4px;">
@@ -83,9 +78,9 @@
    </div>
    
 </div>
-
-<div class="row" style="padding:15px; padding-top:0px;" >
-	<table class="table table-condensed table-hover table-striped">
+</div>
+<div class="row" style="padding:15px; padding-top:0px;margin-top:2px;" >
+	<table class="table table-condensed table-striped table-bordered table-hover">
     	<tr >
         	<th>时间</th>
             <th>输入电流</th>
@@ -582,7 +577,8 @@
             <td>67</td> 
         </tr>
         <tfoot>
-        	<td colspan="6" align="right">
+        	<tr>
+        		<td colspan="100%" align="center">
         		 <ul class="pagination">
 				    <li>
 				      <a href="#" aria-label="Previous">
@@ -601,6 +597,7 @@
 				    </li>
 				  </ul>
         	</td>
+        	</tr>
         </tfoot>
     </table>
     	
