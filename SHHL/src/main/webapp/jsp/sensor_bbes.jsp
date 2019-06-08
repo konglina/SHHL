@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace.min.css" /> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace-rtl.min.css" /> --%>
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace-skins.min.css" /> --%>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/My97DatePicker/WdatePicker.js"></script>
@@ -223,33 +226,125 @@
 				</span>
 			</div>
 	   </div>
+	  
+	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
+		   	<input type="button" class="btn btn-danger" value="查询"/>
+		 </div>
+	</div>
+</form>
+<div  style="padding:2px; margin:0px;"  >
+<div class="row" style="margin-top:15px;">
+	<div class="col-sm-7" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电压
+          </div>
+              <div class="panel-body">
+             		<div id="container1" class="col-sm-12" style="height: 400px;"></div>
+              </div>
+        </div>
+	</div>
+	<div class="col-sm-5" style="height: 400px;">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电流
+          </div>
+              <div class="panel-body">
+             		<div id="container2" class="col-sm-12" style="height: 400px;"></div>
+              </div>
+        </div>
+	</div>
+</div>
+<div class="row" style="">
+	<div class="col-sm-5" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>温度
+          </div>
+              <div class="panel-body">
+             		<div id="container3" class="col-sm-12" style="height: 400px;"></div>
+              </div>
+        </div>
+	</div>
+	<div class="col-sm-7" style="height: 400px;">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电导率
+          </div>
+              <div class="panel-body">
+             		<div id="container4" class="col-sm-12" style="height: 400px;"></div>
+              </div>
+        </div>
+	</div>
+</div>
+<div class="row" style="">
+	<div class="col-sm-6" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>压力
+          </div>
+              <div class="panel-body">
+             		<div id="container5" class="col-sm-12" style="height: 400px;"></div>
+              </div>
+        </div>
+	</div>
+	<div class="col-sm-6" style="height: 400px;">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>盐度
+          </div>
+              <div class="panel-body">
+             		<div id="container6" class="col-sm-12" style="height: 400px;"></div>
+              </div>
+        </div>
+	</div>
+</div>
+
+<div class="row alert alert-info" style="margin:0px; padding:3px">
+		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">历史数据查询</div>
+		 <div class="col-sm-2" style="padding-top:5px">
+	    	<div class="input-group input-group-sm">
+	    		<span class="input-group-addon">
+					开始&nbsp;
+				</span>
+				<input type="text" id="test3" class="form-control">
+				<span class="input-group-addon">
+					<i class="icon-calendar"></i>
+				</span>
+			</div>
+	   </div> 
+	   
+	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
+	    	<div class="input-group input-group-sm">
+	    		<span class="input-group-addon">
+					结束&nbsp;
+				</span>
+				<input type="text" id="test4" class="form-control">
+				<span class="input-group-addon">
+					<i class="icon-calendar"></i>
+				</span>
+			</div>
+	   </div>
 	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
 	    	<div class="input-group input-group-sm">
 	    		<span class="input-group-addon">
 					指标&nbsp;
 				</span>
 	    	<select class="form-control">
-	        	<option>电压</option>
-	            <option>电流</option>
-	            <option>温度</option>
-	            <option>电导率</option>
+	        	<option>培养袋状态</option>
+	            <option>泵状态</option>
+	            <option>阀状态</option> 
 	        </select>
 	    	</div>
 	    </div>
 	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
 		   	<input type="button" class="btn btn-danger" value="查询"/>
 		 </div>
-	</div>
-</form>
-<div class="row">
-	<!-- <div id="container" style="width: 100%;height:600px;"></div> -->
-	<div class="col-sm-1" style="height: 600px;"></div>
-	<div id="container" class="col-sm-10" style="height: 600px;"></div>
-	<div class="col-sm-1" style="height: 600px;"></div>
 </div>
 <script type="text/javascript">
-	var dom = document.getElementById("container");
-	var myChart = echarts.init(dom);
+	//container1
+	var dom1 = document.getElementById("container1");
+	var myChart = echarts.init(dom1);
 	var app = {};
 	option = null;
 	function randomData() {
@@ -325,7 +420,366 @@
 	if (option && typeof option === "object") {
 	    myChart.setOption(option, true);
 	}
+	
+	//container2
+	var dom2 = document.getElementById("container2");
+	var myChart2 = echarts.init(dom2);
+	if (option && typeof option === "object") {
+	    myChart2.setOption(option, true);
+	}
+	//container3
+	var dom3 = document.getElementById("container3");
+	var myChart3 = echarts.init(dom3);
+	if (option && typeof option === "object") {
+	    myChart3.setOption(option, true);
+	}
+	//container4
+	var dom4 = document.getElementById("container4");
+	var myChart4 = echarts.init(dom4);
+	if (option && typeof option === "object") {
+	    myChart4.setOption(option, true);
+	}
+	//container5
+	var dom5 = document.getElementById("container5");
+	var myChart5 = echarts.init(dom5);
+	if (option && typeof option === "object") {
+	    myChart5.setOption(option, true);
+	}
+	//container6
+	var dom6 = document.getElementById("container6");
+	var myChart6 = echarts.init(dom6);
+	if (option && typeof option === "object") {
+	    myChart6.setOption(option, true);
+	}
  </script>
+<div class="row" style="padding:15px; padding-top:0px;" >
+	<table class="table table-condensed table-hover table-striped">
+    	<tr >
+        	<th>时间</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+          	<th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+            <th>培养袋1</th>
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>    
+        </tr>
+		<tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+         
+        
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+        
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+       
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+     
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+      
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+     
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+       
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+   
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+      
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+        
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+    
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+ 
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+    
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+        
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+      
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>34</td>
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+            <td>56</td>
+            <td>67</td> 
+            <td>67</td> 
+            <td>54</td>
+    
+        </tr>
+        <tfoot>
+        	<td colspan="6" align="right">
+        		 <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+        	</td>
+        </tfoot>
+    </table>
+    	
+</div>
  <script>
 //执行一个laydate实例
 laydate.render({
@@ -333,6 +787,12 @@ laydate.render({
 });
 laydate.render({
 	  elem: '#test2' //指定元素
+	});
+laydate.render({
+	  elem: '#test3' //指定元素
+});
+laydate.render({
+	  elem: '#test4' //指定元素
 	});
 </script>
 </body>
