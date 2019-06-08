@@ -42,8 +42,13 @@
 
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
-	
-    <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
+	<!-- BBES_shishi_start -->
+	<div>
+		 <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
+		 
+	</div>
+	<!-- BBES_shishi_end -->
+  <!--   <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
 	<div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -62,7 +67,7 @@
             </div>
         </div>
     </div>
-    <!--开始2-->
+    开始2
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -85,8 +90,8 @@
             </div>
         </div>
     </div>
-    <!--结束2-->
-     <!--开始3-->
+    结束2
+     开始3
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -105,8 +110,8 @@
             </div>
         </div>
     </div>
-    <!--结束3-->
-      <!--开始4-->
+    结束3
+      开始4
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -125,8 +130,8 @@
             </div>
         </div>
     </div>
-    <!--结束4-->
-      <!--开始5-->
+    结束4
+      开始5
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -145,8 +150,8 @@
             </div>
         </div>
     </div>
-    <!--结束5-->
-      <!--开63-->
+    结束5
+      开63
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -165,8 +170,8 @@
             </div>
         </div>
     </div>
-    <!--结束6-->
-      <!--开76-->
+    结束6
+      开76
     <div class="row">
     	<div class="col-sm-5">
         	<div class="form-group">
@@ -189,7 +194,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
