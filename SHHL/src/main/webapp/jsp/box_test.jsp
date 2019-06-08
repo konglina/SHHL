@@ -5,39 +5,101 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" media="screen" href="${pageContext.request.contextPath}/static/date-time/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
+
+<script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/js/echarts.min.js"></script>
 
 </head>
 <body>
-<div class="row" style="padding:15px; padding-top:0px;">
-	开始时间 : <input type="text" id="test1"> &nbsp;&nbsp;结束时间: <input type="text" id="test2">
+<div class="row">
+	<!-- <div id="container" style="width: 100%;height:600px;"></div> -->
+	<div class="col-sm-1" style="height: 600px;"></div>
+	<div id="container" class="col-sm-10" style="height: 600px;"></div>
+	<div class="col-sm-1" style="height: 600px;"></div>
 </div>
-
-<input id="datetimepickerBegin" name="start_time"  type="text"  placeholder="请输入起始时间"></input>
-   
-<script type="text/javascript">
-	$('#datetimepickerBegin').datetimepicker({
-        format: 'yyyy-MM-dd hh:mm:ss',
-        language: 'cn',
-        pickDate: true,
-        pickTime: true,
-        hourStep: 1,
-        minuteStep: 15,
-        secondStep: 30,
-        inputMask: true,
-        endDate:new Date()
-      }); 
-    </script>	
-
-<script src="${pageContext.request.contextPath}/static/laydate/laydate.js"></script>
-<script type="text/javascript" src="${pageContext.request.contextPath}/static/date-time/bootstrap-datetimepicker.min-2.js"></script>
-
-<script>
-//执行一个laydate实例
-laydate.render({
-  elem: '#test1', //指定元素
-  elem: '#test2'
-});
-</script>
-</body>
+       
+        
+       <script type="text/javascript">
+			var dom = document.getElementById("container");
+			var myChart = echarts.init(dom);
+			var app = {};
+			option = null;
+			function randomData() {
+			    now = new Date(+now + oneDay);
+			    value = value + Math.random() * 21 - 10;
+			    return {
+			        name: now.toString(),
+			        value: [
+			            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+			            Math.round(value)
+			        ]
+			    }
+			}
+			
+			var data = [];
+			var now = +new Date(1997, 9, 3);
+			var oneDay = 24 * 3600 * 1000;
+			var value = Math.random() * 1000;
+			for (var i = 0; i < 1000; i++) {
+			    data.push(randomData());
+			}
+			
+			option = {
+			    title: {
+			        text: '动态数据 + 时间坐标轴'
+			    },
+			    tooltip: {
+			        trigger: 'axis',
+			        formatter: function (params) {
+			            params = params[0];
+			            var date = new Date(params.name);
+			            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+			        },
+			        axisPointer: {
+			            animation: false
+			        }
+			    },
+			    xAxis: {
+			        type: 'time',
+			        splitLine: {
+			            show: false
+			        }
+			    },
+			    yAxis: {
+			        type: 'value',
+			        boundaryGap: [0, '100%'],
+			        splitLine: {
+			            show: false
+			        }
+			    },
+			    series: [{
+			        name: '模拟数据',
+			        type: 'line',
+			        showSymbol: false,
+			        hoverAnimation: false,
+			        data: data
+			    }]
+			};
+			
+			setInterval(function () {
+			
+			    for (var i = 0; i < 5; i++) {
+			        data.shift();
+			        data.push(randomData());
+			    }
+			
+			    myChart.setOption({
+			        series: [{
+			            data: data
+			        }]
+			    });
+			}, 1000);;
+			if (option && typeof option === "object") {
+			    myChart.setOption(option, true);
+			}
+       </script>
+   </body>
 </html>

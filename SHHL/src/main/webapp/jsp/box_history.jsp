@@ -55,7 +55,7 @@
 
 <div class="row alert alert-info" style="margin:0px; padding:3px">
 	<div class="col-sm-1" style="padding-top:9px">选择时间范围</div>
-    <div class="col-sm-2" style="padding-top:5px">
+    <div class="col-sm-2" style="padding-top:4px;">
     	<div class="input-group input-group-sm">
     		<span class="input-group-addon">
 				开始&nbsp;
@@ -67,7 +67,7 @@
 		</div>
    </div> 
    
-   <div class="col-sm-2" style="padding-top:5px">
+   <div class="col-sm-2" style="padding-top:4px;">
     	<div class="input-group input-group-sm">
     		<span class="input-group-addon">
 				结束&nbsp;
@@ -78,7 +78,7 @@
 			</span>
 		</div>
    </div>
-   <div class="col-sm-1" style="padding-top:5px">
+   <div class="col-sm-1" style="padding-top:4px;">
    	<input type="button" class="btn btn-danger" value="查询"/>
    </div>
    
