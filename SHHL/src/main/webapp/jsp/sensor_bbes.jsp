@@ -198,7 +198,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
               <div class="panel-body">
-             		<div id="container1" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="shishi_container1" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -208,7 +208,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
               <div class="panel-body">
-             		<div id="container2" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="shishi_container2" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -218,7 +218,7 @@
             <span class="glyphicon glyphicon-refresh"></span>温度
           </div>
               <div class="panel-body">
-             		<div id="container3" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="shishi_container3" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -230,7 +230,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电导率
           </div>
               <div class="panel-body">
-             		<div id="container4"  style="height: 300px;"></div>
+             		<div id="shishi_container4"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -240,7 +240,7 @@
             <span class="glyphicon glyphicon-refresh"></span>压力
           </div>
               <div class="panel-body">
-             		<div id="container5"  style="height: 300px;"></div>
+             		<div id="shishi_container5"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -250,13 +250,126 @@
             <span class="glyphicon glyphicon-refresh"></span>盐度
           </div>
               <div class="panel-body">
-             		<div id="container6"  style="height: 300px;"></div>
+             		<div id="shishi_container6"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
 </div>
 
-
+<script type="text/javascript">
+	//container1
+	var dom1 = document.getElementById("shishi_container1");
+	var myChart = echarts.init(dom1);
+	var app = {};
+	option = null;
+	function randomData() {
+	    now = new Date(+now + oneDay);
+	    value = value + Math.random() * 21 - 10;
+	    return {
+	        name: now.toString(),
+	        value: [
+	            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+	            Math.round(value)
+	        ]
+	    }
+	}
+	
+	var data = [];
+	var now = +new Date(1997, 9, 3);
+	var oneDay = 24 * 3600 * 1000;
+	var value = Math.random() * 1000;
+	for (var i = 0; i < 1000; i++) {
+	    data.push(randomData());
+	}
+	
+	option = {
+	    title: {
+	        text: '动态数据 + 时间坐标轴'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: data
+	    }]
+	};
+	
+	setInterval(function () {
+	
+	    for (var i = 0; i < 5; i++) {
+	        data.shift();
+	        data.push(randomData());
+	    }
+	
+	    myChart.setOption({
+	        series: [{
+	            data: data
+	        }]
+	    });
+	}, 1000);;
+	
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+	
+	//container2
+	var dom2 = document.getElementById("shishi_container2");
+	var myChart2 = echarts.init(dom2);
+	if (option && typeof option === "object") {
+	    myChart2.setOption(option, true);
+	}
+	//container3
+	var dom3 = document.getElementById("shishi_container3");
+	var myChart3 = echarts.init(dom3);
+	if (option && typeof option === "object") {
+	    myChart3.setOption(option, true);
+	}
+	//container4
+	var dom4 = document.getElementById("shishi_container4");
+	var myChart4 = echarts.init(dom4);
+	if (option && typeof option === "object") {
+	    myChart4.setOption(option, true);
+	}
+	//container5
+	var dom5 = document.getElementById("shishi_container5");
+	var myChart5 = echarts.init(dom5);
+	if (option && typeof option === "object") {
+	    myChart5.setOption(option, true);
+	}
+	//container6
+	var dom6 = document.getElementById("shishi_container6");
+	var myChart6 = echarts.init(dom6);
+	if (option && typeof option === "object") {
+	    myChart6.setOption(option, true);
+	}
+	
+	
+ </script>
 </div>
 		 </div>
 	</div>
