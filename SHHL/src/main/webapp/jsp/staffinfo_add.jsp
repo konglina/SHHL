@@ -9,6 +9,7 @@
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/My97DatePicker/WdatePicker.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/js/echarts.min.js"></script>
 </head>
 <body>
 <div style="padding:0px; margin:0px;">
@@ -19,154 +20,145 @@
 </div>
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
-	
-    <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
-	<div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">编号</label>
-                <div class="col-sm-5">
-                	<input type="text" readonly="readonly" name="staffId" class="form-control input-sm" placeholder="自动生成编号"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">姓名</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffName" class="form-control input-sm" placeholder="请输入姓名"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--开始2-->
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">年龄</label>
-                <div class="col-sm-3">
-                	<input type="text" name="staffAge" class="form-control input-sm" placeholder="请输入年龄"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">性别</label>
-                <div class="col-sm-5">
-                	<select name="staffSex">
-                    	<option>保密</option>
-                        <option>男</option>
-                        <option>女</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--结束2-->
-     <!--开始3-->
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">籍贯</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffNativePlace" class="form-control input-sm" placeholder="请输入籍贯"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">身份证号码</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffIdcard" class="form-control input-sm" placeholder="请输入籍贯"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--结束3-->
-      <!--开始4-->
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">出生日期</label>
-                <div class="col-sm-5">
-                	<input type="text" readonly="readonly" name="staffBirthday" class="form-control input-sm" onclick="WdatePicker()" placeholder="请输入出生日期"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">办公电话</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffOfficePhone" class="form-control input-sm" placeholder="请输入办公电话"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--结束4-->
-      <!--开始5-->
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">电子邮件</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffEmail" class="form-control input-sm" placeholder="请输入电子邮件"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">移动电话</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffMobilePhone" class="form-control input-sm" placeholder="请输入移动电话"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--结束5-->
-      <!--开63-->
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">家庭住址</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffAddr" class="form-control input-sm" placeholder="请输入家庭住址"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">QQ</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffQq" class="form-control input-sm" placeholder="请输入QQ"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--结束6-->
-      <!--开76-->
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">入职时间</label>
-                <div class="col-sm-5">
-                	<input type="text" readonly="readonly" name="staffEntryTime" class="form-control input-sm " onclick="WdatePicker()" placeholder="请输入入职时间"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">教育水平</label>
-                <div class="col-sm-9">
-                	<select class="form-control" name="staffEduLevel">
-                    	<option>保密</option>
-                        <option>博士</option>
-                        <option>硕士</option>
-                        <option>本科</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- shishi_start -->
+	<div>
+    	<h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:3px;">实时数据</h5>
+    	<div style="margin: 0px;padding: 3px">
+    		<!-- shishi_table -->
+    		<div >
+    			<table id="sample-table-1" class="table table-striped table-bordered table-hover" >
+    				<tr class="row">
+    					<th class="col-sm-4">时间</th>
+    					<th class="col-sm-4">状态</th>
+    					<th class="col-sm-4">浓度</th>
+    				</tr>
+    				<tr class="row">
+    					<td class="col-sm-4">2019/6/9 17:46</td>
+    					<td class="col-sm-4"><span class="label label-sm label-warning">35</span></td>
+    					<td class="col-sm-4">1.8247</td>
+    				</tr>
+    			</table>
+    		</div>
+    		
+    		<!-- shishi_picture -->
+    		<div class="row">
+    			<div class="col-sm-6" style="">
+		 			<div class="panel panel-default" >
+          				<div class="panel-heading" style=" padding:3px;height:30px;"  >
+            				<span class="glyphicon glyphicon-refresh"></span>状态
+          				</div>
+              			<div class="panel-body">
+             				<div id="shishi_zhuangtai" class="col-sm-12" style="height: 300px;"></div>
+              			</div>
+        			</div>
+				</div>
+					<script type="text/javascript">
+						// 基于准备好的dom，初始化echarts实例
+						var a =0;
+						
+						var myChart = echarts.init(document.getElementById('shishi_zhuangtai'));
+						console.log("12456767")
+						var data = [];
+						
+						for(var i = 0;i<30;i++){
+							data.push(Math.random()*100+1)
+						}
+						console.log(data)
+						var dataTime = [];
+						var time = new Date();
+						for(var i = 0;i<30;i++){
+							value = [2019,time.getMonth(),1+i].join('/')
+							dataTime.push(value)
+						}
+						
+						
+						// 指定图表的配置项和数据
+						var option = {
+								title: {
+						            text: 'Beijing AQI'
+						        },
+						        tooltip: {
+						            trigger: 'axis'
+						        },
+						        xAxis: {
+						            data:dataTime
+						        },
+						        yAxis: {
+						            splitLine: {
+						                show: false
+						            }
+						        },
+						        toolbox: {
+						            left: 'center',
+						            feature: {
+						                dataZoom: {
+						                    yAxisIndex: 'none'
+						                },
+						                restore: {},
+						                saveAsImage: {}
+						            }
+						        },
+						        dataZoom: [{
+						            startValue: '2014-06-01'
+						        }, {
+						            type: 'inside'
+						        }],
+						        visualMap: {
+						            top: 10,
+						            right: 10,
+						            pieces: [{
+						                gt: 0,
+						                lte: 30,
+						                color: '#ffde33'
+						            }, {
+						                gt: 30,
+						                lte: 70,
+						                color: '#ff9933'
+						            }, {
+						                gt: 70,
+						                lte: 100,
+						                color: '#cc0033'
+						            }],
+						            outOfRange: {
+						                color: '#999'
+						            }
+						        },
+						        series: {
+						            name: 'Beijing AQI',
+						            type: 'line',
+						            data: data,
+						            markLine: {
+						                silent: true,
+						                data: [{
+						                    yAxis: 30
+						                }, {
+						                    yAxis: 70
+						                }, {
+						                    yAxis: 100
+						                }, {
+						                    yAxis: 150
+						                }]
+						            }
+						        }
+						};
+
+						// 使用刚指定的配置项和数据显示图表。
+						myChart.setOption(option);
+					</script>
+					<div class="col-sm-6" style="">
+		 			<div class="panel panel-default" >
+          				<div class="panel-heading" style=" padding:3px;height:30px;"  >
+            				<span class="glyphicon glyphicon-refresh"></span>浓度
+          				</div>
+              			<div class="panel-body">
+             				<div id="shishi_nongdu" class="col-sm-12" style="height: 300px;"></div>
+              			</div>
+        			</div>
+				</div>
+    		</div>
+    	</div>
+	</div>
+	<!-- shishi_end -->
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
