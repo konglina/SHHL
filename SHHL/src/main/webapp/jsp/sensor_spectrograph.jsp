@@ -6,10 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/My97DatePicker/WdatePicker.js"></script>
 <script src="${pageContext.request.contextPath}/static/assets/js/echarts.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/laydate/laydate.js"></script>
 </head>
 <body>
 <div style="padding:0px; margin:0px;">
@@ -158,173 +160,212 @@
     		</div>
     	</div>
 	</div>
+	<script type="text/javascript">
+	var dom = document.getElementById("shishi_nongdu");
+	var myChart = echarts.init(dom);
+	var app = {};
+	option = null;
+	function randomData() {
+	    now = new Date(+now + oneDay);
+	    value = value + Math.random() * 21 - 10;
+	    return {
+	        name: now.toString(),
+	        value: [
+	            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
+	            Math.round(value)
+	        ]
+	    }
+	}
+	
+	var data = [];
+	var now = +new Date(1997, 9, 3);
+	var oneDay = 24 * 3600 * 1000;
+	var value = Math.random() * 1000;
+	for (var i = 0; i < 1000; i++) {
+	    data.push(randomData());
+	}
+	
+	option = {
+	    title: {
+	        text: '动态数据 + 时间坐标轴'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: data
+	    }]
+	};
+	
+	setInterval(function () {
+	
+	    for (var i = 0; i < 5; i++) {
+	        data.shift();
+	        data.push(randomData());
+	    }
+	
+	    myChart.setOption({
+	        series: [{
+	            data: data
+	        }]
+	    });
+	}, 1000);;
+	if (option && typeof option === "object") {
+	    myChart.setOption(option, true);
+	}
+ </script>
 	<!-- shishi_end -->
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
-    <div class="row alert alert-info" style="margin:0px; padding:3px">
-		<div class="col-sm-2" style="padding-top:9px;padding-left:3px;">历史数据查询</div>
-	    <div class="col-sm-2">
-	    	<select class="form-control">
-	        	<option>姓名</option>
-	            <option>姓名</option>
-	        </select>
-	    </div>
-	    <div class="col-sm-3">
-	    	<input type="text" class="form-control"/>
-	    </div>
-	    <input type="button" class="btn btn-danger" value="查询"/>
-	    <input type="button" class="btn btn-success" value="添加" onclick="javascript:window.location='${pageContext.request.contextPath}/view/system/staff_info/staffinfo_add.jsp'"/>
-	</div>
-<div align="center">
-	<div class="alert alert-warning" style="margin: 0px; padding: 5px; width: 80%;display: ${empty info?'none':'block'}" >
-		<button type="button" class="close" data-dismiss="alert">
-			<span aria-hidden="true">&times;</span>
-			
-		</button>
-		<p align="center" style="color: red;">员工信息-${info }</p>
-	</div>	
+   
+ <div class="page-content">
+<div class="row alert alert-info" style="margin:0px; padding:3px">
+	<div class="col-sm-1" style="padding-top:9px">历史数据查询</div>
+    <div class="col-sm-2" style="padding-top:4px;">
+    	<div class="input-group input-group-sm">
+    		<span class="input-group-addon">
+				开始&nbsp;
+			</span>
+			<input type="text" id="test1" class="form-control">
+			<span class="input-group-addon">
+				<i class="icon-calendar"></i>
+			</span>
+		</div>
+   </div> 
+   
+   <div class="col-sm-2" style="padding-top:4px;">
+    	<div class="input-group input-group-sm">
+    		<span class="input-group-addon">
+				结束&nbsp;
+			</span>
+			<input type="text" id="test2" class="form-control">
+			<span class="input-group-addon">
+				<i class="icon-calendar"></i>
+			</span>
+		</div>
+   </div>
+   <div class="col-sm-1" style="padding-top:4px;">
+   	<input type="button" class="btn btn-danger" value="查询"/>
+   </div>
+   
 </div>
-<div class="row" style="padding:15px; padding-top:0px;" >
-	<table class="table table-condensed table-striped">
-    	<tr>
-        	<th>员工编号</th>
-            <th>员工姓名</th>
-            <th>员工性别</th>
-            <th>员工年龄</th>
-            <th>员工号码</th>
-            <th>QQ</th>
-            <th>入职时间</th> 
-             <th>操作</th> 
+</div>
+<div class="row" style="padding:15px; padding-top:0px;margin-top:2px;" >
+	<table class="table table-condensed table-striped table-bordered table-hover">
+    	<tr >
+        	<th>时间</th>
+            <th>状态</th>
+            <th>浓度</th>
+           
+         
         </tr>
         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">1001号</a></td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
+        	<td><a href="#">2019-06-09 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+           
+        </tr>
+		<tr>
+        	<td><a href="#">2019-06-09 14:59:48</a></td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 15:00:48</a></td>
+            <td>26</td>
+            <td>13</td> 
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:01:48</a></td>
+            <td>26</td>
+            <td>13</td> 
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:02:48</a></td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:03:48</a></td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:04:48</a></td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:05:48</a></td>
+            <td>26</td>
+            <td>13</td>
         </tr>
          <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
+        	<td><a href="#">2019-06-09 14:06:48</a></td>
+            <td>26</td>
+            <td>13</td>
         </tr>
-         <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
-        </tr>
-         <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
-        </tr>
-        <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
-        </tr>
-        <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
-        </tr>
-        <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
-        </tr>
-        <tr>
-        	<td>1001号</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>25</td>
-            <td>18839967120</td>
-            <td>2363330581</td>
-            <td>2018-02-08</td> 
-            <td>
-               <a class="btn btn-primary btn-sm">修改</a>
-               <a class="btn btn-danger btn-sm">删除</a>
-            </td>
-        </tr>
+        <tfoot>
+        	<tr>
+        		<td colspan="100%" align="center">
+        		 <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+        	</td>
+        	</tr>
+        </tfoot>
     </table>
+    	
 </div>
-    <!--账号信息-->
-     <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">数据自动保存</h5>
-     <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">用户名</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffUsername" class="form-control input-sm" placeholder="请输入用户名"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">密码</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffPassword" class="form-control input-sm" placeholder="请输入密码"/>
-                </div>
-            </div>
-        </div>
-    </div>
-  
 </form>
-
+<script>
+//执行一个laydate实例
+	laydate.render({
+	  elem: '#test1' //指定元素
+	});
+	laydate.render({
+		  elem: '#test2' //指定元素
+		});
+</script>
 </body>
 </html>

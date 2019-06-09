@@ -390,7 +390,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="jsp/staffinfo_add.jsp" target="mainframe">
+									<a href="jsp/sensor_spectrograph.jsp" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										光谱仪
 									</a>
