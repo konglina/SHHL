@@ -5,11 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
-<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace.min.css" /> --%>
-<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace-rtl.min.css" /> --%>
-<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/ace-skins.min.css" /> --%>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/My97DatePicker/WdatePicker.js"></script>
@@ -47,29 +44,116 @@
 		</ul><!-- .breadcrumb -->					
 </div>
 
-
-<form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
+<h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
 	<!-- BBES_shishi_start -->
-	<div>
-		 <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
-		 <div style="margin: 0px;padding: 3px">
-		 	<div class="row" style="padding:11px; padding-top:0px;" >
-		 		<div>
-		 		<table class="table table-condensed table-striped table-bordered table-hover">
-						<tr>
+<div  style="padding:2px; margin:0px;"  >
+<div class="row" style="" >
+		 		<div class="col-sm-8">
+					          <div class="panel panel-default">
+						          <div class="panel-heading"  style=" padding:3px;height:30px;"  >
+						            <span class="glyphicon glyphicon-refresh"></span>培养袋状态
+						          </div> 
+						          <table class="table table-condensed table-striped table-bordered table-hover">
+							<tr>
+								<th>时间</th>
+								<th>培养袋1</th>
+								<th>培养袋2</th>
+								<th>培养袋3</th>
+								<th>培养袋4</th>
+								<th>培养袋5</th>
+								<th>培养袋6</th>
+								<th>培养袋7</th>
+								<th>培养袋8</th>
+								<th>培养袋9</th>
+								<th>培养袋10</th>
+								<th>培养袋11</th>
+								<th>培养袋12</th>
+							</tr>
+							<tr>
+								<td><a
+									href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
+										14:57:48</a></td>
+								<td><span class="label label-sm label-success">培养完成</span></td>
+								<td><span class="label label-sm label-success">培养完成</span></td>
+								<td><span class="label label-sm label-success">培养完成</span></td>
+								<td><span class="label label-sm label-success">培养完成</span></td>
+								<td><span class="label label-sm label-success">培养完成</span></td>
+								<td><span class="label label-sm label-warning">培养中</span></td>
+								<td><span class="label label-sm label-warning">培养中</span></td>
+								<td><span class="label label-sm label-warning">培养中</span></td>
+								<td><span class="label label-sm label-warning">培养中</span></td>
+								<td><span
+									class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								<td><span
+									class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								<td><span
+									class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							</tr>
+						</table>
+					         </div>
+				         </div> 
+				<div class="col-sm-4">
+					          <div class="panel panel-default">
+						          <div class="panel-heading"  style=" padding:3px;height:30px;"  >
+						            <span class="glyphicon glyphicon-refresh"></span>泵状态
+						          </div> 
+						          <table class="table table-condensed table-striped table-bordered table-hover">
+									<tr>
+										<th>时间</th>
+										<th>泵1</th>
+										<th>泵2</th>
+										<th>泵3</th>
+										<th>泵4</th>
+										<th>泵5</th>
+									</tr>
+									<tr>
+										<td><a
+											href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
+												14:57:48</a></td>
+										<td><span class="label label-sm label-success">培养完成</span></td>
+										<td><span class="label label-sm label-success">培养完成</span></td>
+										<td><span class="label label-sm label-success">培养完成</span></td>
+										<td><span class="label label-sm label-success">培养完成</span></td>
+										<td><span class="label label-sm label-success">培养完成</span></td>
+									</tr>
+								</table>
+					         </div>
+				         </div> 
+</div>
+<div class="row">
+ 	
+		 	<div class="col-sm-12">
+		 			<div class="panel panel-default">
+						          <div class="panel-heading"  style=" padding:3px;height:30px;"  >
+						            <span class="glyphicon glyphicon-refresh"></span>阀状态
+						          </div> 
+						          <table class="table table-condensed table-striped table-bordered table-hover">
+									<tr>
 							<th>时间</th>
-							<th>培养袋1</th>
-							<th>培养袋2</th>
-							<th>培养袋3</th>
-							<th>培养袋4</th>
-							<th>培养袋5</th>
-							<th>培养袋6</th>
-							<th>培养袋7</th>
-							<th>培养袋8</th>
-							<th>培养袋9</th>
-							<th>培养袋10</th>
-							<th>培养袋11</th>
-							<th>培养袋12</th>
+							<th>阀1</th>
+							<th>阀2</th>
+							<th>阀3</th>
+							<th>阀4</th>
+							<th>阀5</th>
+							<th>阀6</th>
+							<th>阀7</th>
+							<th>阀8</th>
+							<th>阀9</th>
+							<th>阀10</th>
+							<th>阀11</th>
+							<th>阀12</th>
+							<th>阀13</th>
+							<th>阀14</th>
+							<th>阀15</th>
+							<th>阀16</th>
+							<th>阀17</th>
+							<th>阀18</th>
+							<th>阀19</th>
+							<th>阀20</th>
+							<th>阀21</th>
+							<th>阀22</th>
+							<th>阀23</th>
+							<th>阀24</th>
 						</tr>
 						<tr>
 							<td><a
@@ -90,26 +174,54 @@
 								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
 							<td><span
 								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+						
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>		
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							
 						</tr>
-					</table>
-					</div>
-					
-					<div>
-		 		<table class="table table-condensed table-striped table-bordered table-hover">
+								</table>
+					         </div>
+		 	<%-- 	<table class="table table-condensed table-striped table-bordered table-hover">
+		
 						<tr>
 							<th>时间</th>
-							<th>培养袋1</th>
-							<th>培养袋2</th>
-							<th>培养袋3</th>
-							<th>培养袋4</th>
-							<th>培养袋5</th>
-							<th>培养袋6</th>
-							<th>培养袋7</th>
-							<th>培养袋8</th>
-							<th>培养袋9</th>
-							<th>培养袋10</th>
-							<th>培养袋11</th>
-							<th>培养袋12</th>
+							<th>阀1</th>
+							<th>阀2</th>
+							<th>阀3</th>
+							<th>阀4</th>
+							<th>阀5</th>
+							<th>阀6</th>
+							<th>阀7</th>
+							<th>阀8</th>
+							<th>阀9</th>
+							<th>阀10</th>
+							<th>阀11</th>
+							<th>阀12</th>
+							<th>阀13</th>
+							<th>阀14</th>
+							<th>阀15</th>
+							<th>阀16</th>
+							<th>阀17</th>
+							<th>阀18</th>
+							<th>阀19</th>
+							<th>阀20</th>
+							<th>阀21</th>
+							<th>阀22</th>
+							<th>阀23</th>
+							<th>阀24</th>
 						</tr>
 						<tr>
 							<td><a
@@ -130,68 +242,30 @@
 								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
 							<td><span
 								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-						</tr>
-						<tr>
-							<th>时间</th>
-							<th>培养袋1</th>
-							<th>培养袋2</th>
-							<th>培养袋3</th>
-							<th>培养袋4</th>
-							<th>培养袋5</th>
-							<th>培养袋6</th>
-							<th>培养袋7</th>
-							<th>培养袋8</th>
-							<th>培养袋9</th>
-							<th>培养袋10</th>
-							<th>培养袋11</th>
-							<th>培养袋12</th>
-						</tr>
-						<tr>
-							<td><a
-								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
-									14:57:48</a></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
+						
 							<td><span
 								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
 							<td><span
 								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>		
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							
 						</tr>
-					</table>
-					</div>
-					
-					<div>
-		 		<table class="table table-condensed table-striped table-bordered table-hover">
-						<tr>
-							<th>时间</th>
-							<th>培养袋1</th>
-							<th>培养袋2</th>
-							<th>培养袋3</th>
-							<th>培养袋4</th>
-						</tr>
-						<tr>
-							<td><a
-								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
-									14:57:48</a></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-						</tr>
-					</table>
-					</div>
-		 	</div>
-		 	<div  style="padding:2px; margin:0px;"  >
-<div class="row" style="margin-top:15px;">
+					</table> --%>
+				</div>
+</div>
+</div>
+<div  style="padding:2px; margin:0px;"  >
+<div class="row">
 	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
@@ -205,7 +279,7 @@
 	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电压
+            <span class="glyphicon glyphicon-refresh"></span>电流
           </div>
               <div class="panel-body">
              		<div id="shishi_container2" class="col-sm-12" style="height: 300px;"></div>
@@ -255,7 +329,7 @@
         </div>
 	</div>
 </div>
-
+</div>
 <script type="text/javascript">
 	//container1
 	var dom1 = document.getElementById("shishi_container1");
@@ -370,15 +444,7 @@
 	
 	
  </script>
-</div>
-		 </div>
-	</div>
-	<!-- BBES_shishi_end -->
-	
-    <!--结束7-->
-    <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
-      <!--备注-->
-    <div class="row alert alert-info" style="margin:0px; padding:3px">
+  <div class="row alert alert-info" style="margin:0px; padding:3px">
 		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">数据趋势查询</div>
 		 <div class="col-sm-2" style="padding-top:5px">
 	    	<div class="input-group input-group-sm">
@@ -408,7 +474,7 @@
 		   	<input type="button" class="btn btn-danger" value="查询"/>
 		 </div>
 	</div>
-</form>
+
 <div  style="padding:2px; margin:0px;"  >
 <div class="row" style="margin-top:15px;">
 	<div class="col-sm-4" style="">
@@ -424,7 +490,7 @@
 	<div class="col-sm-4" style="">
 		 <div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电压
+            <span class="glyphicon glyphicon-refresh"></span>电流
           </div>
               <div class="panel-body">
              		<div id="container2" class="col-sm-12" style="height: 300px;"></div>
@@ -629,7 +695,7 @@
 	}
  </script>
 <div class="row" style="padding:15px; padding-top:0px;" >
-	<table class="table table-condensed table-striped table-bordered table-hover">
+			<table class="table table-condensed table-striped table-bordered table-hover">
     	<tr >
         	<th>时间</th>
             <th>培养袋1</th>
@@ -955,8 +1021,7 @@
         	</tr>
         	
         </tfoot> 
-    </table>
-    	
+    </table>	
 </div>
  <script>
 //执行一个laydate实例
