@@ -29,15 +29,16 @@
     		<!-- shishi_table -->
     		<div >
     			<table id="sample-table-1" class="table table-striped table-bordered table-hover" >
+    			
     				<tr class="row">
     					<th class="col-sm-4">时间</th>
     					<th class="col-sm-4">状态</th>
     					<th class="col-sm-4">浓度</th>
     				</tr>
     				<tr class="row">
-    					<td class="col-sm-4">2019/6/9 17:46</td>
+    					<td class="col-sm-4">2019-6-9 17:46</td>
     					<td class="col-sm-4"><span class="label label-sm label-warning">35</span></td>
-    					<td class="col-sm-4">1.8247</td>
+    					<td class="col-sm-4">1.82</td>
     				</tr>
     			</table>
     		</div>
@@ -59,17 +60,21 @@
 						var a =0;
 						
 						var myChart = echarts.init(document.getElementById('shishi_zhuangtai'));
-						console.log("12456767")
+						
 						var data = [];
 						
 						for(var i = 0;i<30;i++){
 							data.push(Math.random()*100+1)
 						}
-						console.log(data)
+						
 						var dataTime = [];
 						var time = new Date();
 						for(var i = 0;i<30;i++){
-							value = [2019,time.getMonth(),1+i].join('/')
+							m = 0+i*2
+							value = [2019,time.getMonth(),9].join('/')+" 22:"+m
+							
+							
+							 
 							dataTime.push(value)
 						}
 						
@@ -77,7 +82,7 @@
 						// 指定图表的配置项和数据
 						var option = {
 								title: {
-						            text: 'Beijing AQI'
+						            text: '近期状态趋势'
 						        },
 						        tooltip: {
 						            trigger: 'axis'
@@ -88,7 +93,8 @@
 						        yAxis: {
 						            splitLine: {
 						                show: false
-						            }
+						            },
+						           
 						        },
 						        toolbox: {
 						            left: 'center',
@@ -157,88 +163,61 @@
               			</div>
         			</div>
 				</div>
-    		</div>
+					<script type="text/javascript">
+						// 基于准备好的dom，初始化echarts实例
+						var myChart = echarts.init(document
+								.getElementById('shishi_nongdu'));
+						
+						var data = [];
+						
+						for(var i = 0;i<30;i++){
+							data.push(1.82+Math.random()-0.5)
+						}
+						
+						var dataTime = [];
+						var time = new Date();
+						for(var i = 0;i<30;i++){
+							m = 0+i*2
+							value = [2019,time.getMonth(),9].join('/')+" 22:"+m
+							
+							
+							 
+							dataTime.push(value)
+						}
+						
+						
+
+						// 指定图表的配置项和数据
+						var option = {
+							title : {
+								text:"近期浓度趋势"
+							},
+							
+							
+							 xAxis: {
+								 type: 'category',
+							        boundaryGap: false,
+						            data:dataTime
+						        },
+						        yAxis: {
+						        	type: 'value',
+						            min:0
+						        },
+							    series: [{
+							        data: data,
+							        type: 'line',
+							        areaStyle: {},
+							        
+							    }]
+						};
+
+						// 使用刚指定的配置项和数据显示图表。
+						myChart.setOption(option);
+					</script>
+				</div>
     	</div>
 	</div>
-	<script type="text/javascript">
-	var dom = document.getElementById("shishi_nongdu");
-	var myChart = echarts.init(dom);
-	var app = {};
-	option = null;
-	function randomData() {
-	    now = new Date(+now + oneDay);
-	    value = value + Math.random() * 21 - 10;
-	    return {
-	        name: now.toString(),
-	        value: [
-	            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-	            Math.round(value)
-	        ]
-	    }
-	}
 	
-	var data = [];
-	var now = +new Date(1997, 9, 3);
-	var oneDay = 24 * 3600 * 1000;
-	var value = Math.random() * 1000;
-	for (var i = 0; i < 1000; i++) {
-	    data.push(randomData());
-	}
-	
-	option = {
-	    title: {
-	        text: '动态数据 + 时间坐标轴'
-	    },
-	    tooltip: {
-	        trigger: 'axis',
-	        formatter: function (params) {
-	            params = params[0];
-	            var date = new Date(params.name);
-	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-	        },
-	        axisPointer: {
-	            animation: false
-	        }
-	    },
-	    xAxis: {
-	        type: 'time',
-	        splitLine: {
-	            show: false
-	        }
-	    },
-	    yAxis: {
-	        type: 'value',
-	        boundaryGap: [0, '100%'],
-	        splitLine: {
-	            show: false
-	        }
-	    },
-	    series: [{
-	        name: '模拟数据',
-	        type: 'line',
-	        showSymbol: false,
-	        hoverAnimation: false,
-	        data: data
-	    }]
-	};
-	
-	setInterval(function () {
-	
-	    for (var i = 0; i < 5; i++) {
-	        data.shift();
-	        data.push(randomData());
-	    }
-	
-	    myChart.setOption({
-	        series: [{
-	            data: data
-	        }]
-	    });
-	}, 1000);;
-	if (option && typeof option === "object") {
-	    myChart.setOption(option, true);
-	}
- </script>
 	<!-- shishi_end -->
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
@@ -276,60 +255,60 @@
    
 </div>
 </div>
-<div class="row" style="padding:15px; padding-top:0px;margin-top:2px;" >
+<div class="row" style="padding:15px; padding-top:0px;margin-top:3px;" >
 	<table class="table table-condensed table-striped table-bordered table-hover">
-    	<tr >
-        	<th>时间</th>
-            <th>状态</th>
-            <th>浓度</th>
+    	<tr class = "row">
+        	<th class="col-sm-4">时间</th>
+            <th class="col-sm-4">状态</th>
+            <th class="col-sm-4">浓度</th>
            
          
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:57:48</a></td>
-            <td>26</td>
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:57:48</a></td>
+            <td><span class="label label-sm label-warning" background-color="#ff9933">53</span></td>
             <td>13</td>
            
         </tr>
-		<tr>
-        	<td><a href="#">2019-06-09 14:59:48</a></td>
-            <td>26</td>
+		<tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:59:48</a></td>
+            <td><span style = "background-color:#cc0033" class="label label-sm label-warning" background-color="#cc0033">71</span></td>
             <td>13</td>
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 15:00:48</a></td>
-            <td>26</td>
-            <td>13</td> 
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 15:00:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ffde33">26</span></td>
+            <td>2.3</td> 
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:01:48</a></td>
-            <td>26</td>
-            <td>13</td> 
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:01:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ff9933">35</span></td>
+            <td>2.0</td> 
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:02:48</a></td>
-            <td>26</td>
-            <td>13</td>
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:02:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ff9933">34</span></td>
+            <td>1.4</td>
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:03:48</a></td>
-            <td>26</td>
-            <td>13</td>
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:03:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ff9933">40</span></td>
+            <td>1.32</td>
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:04:48</a></td>
-            <td>26</td>
-            <td>13</td>
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:04:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ffde33">26</span></td>
+            <td>1.30</td>
         </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:05:48</a></td>
-            <td>26</td>
-            <td>13</td>
+        <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:05:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ff9933">35</span></td>
+            <td>1.50</td>
         </tr>
-         <tr>
-        	<td><a href="#">2019-06-09 14:06:48</a></td>
-            <td>26</td>
-            <td>13</td>
+         <tr class = "row">
+        	<td class="col-sm-4"><a href="#">2019-06-09 14:06:48</a></td>
+            <td><span class="label label-sm label-warning" style="background-color:#ff9933">37</span></td>
+            <td>1.82</td>
         </tr>
         <tfoot>
         	<tr>

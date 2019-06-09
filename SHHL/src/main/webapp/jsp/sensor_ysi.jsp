@@ -56,7 +56,7 @@
 		<div class="col-sm-4">
 		<div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电压
+            <span class="glyphicon glyphicon-refresh"></span>实时数据显示
           </div>
               <div class="panel-body">
              		<table id="sample-table-1" class="table table-striped table-bordered table-hover" style="margin: 0px;padding: 0px">
@@ -66,55 +66,55 @@
         </tr>
         <tr>
         	<th>时刻</th>
-            <td>0.429</td>    
+            <td>6:01</td>    
         </tr>    
         <tr >
             <th>Turbidity</th>
-            <th>123</th>
+            <td>0.21</td>
         </tr>
         <tr>
             <th>TTS</th>
-            <td>32.5</td>      
+            <td>0.00</td>      
         </tr>   
         <tr >
             <th>Chlorophyll</th>
-            <th>123</th>
+            <td>0.01</td>
         </tr>
         <tr>
             <th>BGA-PE</th>
-            <td>32.5</td>      
+            <td>0.01</td>      
         </tr>   
         <tr >
             <th>ODO</th> 
-            <td>123</td>
+            <td>100.43</td>
         </tr>
         <tr>
             <th>Temperature</th>    
-            <td>32.5</td>    
+            <td>27.78</td>    
         </tr>      
         <tr >
             <th>Specific Conductance</th>
-            <td>123</td> 
+            <td>51589.16</td> 
         </tr>
         <tr>
             <th>Salinity</th>
-            <td>376.8</td>
+            <td>33.83</td>
         </tr>    
         <tr >
             <th>pH</th>
-            <td>123</td>
+            <td>7.95</td>
         </tr>
         <tr>
             <th>ORP</th>
-            <td>32.5</td>      
+            <td>-4.98</td>      
         </tr>    
         <tr >
             <th>Pressure</th>
-            <td>123</td> 
+            <td>7.92</td> 
         </tr>
         <tr>
             <th>Deth</th>
-            <td>32.5</td>      
+            <td>5.45</td>      
         </tr>    
         
     </table>
@@ -126,7 +126,7 @@
     <div class="col-sm-8">
     	<div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电压
+            <span class="glyphicon glyphicon-refresh"></span>近期数据趋势
           </div>
               <div class="panel-body">
              		<div id="ysi_shishi" style="width: 100%;height:520px;"></div>
@@ -165,7 +165,10 @@
         	        data: ['周一','周二','周三','周四','周五','周六','周日']
         	    },
         	    yAxis: {
-        	        type: 'value'
+        	        type: 'value',
+        	        axisLabel:{
+        	        	show : false
+        	        }
         	    },
         	    series: [
         	        {
