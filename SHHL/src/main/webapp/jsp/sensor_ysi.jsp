@@ -52,7 +52,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
               <div class="panel-body">
-             		<table id="sample-table-1" class="table table-striped table-bordered table-hover">
+             		<table id="sample-table-1" class="table table-striped table-bordered table-hover" style="margin: 0px;padding: 0px">
     	<tr >
         	<th>日期</th>
         	<td>2019-04-12</td>

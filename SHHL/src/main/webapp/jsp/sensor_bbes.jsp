@@ -52,8 +52,215 @@
 	<!-- BBES_shishi_start -->
 	<div>
 		 <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
-		 
+		 <div style="margin: 0px;padding: 3px">
+		 	<div class="row" style="padding:11px; padding-top:0px;" >
+		 		<div>
+		 		<table class="table table-condensed table-striped table-bordered table-hover">
+						<tr>
+							<th>时间</th>
+							<th>培养袋1</th>
+							<th>培养袋2</th>
+							<th>培养袋3</th>
+							<th>培养袋4</th>
+							<th>培养袋5</th>
+							<th>培养袋6</th>
+							<th>培养袋7</th>
+							<th>培养袋8</th>
+							<th>培养袋9</th>
+							<th>培养袋10</th>
+							<th>培养袋11</th>
+							<th>培养袋12</th>
+						</tr>
+						<tr>
+							<td><a
+								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
+									14:57:48</a></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+						</tr>
+					</table>
+					</div>
+					
+					<div>
+		 		<table class="table table-condensed table-striped table-bordered table-hover">
+						<tr>
+							<th>时间</th>
+							<th>培养袋1</th>
+							<th>培养袋2</th>
+							<th>培养袋3</th>
+							<th>培养袋4</th>
+							<th>培养袋5</th>
+							<th>培养袋6</th>
+							<th>培养袋7</th>
+							<th>培养袋8</th>
+							<th>培养袋9</th>
+							<th>培养袋10</th>
+							<th>培养袋11</th>
+							<th>培养袋12</th>
+						</tr>
+						<tr>
+							<td><a
+								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
+									14:57:48</a></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+						</tr>
+						<tr>
+							<th>时间</th>
+							<th>培养袋1</th>
+							<th>培养袋2</th>
+							<th>培养袋3</th>
+							<th>培养袋4</th>
+							<th>培养袋5</th>
+							<th>培养袋6</th>
+							<th>培养袋7</th>
+							<th>培养袋8</th>
+							<th>培养袋9</th>
+							<th>培养袋10</th>
+							<th>培养袋11</th>
+							<th>培养袋12</th>
+						</tr>
+						<tr>
+							<td><a
+								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
+									14:57:48</a></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+							<td><span
+								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+						</tr>
+					</table>
+					</div>
+					
+					<div>
+		 		<table class="table table-condensed table-striped table-bordered table-hover">
+						<tr>
+							<th>时间</th>
+							<th>培养袋1</th>
+							<th>培养袋2</th>
+							<th>培养袋3</th>
+							<th>培养袋4</th>
+						</tr>
+						<tr>
+							<td><a
+								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
+									14:57:48</a></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+							<td><span class="label label-sm label-success">培养完成</span></td>
+						</tr>
+					</table>
+					</div>
+		 	</div>
+		 	<div  style="padding:2px; margin:0px;"  >
+<div class="row" style="margin-top:15px;">
+	<div class="col-sm-4" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电压
+          </div>
+              <div class="panel-body">
+             		<div id="container1" class="col-sm-12" style="height: 300px;"></div>
+              </div>
+        </div>
 	</div>
+	<div class="col-sm-4" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电压
+          </div>
+              <div class="panel-body">
+             		<div id="container2" class="col-sm-12" style="height: 300px;"></div>
+              </div>
+        </div>
+	</div>
+	<div class="col-sm-4" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>温度
+          </div>
+              <div class="panel-body">
+             		<div id="container3" class="col-sm-12" style="height: 300px;"></div>
+              </div>
+        </div>
+	</div>
+</div>
+<div class="row" style="">
+	<div class="col-sm-4" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>电导率
+          </div>
+              <div class="panel-body">
+             		<div id="container4"  style="height: 300px;"></div>
+              </div>
+        </div>
+	</div>
+	<div class="col-sm-4" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>压力
+          </div>
+              <div class="panel-body">
+             		<div id="container5"  style="height: 300px;"></div>
+              </div>
+        </div>
+	</div>
+	<div class="col-sm-4" style="">
+		 <div class="panel panel-default" >
+          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+            <span class="glyphicon glyphicon-refresh"></span>盐度
+          </div>
+              <div class="panel-body">
+             		<div id="container6"  style="height: 300px;"></div>
+              </div>
+        </div>
+	</div>
+</div>
+
+
+</div>
+		 </div>
+	</div>
+	<!-- BBES_shishi_end -->
 	
     <!--结束7-->
     <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
