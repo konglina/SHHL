@@ -110,11 +110,11 @@
 										<td><a
 											href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
 												14:57:48</a></td>
-										<td><span class="label label-sm label-success">培养完成</span></td>
-										<td><span class="label label-sm label-success">培养完成</span></td>
-										<td><span class="label label-sm label-success">培养完成</span></td>
-										<td><span class="label label-sm label-success">培养完成</span></td>
-										<td><span class="label label-sm label-success">培养完成</span></td>
+										<td><span class="label label-sm label-success">开</span></td>
+										<td><span class="label label-sm label-success">开</span></td>
+										<td><span class="label label-sm label-success">开</span></td>
+										<td><span class="label label-sm label-warning">关</span></td>
+										<td><span class="label label-sm label-success">开</span></td>
 									</tr>
 								</table>
 					         </div>
@@ -159,37 +159,37 @@
 							<td><a
 								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
 									14:57:48</a></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								class="label label-sm label-success">开</span></td>
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								class="label label-sm label-warning">关</span></td>
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								class="label label-sm label-warning">关</span></td>
 						
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								class="label label-sm label-success">开</span></td>
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+								class="label label-sm label-success">开</span></td>
 							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>		
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
+								class="label label-sm label-success">开</span></td>		
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-success">开</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
+							<td><span class="label label-sm label-warning">关</span></td>
 							
 						</tr>
 								</table>
@@ -714,10 +714,10 @@
         <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td>
@@ -729,10 +729,10 @@
 		<tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
+           <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td>
@@ -746,10 +746,10 @@
         <tr>
         <td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
+              <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td>
@@ -764,7 +764,7 @@
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
+           	<td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td>
