@@ -58,7 +58,7 @@
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
-              <div class="panel-body">
+             
              		<table id="sample-table-1" class="table table-striped table-bordered table-hover" style="margin: 0px;padding: 0px">
     	<tr >
         	<th>日期</th>
@@ -118,7 +118,7 @@
         </tr>    
         
     </table>
-              </div>
+              
         </div>
 		
     </div>
@@ -432,6 +432,7 @@
 					指标&nbsp;
 				</span>
 	    	<select class="form-control">
+	    		<option>请选择...</option>
 	        	<option>Turbidity</option>
 	            <option>TTS</option>
 	            <option>Chlorophyll</option>
@@ -452,6 +453,184 @@
 		 </div>
 	</div>
 </form>
+<div class="row"  style="padding:15px; padding-top:0px;margin-top:2px;" >
+		<table class="table table-condensed table-striped table-bordered table-hover">
+    	<tr >
+        	<th>Time</th>
+            <th>Turbidity</th>
+            <th>TTS</th>
+            <th>Chlorophyll</th>
+            <th>BGA-PE</th>
+            <th>ODO</th>
+            <th>Temperature</th>
+            <th>Specific Conductance</th>
+            <th>Salinity</th>
+            <th>pH</th>
+            <th>ORP</th>
+            <th>Pressure</th>
+            <th>Deth</th> 
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+           
+        </tr>
+		<tr>
+        	<td><a href="#">2019-06-09 14:59:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 15:00:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td> 
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:01:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td> 
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:02:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:03:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:04:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:05:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+         <tr>
+        	<td><a href="#">2019-06-09 14:06:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>13</td>
+        </tr>
+        <tfoot>
+        	<tr>
+        		<td colspan="100%" align="center">
+        		 <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+        	</td>
+        	</tr>
+        </tfoot>
+    </table>
+</div>
 <div class="row">
 	<!-- <div id="container" style="width: 100%;height:600px;"></div> -->
 	<div class="col-sm-1" style="height: 600px;"></div>
