@@ -304,8 +304,6 @@
 	    	<select class="form-control">
 	        	<option>电压</option>
 	            <option>电流</option>
-	            <option>温度</option>
-	            <option>电导率</option>
 	        </select>
 	    	</div>
 	    </div>

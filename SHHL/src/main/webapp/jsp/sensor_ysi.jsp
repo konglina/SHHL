@@ -5,7 +5,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/bootstrap.min.css">
+<%-- <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
+<script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/My97DatePicker/WdatePicker.js"></script>
+<script src="${pageContext.request.contextPath}/static/assets/js/echarts.min.js"></script>
+<script src="${pageContext.request.contextPath}/static/laydate/laydate.js"></script> --%>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/static/bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="${pageContext.request.contextPath}/static/assets/css/font-awesome.min.css" />
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/jquery.min.js"></script>
 <script src="${pageContext.request.contextPath}/static/bootstrap/js/bootstrap.min.js"></script>
@@ -45,7 +52,7 @@
 	<!-- shishi_start -->
 	<div >
 		<h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:0px;">实时数据</h5>
-		<div class="row" style="margin: 0px;padding: 2px">
+<div class="row" style="margin-top:15px;padding: 2px">
 		<div class="col-sm-4">
 		<div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
@@ -122,7 +129,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
               <div class="panel-body">
-             		<div id="ysi_shishi" style="width: 100%;height:540px;"></div>
+             		<div id="ysi_shishi" style="width: 100%;height:520px;"></div>
               </div>
         </div>
     </div>
@@ -133,13 +140,13 @@
        
         var option = {
         	    title: {
-        	        text: '折线图堆叠'
+        	        text: ''
         	    },
         	    tooltip: {
         	        trigger: 'axis'
         	    },
         	    legend: {
-        	        data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+        	        data:['Turbidity','TTS','Chlorophyll','BGA-PE','ODO','Temperature','Specific Conductance','Salinity','pH','ORP','Pressure', 'Deth']
         	    },
         	    grid: {
         	        left: '3%',
@@ -162,41 +169,78 @@
         	    },
         	    series: [
         	        {
-        	            name:'邮件营销',
+        	            name:'Turbidity',
         	            type:'line',
         	            stack: '总量',
         	            data:[120, 132, 101, 134, 90, 230, 210]
         	        },
         	        {
-        	            name:'联盟广告',
+        	            name:'TTS',
         	            type:'line',
         	            stack: '总量',
         	            data:[220, 182, 191, 234, 290, 330, 310]
         	        },
         	        {
-        	            name:'视频广告',
+        	            name:'Chlorophyll',
         	            type:'line',
         	            stack: '总量',
         	            data:[150, 232, 201, 154, 190, 330, 410]
         	        },
         	        {
-        	            name:'直接访问',
+        	            name:'BGA-PE',
         	            type:'line',
         	            stack: '总量',
         	            data:[320, 332, 301, 334, 390, 330, 320]
         	        },
         	        {
-        	            name:'搜索引擎',
+        	            name:'ODO',
         	            type:'line',
         	            stack: '总量',
         	            data:[820, 932, 901, 934, 1290, 1330, 1320]
         	        },
         	        {
-        	            name:'搜索引擎',
+        	            name:'Temperature',
         	            type:'line',
         	            stack: '总量',
         	            data:[825, 954, 985, 947, 1324, 1255, 1185]
+        	        },
+        	        {
+        	            name:'Specific Conductance',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[835, 964, 995, 937, 1200, 1255, 1200]
+        	        },
+        	        {
+        	            name:'Salinity',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[845, 964, 995, 957, 1424, 1355, 1085]
+        	        },
+        	        {
+        	            name:'pH',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[855, 974, 1005, 1147, 1224, 1355, 1285]
+        	        },
+        	        {
+        	            name:'ORP',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[865, 854, 1085, 1047, 1124, 1055, 985]
+        	        },
+        	        {
+        	            name:'Pressure',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[870, 754, 1185, 1247, 1424, 1555, 1385]
+        	        },
+        	        {
+        	            name:'Deth',
+        	            type:'line',
+        	            stack: '总量',
+        	            data:[885, 954, 985, 1347, 1224, 1155, 1085]
         	        }
+        	        
         	    ]
         	};
 
@@ -388,10 +432,18 @@
 					指标&nbsp;
 				</span>
 	    	<select class="form-control">
-	        	<option>电压</option>
-	            <option>电流</option>
-	            <option>温度</option>
-	            <option>电导率</option>
+	        	<option>Turbidity</option>
+	            <option>TTS</option>
+	            <option>Chlorophyll</option>
+	            <option>BGA-PE</option>
+	            <option>ODO</option>
+	            <option>Temperature</option>
+	            <option>Specific Conductance</option>
+	            <option>Salinity</option>
+	            <option>pH</option>
+	            <option>ORP</option>
+	            <option>Pressure</option>
+	            <option>Deth</option>
 	        </select>
 	    	</div>
 	    </div>
