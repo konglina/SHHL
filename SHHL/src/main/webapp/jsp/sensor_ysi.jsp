@@ -486,7 +486,7 @@
             <td>13</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
            
         </tr>
@@ -502,7 +502,7 @@
             <td>11</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
         </tr>
         <tr>
@@ -517,7 +517,7 @@
             <td>30</td>
             <td>26</td>
             <td>13</td>
-            <td>25</td>
+            <td></td>
             <td>18</td> 
         </tr>
         <tr>
@@ -532,7 +532,7 @@
             <td>13</td>
             <td>26</td>
             <td>13</td>
-            <td>53</td>
+            <td></td>
             <td>23</td> 
         </tr>
         <tr>
@@ -547,7 +547,7 @@
             <td>23</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
         </tr>
         <tr>
@@ -562,7 +562,7 @@
             <td>13</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
         </tr>
         <tr>
@@ -577,7 +577,7 @@
             <td>13</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
         </tr>
         <tr>
@@ -592,7 +592,7 @@
             <td>25</td>
             <td>23</td>
             <td>22</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
         </tr>
          <tr>
@@ -607,7 +607,7 @@
             <td>13</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
+            <td></td>
             <td>13</td>
         </tr>
         <tfoot>
