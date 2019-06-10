@@ -56,27 +56,41 @@
 		<script type="text/javascript">
         	// 基于准备好的dom，初始化echarts实例
         	var myChart = echarts.init(document.getElementById('dianya_shishi'));
-
+        	var data = [];
+			
+			for(var i = 0;i<821;i++){
+				data.push(-614.57+(Math.sin(i/20)*0.5+(Math.random()*2-1)*0.5)*600)
+			}
+			
+			var dataTime = [];
+			var time = new Date();
+			for(var i = 0;i<821;i++){
+				
+				dataTime.push(i+1)
+			}
         	// 指定图表的配置项和数据
         	var option = {
+        			
+        			
             	title: {
                 	text: '电压数据（mV nA）',
                 	left: 'center'
             	},
+            	
             	tooltip: {},
             	legend: {
                 	data:['销量']
             	},
             	xAxis: {
             	    type: 'category',
-            	    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            	    data: dataTime
             	   },
             	yAxis: {
             	    type: 'value'
             	    },
             	series: [{
                 	name: '123',
-                	data: [820, 932, 901, 934, 1290, 1330, 1320],
+                	data: data,
                     type: 'line'
             	}]
         	};
@@ -91,11 +105,22 @@
 		<script type="text/javascript">
         	// 基于准备好的dom，初始化echarts实例
         	var myChart = echarts.init(document.getElementById('dianliu_shishi'));
-
+			var data = [];
+			
+			for(var i = 0;i<821;i++){
+				data.push(-17.83+(Math.cos(i/20+Math.random()/10)*0.5+(Math.random()*2-1)*0.5)*200)
+			}
+			
+			var dataTime = [];
+			var time = new Date();
+			for(var i = 0;i<821;i++){
+				
+				dataTime.push(i+1)
+			}
         	// 指定图表的配置项和数据
         	var option = {
             	title: {
-                	text: '电压数据（mV nA）',
+                	text: '电流数据（mV nA）',
                 	left: 'center'
             	},
             	tooltip: {},
@@ -104,13 +129,13 @@
             	},
             	xAxis: {
             	    type: 'category',
-            	    data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+            	    data: dataTime
             	   },
             	yAxis: {
             	    type: 'value'
             	    },
             	series: [{
-                	data: [820, 932, 901, 934, 1290, 1330, 1320],
+                	data: data,
                     type: 'line'
             	}]
         	};
@@ -433,89 +458,51 @@
 </div>
 <div class="row">
 	<!-- <div id="container" style="width: 100%;height:600px;"></div> -->
-	<div class="col-sm-2" style="height: 400px;"></div>
-	<div id="container" class="col-sm-8" style="height: 400px;"></div>
-	<div class="col-sm-2" style="height: 400px;"></div>
+	
+	<div id="container" style="height: 400px;"></div>
+	
 </div>
 <script type="text/javascript">
-	var dom = document.getElementById("container");
-	var myChart = echarts.init(dom);
-	var app = {};
-	option = null;
-	function randomData() {
-	    now = new Date(+now + oneDay);
-	    value = value + Math.random() * 21 - 10;
-	    return {
-	        name: now.toString(),
-	        value: [
-	            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-	            Math.round(value)
-	        ]
-	    }
-	}
-	
-	var data = [];
-	var now = +new Date(1997, 9, 3);
-	var oneDay = 24 * 3600 * 1000;
-	var value = Math.random() * 1000;
-	for (var i = 0; i < 1000; i++) {
-	    data.push(randomData());
-	}
-	
-	option = {
-	    title: {
-	        text: '动态数据 + 时间坐标轴'
-	    },
-	    tooltip: {
-	        trigger: 'axis',
-	        formatter: function (params) {
-	            params = params[0];
-	            var date = new Date(params.name);
-	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-	        },
-	        axisPointer: {
-	            animation: false
-	        }
-	    },
-	    xAxis: {
-	        type: 'time',
-	        splitLine: {
-	            show: false
-	        }
-	    },
-	    yAxis: {
-	        type: 'value',
-	        boundaryGap: [0, '100%'],
-	        splitLine: {
-	            show: false
-	        }
-	    },
-	    series: [{
-	        name: '模拟数据',
-	        type: 'line',
-	        showSymbol: false,
-	        hoverAnimation: false,
-	        data: data
-	    }]
-	};
-	
-	setInterval(function () {
-	
-	    for (var i = 0; i < 5; i++) {
-	        data.shift();
-	        data.push(randomData());
-	    }
-	
-	    myChart.setOption({
-	        series: [{
-	            data: data
-	        }]
-	    });
-	}, 1000);;
-	if (option && typeof option === "object") {
-	    myChart.setOption(option, true);
-	}
- </script>
+        	// 基于准备好的dom，初始化echarts实例
+        	var myChart = echarts.init(document.getElementById('container'));
+			var data = [];
+			
+			for(var i = 0;i<821;i++){
+				data.push(-17.83+(Math.cos(i/20+Math.random()/10)*0.5+(Math.random()*2-1)*0.5)*200)
+			}
+			
+			var dataTime = [];
+			var time = new Date();
+			for(var i = 0;i<821;i++){
+				
+				dataTime.push(i+1)
+			}
+        	// 指定图表的配置项和数据
+        	var option = {
+            	title: {
+                	text: '电流数据（mV nA）',
+                	left: 'center'
+            	},
+            	tooltip: {},
+            	legend: {
+                	data:[]
+            	},
+            	xAxis: {
+            	    type: 'category',
+            	    data: dataTime
+            	   },
+            	yAxis: {
+            	    type: 'value'
+            	    },
+            	series: [{
+                	data: data,
+                    type: 'line'
+            	}]
+        	};
+
+        	// 使用刚指定的配置项和数据显示图表。
+        	myChart.setOption(option);
+    	</script>
  <script>
 //执行一个laydate实例
 laydate.render({

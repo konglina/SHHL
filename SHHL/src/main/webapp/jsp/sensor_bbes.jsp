@@ -723,7 +723,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>    
         </tr>
 		<tr>
@@ -738,7 +738,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
          
         
@@ -749,13 +749,13 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
-              <td><span class="label label-sm label-warning">培养中</span></td> 
+            <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td> 
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
         </tr>
         <tr>
@@ -770,7 +770,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
         
         </tr>
@@ -786,7 +786,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
        
         </tr>
@@ -802,7 +802,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
      
         </tr>
@@ -818,7 +818,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
       
         </tr>
@@ -834,7 +834,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
      
         </tr>
@@ -850,7 +850,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
        
         </tr>
@@ -866,7 +866,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
         </tr>
          <tr>
@@ -881,7 +881,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
       
         </tr>
@@ -897,7 +897,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+           <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
         
         </tr>
@@ -913,7 +913,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
     
         </tr>
@@ -929,7 +929,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
  
         </tr>
@@ -945,7 +945,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+           <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
     
         </tr>
@@ -961,7 +961,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
         
         </tr>
@@ -977,7 +977,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td> 
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
       
         </tr>
@@ -993,7 +993,7 @@
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
+            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
     
         </tr>
