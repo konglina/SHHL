@@ -358,7 +358,7 @@
 	
 	option = {
 	    title: {
-	        text: '动态数据 + 时间坐标轴'
+	        text: '近期趋势'
 	    },
 	    tooltip: {
 	        trigger: 'axis',
@@ -602,7 +602,7 @@
 	}
 	
 	var data = [];
-	var now = +new Date(1997, 9, 3);
+	var now = +new Date(2019, 9, 3);
 	var oneDay = 24 * 3600 * 1000;
 	var value = Math.random() * 1000;
 	for (var i = 0; i < 1000; i++) {
@@ -611,7 +611,7 @@
 	
 	option = {
 	    title: {
-	        text: '动态数据 + 时间坐标轴'
+	        text: ''
 	    },
 	    tooltip: {
 	        trigger: 'axis',
