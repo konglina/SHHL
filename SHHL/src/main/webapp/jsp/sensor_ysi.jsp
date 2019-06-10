@@ -492,14 +492,14 @@
         </tr>
 		<tr>
         	<td><a href="#">2019-06-09 14:59:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
+            <td>27</td>
+            <td>14</td>
+            <td>25</td>
+            <td>16</td>
+            <td>27</td>
+            <td>18</td>
+            <td>29</td>
+            <td>11</td>
             <td>26</td>
             <td>13</td>
             <td>26</td>
@@ -507,44 +507,44 @@
         </tr>
         <tr>
         	<td><a href="#">2019-06-09 15:00:48</a></td>
+            <td>20</td>
+            <td>22</td>
             <td>26</td>
             <td>13</td>
             <td>26</td>
             <td>13</td>
             <td>26</td>
-            <td>13</td>
+            <td>30</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td> 
+            <td>25</td>
+            <td>18</td> 
         </tr>
         <tr>
         	<td><a href="#">2019-06-09 14:01:48</a></td>
+            <td>30</td>
+            <td>22</td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            <td>44</td>
             <td>26</td>
             <td>13</td>
             <td>26</td>
             <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td> 
+            <td>53</td>
+            <td>23</td> 
         </tr>
         <tr>
         	<td><a href="#">2019-06-09 14:02:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
+            <td>22</td>
+            <td>25</td>
+            <td>23</td>
+            <td>24</td>
+            <td>20</td>
+            <td>23</td>
+            <td>30</td>
+            <td>23</td>
             <td>26</td>
             <td>13</td>
             <td>26</td>
@@ -567,7 +567,7 @@
         </tr>
         <tr>
         	<td><a href="#">2019-06-09 14:04:48</a></td>
-            <td>26</td>
+            <td>5</td>
             <td>13</td>
             <td>26</td>
             <td>13</td>
@@ -582,16 +582,16 @@
         </tr>
         <tr>
         	<td><a href="#">2019-06-09 14:05:48</a></td>
-            <td>26</td>
+            <td>36</td>
+            <td>25</td>
+            <td>45</td>
+            <td>36</td>
             <td>13</td>
             <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
+            <td>20</td>
+            <td>25</td>
+            <td>23</td>
+            <td>22</td>
             <td>26</td>
             <td>13</td>
         </tr>
