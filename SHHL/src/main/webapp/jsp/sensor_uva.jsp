@@ -59,7 +59,7 @@
         	var data = [];
 			
 			for(var i = 0;i<821;i++){
-				data.push(-614.57+(Math.sin(i/20)*0.5+(Math.random()*2-1)*0.5)*600)
+				data.push(-614.57+(Math.sin(i/400)*0.9+(Math.random()*2-1)*0.1)*600)
 			}
 			
 			var dataTime = [];
@@ -108,7 +108,7 @@
 			var data = [];
 			
 			for(var i = 0;i<821;i++){
-				data.push(-17.83+(Math.cos(i/20+Math.random()/10)*0.5+(Math.random()*2-1)*0.5)*200)
+				data.push(-17.83+(Math.sin(i/500)*0.85+((Math.random()*2-1)*i/700)*0.15)*200)
 			}
 			
 			var dataTime = [];
