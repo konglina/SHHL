@@ -353,12 +353,7 @@
 										历史数据查询
 									</a>
 								</li>
-								<li>
-									<a href="jsp/box_test.jsp" target="mainframe">
-										<i class="icon-double-angle-right"></i>
-										数据自动保存
-									</a>
-								</li>
+								
                             </ul>
 						</li>
 						
@@ -399,7 +394,7 @@
 						</li>
 						
 
-						<li>
+					<!-- 	<li>
 							<a href="#" class="dropdown-toggle">
 								<i class="icon-desktop"></i>
 								<span class="menu-text"> UI 组件 </span>
@@ -486,7 +481,7 @@
 									</ul>
 								</li>
 							</ul>
-						</li>
+						</li> -->
 
 						
 

@@ -296,12 +296,33 @@
 				</span>
 			</div>
 	   </div>
+	    <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
+	    	<div class="input-group input-group-sm">
+	    		<span class="input-group-addon">
+					时刻&nbsp;
+				</span>
+	    	<select class="form-control">
+	    		<option>请选择...</option>
+	        	<option>2019-06-09 15:00:48</option>
+	            <option>2019-06-09 15:01:48</option>
+	            <option>2019-06-09 15:02:48</option>
+	            <option>2019-06-09 15:03:48</option>
+	            <option>2019-06-09 15:04:48</option>
+	            <option>2019-06-09 15:05:48</option>
+	            <option>2019-06-09 15:06:48</option>
+	            <option>2019-06-09 15:07:48</option>
+	            <option>2019-06-09 15:08:48</option>
+	       
+	        </select>
+	    	</div>
+	    </div>
 	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
 	    	<div class="input-group input-group-sm">
 	    		<span class="input-group-addon">
 					指标&nbsp;
 				</span>
 	    	<select class="form-control">
+	    		<option>请选择...</option>
 	        	<option>电压</option>
 	            <option>电流</option>
 	        </select>
@@ -312,11 +333,109 @@
 		 </div>
 	</div>
 </form>
+<div class="row"  style="padding:15px; padding-top:0px;margin-top:2px;" >
+		<table class="table table-condensed table-striped table-bordered table-hover">
+    	<tr >
+        	<th>Time</th>
+            <th>温度</th>
+            <th>电压</th>
+            <th>电流</th>
+     
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:57:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            
+           
+        </tr>
+		<tr>
+        	<td><a href="#">2019-06-09 14:59:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 15:00:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:01:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:02:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:03:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:04:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+            
+        </tr>
+        <tr>
+        	<td><a href="#">2019-06-09 14:05:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+         <tr>
+        	<td><a href="#">2019-06-09 14:06:48</a></td>
+            <td>26</td>
+            <td>13</td>
+            <td>26</td>
+           
+        </tr>
+        <tfoot>
+        	<tr>
+        		<td colspan="100%" align="center">
+        		 <ul class="pagination">
+				    <li>
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				    <li><a href="#">1</a></li>
+				    <li><a href="#">2</a></li>
+				    <li><a href="#">3</a></li>
+				    <li><a href="#">4</a></li>
+				    <li><a href="#">5</a></li>
+				    <li>
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>
+				  </ul>
+        	</td>
+        	</tr>
+        </tfoot>
+    </table>
+</div>
 <div class="row">
 	<!-- <div id="container" style="width: 100%;height:600px;"></div> -->
-	<div class="col-sm-1" style="height: 600px;"></div>
-	<div id="container" class="col-sm-10" style="height: 600px;"></div>
-	<div class="col-sm-1" style="height: 600px;"></div>
+	<div class="col-sm-2" style="height: 400px;"></div>
+	<div id="container" class="col-sm-8" style="height: 400px;"></div>
+	<div class="col-sm-2" style="height: 400px;"></div>
 </div>
 <script type="text/javascript">
 	var dom = document.getElementById("container");

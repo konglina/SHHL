@@ -17,7 +17,7 @@
 <div style="padding:0px; margin:0px;">
 	<ul class="breadcrumb" style="margin:0px; padding-left:20px">
     	<li><a>传感器</a></li>
-        <li>BBES</li>
+        <li>光谱仪</li>
     </ul>
 </div>
 

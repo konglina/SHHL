@@ -429,6 +429,7 @@
 				</span>
 			</div>
 	   </div>
+	  
 	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
 	    	<div class="input-group input-group-sm">
 	    		<span class="input-group-addon">
@@ -636,9 +637,9 @@
 </div>
 <div class="row">
 	<!-- <div id="container" style="width: 100%;height:600px;"></div> -->
-	<div class="col-sm-1" style="height: 600px;"></div>
-	<div id="container" class="col-sm-10" style="height: 600px;"></div>
-	<div class="col-sm-1" style="height: 600px;"></div>
+	<div class="col-sm-2" style="height: 400px;"></div>
+	<div id="container" class="col-sm-8" style="height: 400px;"></div>
+	<div class="col-sm-2" style="height: 400px;"></div>
 </div>
 <script type="text/javascript">
 	var dom = document.getElementById("container");
