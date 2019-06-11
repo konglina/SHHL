@@ -136,29 +136,158 @@
         </tr>
 		<tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>23</td>
+            <td>14</td>
+            <td>30</td>
+            <td>50</td>
+            <td>55</td>
+            <td>65</td> 
+            <td>60</td> 
+            <td>44</td>
+            <td>45</td>
+            <td>46</td> 
+            <td>67</td> 
+            <td>22</td>
+            <td>35</td>
+            <td>25</td> 
+            <td>36</td> 
+            <td>25</td>
+            <td>36</td>
+            <td>25</td> 
+            <td>36</td> 
+            <td>22</td>
             <td>26</td>
-            <td>13</td>
+            <td>23</td> 
+            <td>24</td> 
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>23</td>
+            <td>23</td>
+            <td>44</td>
+            <td>64</td>
+            <td>36</td>
+            <td>27</td> 
+            <td>37</td> 
             <td>34</td>
+            <td>46</td>
+            <td>57</td> 
+            <td>27</td> 
+            <td>34</td>
+            <td>46</td>
+            <td>57</td> 
+            <td>17</td> 
+            <td>24</td>
+            <td>36</td>
+            <td>57</td> 
+            <td>44</td>
+            <td>36</td>
+            <td>27</td> 
+            <td>37</td> 
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>36</td>
+            <td>23</td>
+            <td>64</td>
             <td>54</td>
-            <td>56</td>
+            <td>46</td>
+            <td>37</td> 
+            <td>27</td> 
+            <td>14</td>
+            <td>66</td>
+            <td>47</td> 
+            <td>27</td> 
+            <td>34</td>
+            <td>46</td>
+            <td>57</td> 
             <td>67</td> 
+            <td>74</td>
+            <td>76</td>
             <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
+            <td>57</td> 
+            <td>44</td>
+            <td>36</td>
+            <td>27</td> 
+            <td>17</td> 
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>53</td>
+            <td>52</td>
+            <td>65</td> 
+            <td>65</td> 
+            <td>34</td>
+            <td>36</td>
+            <td>44</td> 
+            <td>45</td> 
+            <td>27</td>
+            <td>26</td>
+            <td>17</td> 
+            <td>27</td> 
+            <td>34</td>
+            <td>26</td>
+            <td>22</td> 
+            <td>26</td> 
+            <td>27</td>
+            <td>29</td>
+            <td>17</td> 
+            <td>18</td> 
+        </tr>
+        <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+            <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
         </tr>
         <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
@@ -186,9 +315,35 @@
             <td>67</td> 
             <td>67</td> 
         </tr>
-        <tr>
+         <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
+            <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
+        </tr>
+         <tr>
+        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+           <td>26</td>
             <td>13</td>
             <td>34</td>
             <td>54</td>
@@ -212,109 +367,31 @@
             <td>67</td> 
             <td>67</td> 
         </tr>
-        <tr>
+         <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
+             <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
@@ -344,29 +421,29 @@
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
+            <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
@@ -396,29 +473,29 @@
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
+            <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
@@ -448,107 +525,29 @@
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>34</td>
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
-            <td>54</td>
-            <td>56</td>
-            <td>67</td> 
-            <td>67</td> 
+           <td>25</td>
+            <td>14</td>
+            <td>35</td>
+            <td>53</td>
+            <td>55</td>
+            <td>66</td> 
+            <td>65</td> 
+            <td>55</td>
+            <td>55</td>
+            <td>68</td> 
+            <td>66</td> 
+            <td>55</td>
+            <td>50</td>
+            <td>63</td> 
+            <td>64</td> 
+            <td>55</td>
+            <td>52</td>
+            <td>63</td> 
+            <td>60</td> 
+            <td>50</td>
+            <td>51</td>
+            <td>60</td> 
+            <td>69</td> 
         </tr>
          <tr>
         	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
