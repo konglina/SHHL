@@ -328,7 +328,7 @@
 
 					<ul class="nav nav-list">
 						<li class="active">
-							<a href="bootm.jsp" target="mainframe">
+							<a href="jsp/jiebohe_shishi.jsp" target="mainframe">
 								<i class="icon-dashboard"></i>
 								<span class="menu-text"> 控制台 </span>
 							</a>
