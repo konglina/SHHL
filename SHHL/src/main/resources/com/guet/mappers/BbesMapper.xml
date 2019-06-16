@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.mapper.BbesMapper">
+  <resultMap id="BaseResultMap" type="com.guet.entity.Bbes">
+    <result column="TIME" jdbcType="TIMESTAMP" property="time" />
+    <result column="Volt48" jdbcType="DECIMAL" property="volt48" />
+    <result column="Abel48" jdbcType="DECIMAL" property="abel48" />
+    <result column="Volt24" jdbcType="DECIMAL" property="volt24" />
+    <result column="Abel24" jdbcType="DECIMAL" property="abel24" />
+    <result column="Volt12" jdbcType="DECIMAL" property="volt12" />
+    <result column="Abel12" jdbcType="DECIMAL" property="abel12" />
+    <result column="Temperature" jdbcType="DECIMAL" property="temperature" />
+    <result column="Sensor_Temperature" jdbcType="DECIMAL" property="sensorTemperature" />
+    <result column="CO2" jdbcType="DECIMAL" property="co2" />
+    <result column="CH4" jdbcType="DECIMAL" property="ch4" />
+    <result column="Density" jdbcType="DECIMAL" property="density" />
+    <result column="Conductivity" jdbcType="DECIMAL" property="conductivity" />
+    <result column="Do" jdbcType="DECIMAL" property="BbesDo" />
+    <result column="pH" jdbcType="DECIMAL" property="ph" />
+    <result column="Pressure" jdbcType="DECIMAL" property="pressure" />
+    <result column="Salinity" jdbcType="DECIMAL" property="salinity" />
+    <result column="Calc" jdbcType="DECIMAL" property="calc" />
+    <result column="BlockBattery" jdbcType="DECIMAL" property="blockbattery" />
+    <result column="Cultivating_bag_1" jdbcType="INTEGER" property="cultivatingBag1" />
+    <result column="Cultivating_bag_2" jdbcType="INTEGER" property="cultivatingBag2" />
+    <result column="Cultivating_bag_3" jdbcType="INTEGER" property="cultivatingBag3" />
+    <result column="Cultivating_bag_4" jdbcType="INTEGER" property="cultivatingBag4" />
+    <result column="Cultivating_bag_5" jdbcType="INTEGER" property="cultivatingBag5" />
+    <result column="Cultivating_bag_6" jdbcType="INTEGER" property="cultivatingBag6" />
+    <result column="Cultivating_bag_7" jdbcType="INTEGER" property="cultivatingBag7" />
+    <result column="Cultivating_bag_8" jdbcType="INTEGER" property="cultivatingBag8" />
+    <result column="Cultivating_bag_9" jdbcType="INTEGER" property="cultivatingBag9" />
+    <result column="Cultivating_bag_10" jdbcType="INTEGER" property="cultivatingBag10" />
+    <result column="Cultivating_bag_11" jdbcType="INTEGER" property="cultivatingBag11" />
+    <result column="Cultivating_bag_12" jdbcType="INTEGER" property="cultivatingBag12" />
+    <result column="Pump_1" jdbcType="INTEGER" property="pump1" />
+    <result column="Pump_2" jdbcType="INTEGER" property="pump2" />
+    <result column="Pump_3" jdbcType="INTEGER" property="pump3" />
+    <result column="Pump_4" jdbcType="INTEGER" property="pump4" />
+    <result column="Pump_5" jdbcType="INTEGER" property="pump5" />
+    <result column="Solenoid_valve_1" jdbcType="INTEGER" property="solenoidValve1" />
+    <result column="Solenoid_valve_2" jdbcType="INTEGER" property="solenoidValve2" />
+    <result column="Solenoid_valve_3" jdbcType="INTEGER" property="solenoidValve3" />
+    <result column="Solenoid_valve_4" jdbcType="INTEGER" property="solenoidValve4" />
+    <result column="Solenoid_valve_5" jdbcType="INTEGER" property="solenoidValve5" />
+    <result column="Solenoid_valve_6" jdbcType="INTEGER" property="solenoidValve6" />
+    <result column="Solenoid_valve_7" jdbcType="INTEGER" property="solenoidValve7" />
+    <result column="Solenoid_valve_8" jdbcType="INTEGER" property="solenoidValve8" />
+    <result column="Solenoid_valve_9" jdbcType="INTEGER" property="solenoidValve9" />
+    <result column="Solenoid_valve_10" jdbcType="INTEGER" property="solenoidValve10" />
+    <result column="Solenoid_valve_11" jdbcType="INTEGER" property="solenoidValve11" />
+    <result column="Solenoid_valve_12" jdbcType="INTEGER" property="solenoidValve12" />
+    <result column="Solenoid_valve_13" jdbcType="INTEGER" property="solenoidValve13" />
+    <result column="Solenoid_valve_14" jdbcType="INTEGER" property="solenoidValve14" />
+    <result column="Solenoid_valve_15" jdbcType="INTEGER" property="solenoidValve15" />
+    <result column="Solenoid_valve_16" jdbcType="INTEGER" property="solenoidValve16" />
+    <result column="Solenoid_valve_17" jdbcType="INTEGER" property="solenoidValve17" />
+    <result column="Solenoid_valve_18" jdbcType="INTEGER" property="solenoidValve18" />
+    <result column="Solenoid_valve_19" jdbcType="INTEGER" property="solenoidValve19" />
+    <result column="Solenoid_valve_20" jdbcType="INTEGER" property="solenoidValve20" />
+    <result column="Solenoid_valve_21" jdbcType="INTEGER" property="solenoidValve21" />
+    <result column="Solenoid_valve_22" jdbcType="INTEGER" property="solenoidValve22" />
+    <result column="Solenoid_valve_23" jdbcType="INTEGER" property="solenoidValve23" />
+    <result column="Solenoid_valve_24" jdbcType="INTEGER" property="solenoidValve24" />
+    <result column="CTD_sensor_status" jdbcType="INTEGER" property="ctdSensorStatus" />
+    <result column="CO2_sensor_status" jdbcType="INTEGER" property="co2SensorStatus" />
+    <result column="CH4_sensor_status" jdbcType="INTEGER" property="ch4SensorStatus" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    TIME, Volt48, Abel48, Volt24, Abel24, Volt12, Abel12, Temperature, Sensor_Temperature, 
+    CO2, CH4, Density, Conductivity, Do, pH, Pressure, Salinity, Calc, BlockBattery, 
+    Cultivating_bag_1, Cultivating_bag_2, Cultivating_bag_3, Cultivating_bag_4, Cultivating_bag_5, 
+    Cultivating_bag_6, Cultivating_bag_7, Cultivating_bag_8, Cultivating_bag_9, Cultivating_bag_10, 
+    Cultivating_bag_11, Cultivating_bag_12, Pump_1, Pump_2, Pump_3, Pump_4, Pump_5, Solenoid_valve_1, 
+    Solenoid_valve_2, Solenoid_valve_3, Solenoid_valve_4, Solenoid_valve_5, Solenoid_valve_6, 
+    Solenoid_valve_7, Solenoid_valve_8, Solenoid_valve_9, Solenoid_valve_10, Solenoid_valve_11, 
+    Solenoid_valve_12, Solenoid_valve_13, Solenoid_valve_14, Solenoid_valve_15, Solenoid_valve_16, 
+    Solenoid_valve_17, Solenoid_valve_18, Solenoid_valve_19, Solenoid_valve_20, Solenoid_valve_21, 
+    Solenoid_valve_22, Solenoid_valve_23, Solenoid_valve_24, CTD_sensor_status, CO2_sensor_status, 
+    CH4_sensor_status
+  </sql>
+  <select id="selectByExample" parameterType="com.guet.entity.BbesExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'false' as QUERYID,
+    <include refid="Base_Column_List" />
+    from bbes_data
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <insert id="insert" parameterType="com.guet.entity.Bbes">
+    insert into bbes_data (TIME, Volt48, Abel48, 
+      Volt24, Abel24, Volt12, 
+      Abel12, Temperature, Sensor_Temperature, 
+      CO2, CH4, Density, 
+      Conductivity, Do, pH, 
+      Pressure, Salinity, Calc, 
+      BlockBattery, Cultivating_bag_1, Cultivating_bag_2, 
+      Cultivating_bag_3, Cultivating_bag_4, Cultivating_bag_5, 
+      Cultivating_bag_6, Cultivating_bag_7, Cultivating_bag_8, 
+      Cultivating_bag_9, Cultivating_bag_10, Cultivating_bag_11, 
+      Cultivating_bag_12, Pump_1, Pump_2, 
+      Pump_3, Pump_4, Pump_5, 
+      Solenoid_valve_1, Solenoid_valve_2, Solenoid_valve_3, 
+      Solenoid_valve_4, Solenoid_valve_5, Solenoid_valve_6, 
+      Solenoid_valve_7, Solenoid_valve_8, Solenoid_valve_9, 
+      Solenoid_valve_10, Solenoid_valve_11, Solenoid_valve_12, 
+      Solenoid_valve_13, Solenoid_valve_14, Solenoid_valve_15, 
+      Solenoid_valve_16, Solenoid_valve_17, Solenoid_valve_18, 
+      Solenoid_valve_19, Solenoid_valve_20, Solenoid_valve_21, 
+      Solenoid_valve_22, Solenoid_valve_23, Solenoid_valve_24, 
+      CTD_sensor_status, CO2_sensor_status, CH4_sensor_status
+      )
+    values (#{time,jdbcType=TIMESTAMP}, #{volt48,jdbcType=DECIMAL}, #{abel48,jdbcType=DECIMAL}, 
+      #{volt24,jdbcType=DECIMAL}, #{abel24,jdbcType=DECIMAL}, #{volt12,jdbcType=DECIMAL}, 
+      #{abel12,jdbcType=DECIMAL}, #{temperature,jdbcType=DECIMAL}, #{sensorTemperature,jdbcType=DECIMAL}, 
+      #{co2,jdbcType=DECIMAL}, #{ch4,jdbcType=DECIMAL}, #{density,jdbcType=DECIMAL}, 
+      #{conductivity,jdbcType=DECIMAL}, #{BbesDo,jdbcType=DECIMAL}, #{ph,jdbcType=DECIMAL}, 
+      #{pressure,jdbcType=DECIMAL}, #{salinity,jdbcType=DECIMAL}, #{calc,jdbcType=DECIMAL}, 
+      #{blockbattery,jdbcType=DECIMAL}, #{cultivatingBag1,jdbcType=INTEGER}, #{cultivatingBag2,jdbcType=INTEGER}, 
+      #{cultivatingBag3,jdbcType=INTEGER}, #{cultivatingBag4,jdbcType=INTEGER}, #{cultivatingBag5,jdbcType=INTEGER}, 
+      #{cultivatingBag6,jdbcType=INTEGER}, #{cultivatingBag7,jdbcType=INTEGER}, #{cultivatingBag8,jdbcType=INTEGER}, 
+      #{cultivatingBag9,jdbcType=INTEGER}, #{cultivatingBag10,jdbcType=INTEGER}, #{cultivatingBag11,jdbcType=INTEGER}, 
+      #{cultivatingBag12,jdbcType=INTEGER}, #{pump1,jdbcType=INTEGER}, #{pump2,jdbcType=INTEGER}, 
+      #{pump3,jdbcType=INTEGER}, #{pump4,jdbcType=INTEGER}, #{pump5,jdbcType=INTEGER}, 
+      #{solenoidValve1,jdbcType=INTEGER}, #{solenoidValve2,jdbcType=INTEGER}, #{solenoidValve3,jdbcType=INTEGER}, 
+      #{solenoidValve4,jdbcType=INTEGER}, #{solenoidValve5,jdbcType=INTEGER}, #{solenoidValve6,jdbcType=INTEGER}, 
+      #{solenoidValve7,jdbcType=INTEGER}, #{solenoidValve8,jdbcType=INTEGER}, #{solenoidValve9,jdbcType=INTEGER}, 
+      #{solenoidValve10,jdbcType=INTEGER}, #{solenoidValve11,jdbcType=INTEGER}, #{solenoidValve12,jdbcType=INTEGER}, 
+      #{solenoidValve13,jdbcType=INTEGER}, #{solenoidValve14,jdbcType=INTEGER}, #{solenoidValve15,jdbcType=INTEGER}, 
+      #{solenoidValve16,jdbcType=INTEGER}, #{solenoidValve17,jdbcType=INTEGER}, #{solenoidValve18,jdbcType=INTEGER}, 
+      #{solenoidValve19,jdbcType=INTEGER}, #{solenoidValve20,jdbcType=INTEGER}, #{solenoidValve21,jdbcType=INTEGER}, 
+      #{solenoidValve22,jdbcType=INTEGER}, #{solenoidValve23,jdbcType=INTEGER}, #{solenoidValve24,jdbcType=INTEGER}, 
+      #{ctdSensorStatus,jdbcType=INTEGER}, #{co2SensorStatus,jdbcType=INTEGER}, #{ch4SensorStatus,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.guet.entity.Bbes">
+    insert into bbes_data
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="time != null">
+        TIME,
+      </if>
+      <if test="volt48 != null">
+        Volt48,
+      </if>
+      <if test="abel48 != null">
+        Abel48,
+      </if>
+      <if test="volt24 != null">
+        Volt24,
+      </if>
+      <if test="abel24 != null">
+        Abel24,
+      </if>
+      <if test="volt12 != null">
+        Volt12,
+      </if>
+      <if test="abel12 != null">
+        Abel12,
+      </if>
+      <if test="temperature != null">
+        Temperature,
+      </if>
+      <if test="sensorTemperature != null">
+        Sensor_Temperature,
+      </if>
+      <if test="co2 != null">
+        CO2,
+      </if>
+      <if test="ch4 != null">
+        CH4,
+      </if>
+      <if test="density != null">
+        Density,
+      </if>
+      <if test="conductivity != null">
+        Conductivity,
+      </if>
+      <if test="BbesDo != null">
+        Do,
+      </if>
+      <if test="ph != null">
+        pH,
+      </if>
+      <if test="pressure != null">
+        Pressure,
+      </if>
+      <if test="salinity != null">
+        Salinity,
+      </if>
+      <if test="calc != null">
+        Calc,
+      </if>
+      <if test="blockbattery != null">
+        BlockBattery,
+      </if>
+      <if test="cultivatingBag1 != null">
+        Cultivating_bag_1,
+      </if>
+      <if test="cultivatingBag2 != null">
+        Cultivating_bag_2,
+      </if>
+      <if test="cultivatingBag3 != null">
+        Cultivating_bag_3,
+      </if>
+      <if test="cultivatingBag4 != null">
+        Cultivating_bag_4,
+      </if>
+      <if test="cultivatingBag5 != null">
+        Cultivating_bag_5,
+      </if>
+      <if test="cultivatingBag6 != null">
+        Cultivating_bag_6,
+      </if>
+      <if test="cultivatingBag7 != null">
+        Cultivating_bag_7,
+      </if>
+      <if test="cultivatingBag8 != null">
+        Cultivating_bag_8,
+      </if>
+      <if test="cultivatingBag9 != null">
+        Cultivating_bag_9,
+      </if>
+      <if test="cultivatingBag10 != null">
+        Cultivating_bag_10,
+      </if>
+      <if test="cultivatingBag11 != null">
+        Cultivating_bag_11,
+      </if>
+      <if test="cultivatingBag12 != null">
+        Cultivating_bag_12,
+      </if>
+      <if test="pump1 != null">
+        Pump_1,
+      </if>
+      <if test="pump2 != null">
+        Pump_2,
+      </if>
+      <if test="pump3 != null">
+        Pump_3,
+      </if>
+      <if test="pump4 != null">
+        Pump_4,
+      </if>
+      <if test="pump5 != null">
+        Pump_5,
+      </if>
+      <if test="solenoidValve1 != null">
+        Solenoid_valve_1,
+      </if>
+      <if test="solenoidValve2 != null">
+        Solenoid_valve_2,
+      </if>
+      <if test="solenoidValve3 != null">
+        Solenoid_valve_3,
+      </if>
+      <if test="solenoidValve4 != null">
+        Solenoid_valve_4,
+      </if>
+      <if test="solenoidValve5 != null">
+        Solenoid_valve_5,
+      </if>
+      <if test="solenoidValve6 != null">
+        Solenoid_valve_6,
+      </if>
+      <if test="solenoidValve7 != null">
+        Solenoid_valve_7,
+      </if>
+      <if test="solenoidValve8 != null">
+        Solenoid_valve_8,
+      </if>
+      <if test="solenoidValve9 != null">
+        Solenoid_valve_9,
+      </if>
+      <if test="solenoidValve10 != null">
+        Solenoid_valve_10,
+      </if>
+      <if test="solenoidValve11 != null">
+        Solenoid_valve_11,
+      </if>
+      <if test="solenoidValve12 != null">
+        Solenoid_valve_12,
+      </if>
+      <if test="solenoidValve13 != null">
+        Solenoid_valve_13,
+      </if>
+      <if test="solenoidValve14 != null">
+        Solenoid_valve_14,
+      </if>
+      <if test="solenoidValve15 != null">
+        Solenoid_valve_15,
+      </if>
+      <if test="solenoidValve16 != null">
+        Solenoid_valve_16,
+      </if>
+      <if test="solenoidValve17 != null">
+        Solenoid_valve_17,
+      </if>
+      <if test="solenoidValve18 != null">
+        Solenoid_valve_18,
+      </if>
+      <if test="solenoidValve19 != null">
+        Solenoid_valve_19,
+      </if>
+      <if test="solenoidValve20 != null">
+        Solenoid_valve_20,
+      </if>
+      <if test="solenoidValve21 != null">
+        Solenoid_valve_21,
+      </if>
+      <if test="solenoidValve22 != null">
+        Solenoid_valve_22,
+      </if>
+      <if test="solenoidValve23 != null">
+        Solenoid_valve_23,
+      </if>
+      <if test="solenoidValve24 != null">
+        Solenoid_valve_24,
+      </if>
+      <if test="ctdSensorStatus != null">
+        CTD_sensor_status,
+      </if>
+      <if test="co2SensorStatus != null">
+        CO2_sensor_status,
+      </if>
+      <if test="ch4SensorStatus != null">
+        CH4_sensor_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="time != null">
+        #{time,jdbcType=TIMESTAMP},
+      </if>
+      <if test="volt48 != null">
+        #{volt48,jdbcType=DECIMAL},
+      </if>
+      <if test="abel48 != null">
+        #{abel48,jdbcType=DECIMAL},
+      </if>
+      <if test="volt24 != null">
+        #{volt24,jdbcType=DECIMAL},
+      </if>
+      <if test="abel24 != null">
+        #{abel24,jdbcType=DECIMAL},
+      </if>
+      <if test="volt12 != null">
+        #{volt12,jdbcType=DECIMAL},
+      </if>
+      <if test="abel12 != null">
+        #{abel12,jdbcType=DECIMAL},
+      </if>
+      <if test="temperature != null">
+        #{temperature,jdbcType=DECIMAL},
+      </if>
+      <if test="sensorTemperature != null">
+        #{sensorTemperature,jdbcType=DECIMAL},
+      </if>
+      <if test="co2 != null">
+        #{co2,jdbcType=DECIMAL},
+      </if>
+      <if test="ch4 != null">
+        #{ch4,jdbcType=DECIMAL},
+      </if>
+      <if test="density != null">
+        #{density,jdbcType=DECIMAL},
+      </if>
+      <if test="conductivity != null">
+        #{conductivity,jdbcType=DECIMAL},
+      </if>
+      <if test="BbesDo != null">
+        #{BbesDo,jdbcType=DECIMAL},
+      </if>
+      <if test="ph != null">
+        #{ph,jdbcType=DECIMAL},
+      </if>
+      <if test="pressure != null">
+        #{pressure,jdbcType=DECIMAL},
+      </if>
+      <if test="salinity != null">
+        #{salinity,jdbcType=DECIMAL},
+      </if>
+      <if test="calc != null">
+        #{calc,jdbcType=DECIMAL},
+      </if>
+      <if test="blockbattery != null">
+        #{blockbattery,jdbcType=DECIMAL},
+      </if>
+      <if test="cultivatingBag1 != null">
+        #{cultivatingBag1,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag2 != null">
+        #{cultivatingBag2,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag3 != null">
+        #{cultivatingBag3,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag4 != null">
+        #{cultivatingBag4,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag5 != null">
+        #{cultivatingBag5,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag6 != null">
+        #{cultivatingBag6,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag7 != null">
+        #{cultivatingBag7,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag8 != null">
+        #{cultivatingBag8,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag9 != null">
+        #{cultivatingBag9,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag10 != null">
+        #{cultivatingBag10,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag11 != null">
+        #{cultivatingBag11,jdbcType=INTEGER},
+      </if>
+      <if test="cultivatingBag12 != null">
+        #{cultivatingBag12,jdbcType=INTEGER},
+      </if>
+      <if test="pump1 != null">
+        #{pump1,jdbcType=INTEGER},
+      </if>
+      <if test="pump2 != null">
+        #{pump2,jdbcType=INTEGER},
+      </if>
+      <if test="pump3 != null">
+        #{pump3,jdbcType=INTEGER},
+      </if>
+      <if test="pump4 != null">
+        #{pump4,jdbcType=INTEGER},
+      </if>
+      <if test="pump5 != null">
+        #{pump5,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve1 != null">
+        #{solenoidValve1,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve2 != null">
+        #{solenoidValve2,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve3 != null">
+        #{solenoidValve3,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve4 != null">
+        #{solenoidValve4,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve5 != null">
+        #{solenoidValve5,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve6 != null">
+        #{solenoidValve6,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve7 != null">
+        #{solenoidValve7,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve8 != null">
+        #{solenoidValve8,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve9 != null">
+        #{solenoidValve9,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve10 != null">
+        #{solenoidValve10,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve11 != null">
+        #{solenoidValve11,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve12 != null">
+        #{solenoidValve12,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve13 != null">
+        #{solenoidValve13,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve14 != null">
+        #{solenoidValve14,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve15 != null">
+        #{solenoidValve15,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve16 != null">
+        #{solenoidValve16,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve17 != null">
+        #{solenoidValve17,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve18 != null">
+        #{solenoidValve18,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve19 != null">
+        #{solenoidValve19,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve20 != null">
+        #{solenoidValve20,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve21 != null">
+        #{solenoidValve21,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve22 != null">
+        #{solenoidValve22,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve23 != null">
+        #{solenoidValve23,jdbcType=INTEGER},
+      </if>
+      <if test="solenoidValve24 != null">
+        #{solenoidValve24,jdbcType=INTEGER},
+      </if>
+      <if test="ctdSensorStatus != null">
+        #{ctdSensorStatus,jdbcType=INTEGER},
+      </if>
+      <if test="co2SensorStatus != null">
+        #{co2SensorStatus,jdbcType=INTEGER},
+      </if>
+      <if test="ch4SensorStatus != null">
+        #{ch4SensorStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

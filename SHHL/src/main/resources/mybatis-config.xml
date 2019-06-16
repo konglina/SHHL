@@ -7,4 +7,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 	<typeAliases>
 		<package name="com.guet.entity"/>
 	</typeAliases>
+	<mappers>
+		<package name="com.guet.mappers"/>
+	</mappers>
 </configuration>
