@@ -17,4 +17,9 @@ import com.guet.service.MangerService;
 public class ManagerController {
 	@Resource
 	private MangerService mangerService;
+	
+	@RequestMapping("/test.do")
+	public void test(){
+		System.out.println("test....");
+	}
 }
