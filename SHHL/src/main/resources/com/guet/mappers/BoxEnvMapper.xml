@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.dao.BoxEnvDao">
+	<resultMap type="BoxEnv" id="BoxEnvResult">
+		<result property="TIME" column="TIME"/>
+		<result property="InVoltage" column="InVoltage"/>
+		<result property="InCurrent" column="InCurrent"/>
+		<result property="Humidity" column="Humidity"/>
+		<result property="Leakage" column="Leakage"/>
+		<result property="Temperature1" column="Temperature1"/>
+		<result property="Temperature2" column="Temperature2"/>
+		<result property="Temperature3" column="Temperature3"/>
+		<result property="Temperature4" column="Temperature4"/>
+		<result property="OutVoltage1" column="OutVoltage1"/>
+		<result property="OutVoltage2" column="OutVoltage2"/>
+		<result property="OutVoltage3" column="OutVoltage3"/>
+		<result property="OutVoltage4" column="OutVoltage4"/>
+		<result property="OutVoltage5" column="OutVoltage5"/>
+		<result property="OutVoltage6" column="OutVoltage6"/>
+		<result property="OutVoltage7" column="OutVoltage7"/>
+		<result property="OutVoltage8" column="OutVoltage8"/>
+		<result property="OutCurrent1" column="OutCurrent1"/>
+		<result property="OutCurrent2" column="OutCurrent2"/>
+		<result property="OutCurrent3" column="OutCurrent3"/>
+		<result property="OutCurrent4" column="OutCurrent4"/>
+		<result property="OutCurrent5" column="OutCurrent5"/>
+		<result property="OutCurrent6" column="OutCurrent6"/>
+		<result property="OutCurrent7" column="OutCurrent7"/>
+		<result property="OutCurrent8" column="OutCurrent8"/>
+	</resultMap>
+	<select id="getList" parameterType="Map" resultMap="BoxEnvResult">
+		select * from sanya_shenhaisuo_box_environment
+	</select>
+	
+</mapper> 
