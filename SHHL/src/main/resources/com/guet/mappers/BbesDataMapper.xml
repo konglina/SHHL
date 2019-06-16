@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.dao.BbesDataDao">
+	<resultMap type="BbesData" id="BbesDataResult">
+		<result property="TIME" column="TIME"/>
+		<result property="Volt48" column="Volt48"/>
+		<result property="Abel48" column="Abel48"/>
+		<result property="Volt24" column="Volt24"/>
+		<result property="Abel24" column="Abel24"/>
+		<result property="Volt12" column="Volt12"/>
+		<result property="Abel12" column="Abel12"/>
+		<result property="Temperature" column="Temperature"/>
+		<result property="Sensor_Temperature" column="Sensor_Temperature"/>
+		<result property="CO2" column="CO2"/>
+		<result property="CH4" column="CH4"/>
+		<result property="Density" column="Density"/>
+		<result property="Conductivity" column="Conductivity"/>
+		<result property="DoData" column="Do"/>
+		<result property="pH" column="pH"/>
+		<result property="Pressure" column="Pressure"/>
+		<result property="Salinity" column="Salinity"/>
+		<result property="Calc" column="Calc"/>
+		<result property="BlockBattery" column="BlockBattery"/>
+		<result property="Cultivating_bag_1" column="Cultivating_bag_1"/>
+		<result property="Cultivating_bag_2" column="Cultivating_bag_2"/>
+		<result property="Cultivating_bag_3" column="Cultivating_bag_3"/>
+		<result property="Cultivating_bag_4" column="Cultivating_bag_4"/>
+		<result property="Cultivating_bag_5" column="Cultivating_bag_5"/>
+		<result property="Cultivating_bag_6" column="Cultivating_bag_6"/>
+		<result property="Cultivating_bag_7" column="Cultivating_bag_7"/>
+		<result property="Cultivating_bag_8" column="Cultivating_bag_8"/>
+		<result property="Cultivating_bag_9" column="Cultivating_bag_9"/>
+		<result property="Cultivating_bag_10" column="Cultivating_bag_10"/>
+		<result property="Cultivating_bag_11" column="Cultivating_bag_11"/>
+		<result property="Cultivating_bag_12" column="Cultivating_bag_12"/>
+		<result property="Pump_1" column="Pump_1"/>
+		<result property="Pump_2" column="Pump_2"/>
+		<result property="Pump_3" column="Pump_3"/>
+		<result property="Pump_4" column="Pump_4"/>
+		<result property="Pump_5" column="Pump_5"/>
+		<result property="Solenoid_valve_1" column="Solenoid_valve_1"/>
+		<result property="Solenoid_valve_2" column="Solenoid_valve_2"/>
+		<result property="Solenoid_valve_3" column="Solenoid_valve_3"/>
+		<result property="Solenoid_valve_4" column="Solenoid_valve_4"/>
+		<result property="Solenoid_valve_5" column="Solenoid_valve_5"/>
+		<result property="Solenoid_valve_6" column="Solenoid_valve_6"/>
+		<result property="Solenoid_valve_7" column="Solenoid_valve_7"/>
+		<result property="Solenoid_valve_8" column="Solenoid_valve_8"/>
+		<result property="Solenoid_valve_9" column="Solenoid_valve_9"/>
+		<result property="Solenoid_valve_10" column="Solenoid_valve_10"/>
+		<result property="Solenoid_valve_11" column="Solenoid_valve_11"/>
+		<result property="Solenoid_valve_12" column="Solenoid_valve_12"/>
+		<result property="Solenoid_valve_13" column="Solenoid_valve_13"/>
+		<result property="Solenoid_valve_14" column="Solenoid_valve_14"/>
+		<result property="Solenoid_valve_15" column="Solenoid_valve_15"/>
+		<result property="Solenoid_valve_16" column="Solenoid_valve_16"/>
+		<result property="Solenoid_valve_17" column="Solenoid_valve_17"/>
+		<result property="Solenoid_valve_18" column="Solenoid_valve_18"/>
+		<result property="Solenoid_valve_19" column="Solenoid_valve_19"/>
+		<result property="Solenoid_valve_20" column="Solenoid_valve_20"/>
+		<result property="Solenoid_valve_21" column="Solenoid_valve_21"/>
+		<result property="Solenoid_valve_22" column="Solenoid_valve_22"/>
+		<result property="Solenoid_valve_23" column="Solenoid_valve_23"/>
+		<result property="Solenoid_valve_24" column="Solenoid_valve_24"/>
+		<result property="CTD_sensor_status" column="CTD_sensor_status"/>
+		<result property="CO2_sensor_status" column="CO2_sensor_status"/>
+		<result property="CH4_sensor_status" column="CH4_sensor_status"/>
+	</resultMap>
+	<select id="getList" parameterType="Map" resultMap="BbesDataResult">
+		<!-- select * from bbes_data 查询数据库中前10条数据--> 
+		select * from bbes_data limit 0,10
+	</select>
+	
+</mapper> 

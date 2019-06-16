@@ -367,7 +367,7 @@
 							</a>
                             <ul class="submenu">
                           		<li>
-									<a href="jsp/sensor_bbes.jsp" target="mainframe">
+									<a href="${pageContext.request.contextPath}/bbesData/getlist.do" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										BBES
 									</a>
