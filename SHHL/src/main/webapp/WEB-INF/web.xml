@@ -25,13 +25,13 @@
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	<!-- Spring监听器 -->
-	<listener>
+<!-- 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	
 	<listener>
 		<listener-class>com.guet.init.InitComponent</listener-class>
-	</listener>
+	</listener> -->
 	
 	
 	<!-- 添加对springmvc的支持 -->
