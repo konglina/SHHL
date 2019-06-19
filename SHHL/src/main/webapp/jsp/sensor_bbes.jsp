@@ -72,23 +72,99 @@
 							</tr>
 							<tr>
 								<td><a
-									href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
-										14:57:48</a></td>
-								<td><span class="label label-sm label-success">培养完成</span></td>
-								<td><span class="label label-sm label-success">培养完成</span></td>
-								<td><span class="label label-sm label-success">培养完成</span></td>
-								<td><span class="label label-sm label-success">培养完成</span></td>
-								<td><span class="label label-sm label-success">培养完成</span></td>
-								<td><span class="label label-sm label-warning">培养中</span></td>
-								<td><span class="label label-sm label-warning">培养中</span></td>
-								<td><span class="label label-sm label-warning">培养中</span></td>
-								<td><span class="label label-sm label-warning">培养中</span></td>
-								<td><span
-									class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-								<td><span
-									class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-								<td><span
-									class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
+									href="#">${newbbes.TIME}</a></td>
+								<td>
+								<!-- 假定1为培养完成，0为培养中,2为等待，其他为未知 -->
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_1==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_1==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_1==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_2==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_2==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_2==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_3==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_3==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_3==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_4==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_4==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_4==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td><c:choose>
+								<c:when test="${newbbes.cultivating_bag_5==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_5==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_5==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td><c:choose>
+								<c:when test="${newbbes.cultivating_bag_6==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_6==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_6==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td><c:choose>
+								<c:when test="${newbbes.cultivating_bag_7==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_7==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_7==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td><c:choose>
+								<c:when test="${newbbes.cultivating_bag_8==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_8==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_8==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td><c:choose>
+								<c:when test="${newbbes.cultivating_bag_9==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_9==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_9==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_10==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_10==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_10==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_11==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_11==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_11==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
+								<td>
+								<c:choose>
+								<c:when test="${newbbes.cultivating_bag_12==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_12==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+								<c:when test="${newbbes.cultivating_bag_12==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+								</c:choose>
+								</td>
 							</tr>
 						</table>
 					         </div>
@@ -109,13 +185,42 @@
 									</tr>
 									<tr>
 										<td><a
-											href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
-												14:57:48</a></td>
-										<td><span class="label label-sm label-success">开</span></td>
-										<td><span class="label label-sm label-success">开</span></td>
-										<td><span class="label label-sm label-success">开</span></td>
-										<td><span class="label label-sm label-warning">关</span></td>
-										<td><span class="label label-sm label-success">开</span></td>
+											href="#">${newbbes.TIME}</a></td>
+										<td>
+										<c:choose>
+										<c:when test="${newbbes.pump_1==0}"><span class="label label-sm label-warning">关</span></c:when>
+										<c:when test="${newbbes.pump_1==1}"><span class="label label-sm label-success">开</span></c:when>
+										<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+										</c:choose>
+										</td>
+										<td>
+										<c:choose>
+										<c:when test="${newbbes.pump_1==0}"><span class="label label-sm label-warning">关</span></c:when>
+										<c:when test="${newbbes.pump_1==1}"><span class="label label-sm label-success">开</span></c:when>
+										<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+										</c:choose>
+										</td>
+										<td>
+										<c:choose>
+										<c:when test="${newbbes.pump_1==0}"><span class="label label-sm label-warning">关</span></c:when>
+										<c:when test="${newbbes.pump_1==1}"><span class="label label-sm label-success">开</span></c:when>
+										<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+										</c:choose>
+										</td>
+										<td>
+										<c:choose>
+										<c:when test="${newbbes.pump_1==0}"><span class="label label-sm label-warning">关</span></c:when>
+										<c:when test="${newbbes.pump_1==1}"><span class="label label-sm label-success">开</span></c:when>
+										<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+										</c:choose>
+										</td>
+										<td>
+										<c:choose>
+										<c:when test="${newbbes.pump_1==0}"><span class="label label-sm label-warning">关</span></c:when>
+										<c:when test="${newbbes.pump_1==1}"><span class="label label-sm label-success">开</span></c:when>
+										<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+										</c:choose>
+										</td>
 									</tr>
 								</table>
 					         </div>
@@ -157,111 +262,179 @@
 							<th>阀24</th>
 						</tr>
 						<tr>
-							<td><a
-								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
-									14:57:48</a></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span
-								class="label label-sm label-success">开</span></td>
-							<td><span
-								class="label label-sm label-warning">关</span></td>
-							<td><span
-								class="label label-sm label-warning">关</span></td>
-						
-							<td><span
-								class="label label-sm label-success">开</span></td>
-							<td><span
-								class="label label-sm label-success">开</span></td>
-							<td><span
-								class="label label-sm label-success">开</span></td>		
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-success">开</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
-							<td><span class="label label-sm label-warning">关</span></td>
+							<td><a href="#">${newbbes.TIME}</a></td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_1==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_1==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_2==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_2==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_3==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_3==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_4==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_4==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_5==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_5==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_6==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_6==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_7==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_7==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_8==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_8==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_9==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_9==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_10==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_10==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_11==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_11==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_12==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_12==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_13==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_13==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_14==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_14==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_15==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_15==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>		
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_16==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_16==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_17==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_17==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_18==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_18==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_19==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_19==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_20==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_20==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_21==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_21==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_22==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_22==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_23==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_23==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
+							<td>
+							<c:choose>
+							<c:when test="${newbbes.solenoid_valve_24==0}"><span class="label label-sm label-warning">关</span></c:when>
+							<c:when test="${newbbes.solenoid_valve_24==1}"><span class="label label-sm label-success">开</span></c:when>
+							<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+							</c:choose>
+							</td>
 							
 						</tr>
 								</table>
 					         </div>
-		 	<%-- 	<table class="table table-condensed table-striped table-bordered table-hover">
-		
-						<tr>
-							<th>时间</th>
-							<th>阀1</th>
-							<th>阀2</th>
-							<th>阀3</th>
-							<th>阀4</th>
-							<th>阀5</th>
-							<th>阀6</th>
-							<th>阀7</th>
-							<th>阀8</th>
-							<th>阀9</th>
-							<th>阀10</th>
-							<th>阀11</th>
-							<th>阀12</th>
-							<th>阀13</th>
-							<th>阀14</th>
-							<th>阀15</th>
-							<th>阀16</th>
-							<th>阀17</th>
-							<th>阀18</th>
-							<th>阀19</th>
-							<th>阀20</th>
-							<th>阀21</th>
-							<th>阀22</th>
-							<th>阀23</th>
-							<th>阀24</th>
-						</tr>
-						<tr>
-							<td><a
-								href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12
-									14:57:48</a></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-						
-							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>
-							<td><span
-								class="label label-sm label-info arrowed arrowed-righ">等待</span></td>		
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-success">培养完成</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							<td><span class="label label-sm label-warning">培养中</span></td>
-							
-						</tr>
-					</table> --%>
 				</div>
 </div>
 </div>
@@ -273,7 +446,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
               <div class="panel-body">
-             		<div id="shishi_container1" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="realtime_container1" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -283,7 +456,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电流
           </div>
               <div class="panel-body">
-             		<div id="shishi_container2" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="realtime_container2" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -293,7 +466,7 @@
             <span class="glyphicon glyphicon-refresh"></span>温度
           </div>
               <div class="panel-body">
-             		<div id="shishi_container3" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="realtime_container3" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -305,7 +478,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电导率
           </div>
               <div class="panel-body">
-             		<div id="shishi_container4"  style="height: 300px;"></div>
+             		<div id="realtime_container4"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -315,7 +488,7 @@
             <span class="glyphicon glyphicon-refresh"></span>压力
           </div>
               <div class="panel-body">
-             		<div id="shishi_container5"  style="height: 300px;"></div>
+             		<div id="realtime_container5"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -325,41 +498,32 @@
             <span class="glyphicon glyphicon-refresh"></span>盐度
           </div>
               <div class="panel-body">
-             		<div id="shishi_container6"  style="height: 300px;"></div>
+             		<div id="realtime_container6"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
 </div>
 </div>
 <script type="text/javascript">
-	//container1
-	var dom1 = document.getElementById("shishi_container1");
-	var myChart = echarts.init(dom1);
-	var app = {};
-	option = null;
-	function randomData() {
-	    now = new Date(+now + oneDay);
-	    value = value + Math.random() * 21 - 10;
-	    return {
-	        name: now.toString(),
-	        value: [
-	            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-	            Math.round(value)
-	        ]
-	    }
-	}
+	//实时显示数据realtime_dom1
+	var realtime_dom1 = document.getElementById("realtime_container1");
+	var realtime_myChart1 = echarts.init(realtime_dom1);
+	realtime_option1 = null;
+	var volt = [];//电压的数据
 	
-	var data = [];
-	var now = +new Date(1997, 9, 3);
-	var oneDay = 24 * 3600 * 1000;
-	var value = Math.random() * 1000;
-	for (var i = 0; i < 1000; i++) {
-	    data.push(randomData());
+	//放入实际的数据
+	var bbesDataList=JSON.parse('<%=request.getAttribute("bbesDataList")%>');
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].volt48]
+		};
+		volt.push(bbes);
 	}
-	
-	option = {
+	realtime_option1 = {
 	    title: {
-	        text: '近期趋势'
+	        text: '实时数据'
 	    },
 	    tooltip: {
 	        trigger: 'axis',
@@ -390,63 +554,414 @@
 	        type: 'line',
 	        showSymbol: false,
 	        hoverAnimation: false,
-	        data: data
+	        data: volt
 	    }]
 	};
 	
-	setInterval(function () {
-	
-	    for (var i = 0; i < 5; i++) {
-	        data.shift();
-	        data.push(randomData());
-	    }
-	
-	    myChart.setOption({
-	        series: [{
-	            data: data
-	        }]
-	    });
-	}, 1000);;
-	
-	if (option && typeof option === "object") {
-	    myChart.setOption(option, true);
+	if (realtime_option1 && typeof realtime_option1 === "object") {
+		realtime_myChart1.setOption(realtime_option1, true);
 	}
-	
-	
 	
 	
 	//container2
-	var dom2 = document.getElementById("shishi_container2");
-	var myChart2 = echarts.init(dom2);
-	if (option && typeof option === "object") {
-	    myChart2.setOption(option, true);
+	var realtime_dom2 = document.getElementById("realtime_container2");
+	var realtime_myChart2 = echarts.init(realtime_dom2);
+	realtime_option2 = null;
+	var abel = [];//电流的数据
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].abel48]
+		};
+		abel.push(bbes);
 	}
+	realtime_option2 = {
+	    title: {
+	        text: '实时数据'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: abel
+	    }]
+	};
+	
+	if (realtime_option2 && typeof realtime_option2 === "object") {
+		realtime_myChart2.setOption(realtime_option2, true);
+	}
+	
 	//container3
-	var dom3 = document.getElementById("shishi_container3");
-	var myChart3 = echarts.init(dom3);
-	if (option && typeof option === "object") {
-	    myChart3.setOption(option, true);
+	var realtime_dom3 = document.getElementById("realtime_container3");
+	var realtime_myChart3 = echarts.init(realtime_dom3);
+	
+	realtime_option3 = null;
+	var temperature = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].temperature]
+		};
+		temperature.push(bbes);
 	}
+	realtime_option3 = {
+	    title: {
+	        text: '实时数据'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: temperature
+	    }]
+	};
+	
+	if (realtime_option3 && typeof realtime_option3 === "object") {
+		realtime_myChart3.setOption(realtime_option3, true);
+	}
+	
+	
 	//container4
-	var dom4 = document.getElementById("shishi_container4");
-	var myChart4 = echarts.init(dom4);
-	if (option && typeof option === "object") {
-	    myChart4.setOption(option, true);
+	var realtime_dom4 = document.getElementById("realtime_container4");
+	var realtime_myChart4 = echarts.init(realtime_dom4);
+	
+	realtime_option4 = null;
+	var conductivity = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].conductivity]
+		};
+		conductivity.push(bbes);
+	}
+	realtime_option4 = {
+	    title: {
+	        text: '实时数据'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: conductivity
+	    }]
+	};
+	
+	if (realtime_option4 && typeof realtime_option4 === "object") {
+	    realtime_myChart4.setOption(realtime_option4, true);
 	}
 	//container5
-	var dom5 = document.getElementById("shishi_container5");
-	var myChart5 = echarts.init(dom5);
-	if (option && typeof option === "object") {
-	    myChart5.setOption(option, true);
+	var realtime_dom5 = document.getElementById("realtime_container5");
+	var realtime_myChart5 = echarts.init(realtime_dom5);
+	
+	realtime_option5 = null;
+	var pressure = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].pressure]
+		};
+		pressure.push(bbes);
+	}
+	realtime_option5 = {
+	    title: {
+	        text: '实时数据'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: pressure
+	    }]
+	};
+	
+	if (realtime_option5 && typeof realtime_option5 === "object") {
+		realtime_myChart5.setOption(realtime_option5, true);
 	}
 	//container6
-	var dom6 = document.getElementById("shishi_container6");
-	var myChart6 = echarts.init(dom6);
-	if (option && typeof option === "object") {
-	    myChart6.setOption(option, true);
+	var realtime_dom6 = document.getElementById("realtime_container6");
+	var realtime_myChart6 = echarts.init(realtime_dom6);
+	
+	realtime_option6 = null;
+	var salinity = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].salinity]
+		};
+		salinity.push(bbes);
+	}
+	realtime_option6 = {
+	    title: {
+	        text: '实时数据'
+	    },
+	    tooltip: {
+	        trigger: 'axis',
+	        formatter: function (params) {
+	            params = params[0];
+	            var date = new Date(params.name);
+	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+	        },
+	        axisPointer: {
+	            animation: false
+	        }
+	    },
+	    xAxis: {
+	        type: 'time',
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    yAxis: {
+	        type: 'value',
+	        boundaryGap: [0, '100%'],
+	        splitLine: {
+	            show: false
+	        }
+	    },
+	    series: [{
+	        name: '模拟数据',
+	        type: 'line',
+	        showSymbol: false,
+	        hoverAnimation: false,
+	        data: salinity
+	    }]
+	};
+	
+	if (realtime_option6 && typeof realtime_option6 === "object") {
+		realtime_myChart6.setOption(realtime_option6, true);
 	}
 	
-	
+	//保存上一次的时间，对比时间可得是否更新
+	var lasttime = "${newbbes.TIME}";
+	var timeflag =0;
+	var flag=true;
+	//定时刷新,在此处初始化data
+	$(document).ready(function () {
+        setInterval("startRequest()", 3000);//3s一次
+    });
+    function startRequest() {
+        $.ajax({
+            url:  "${pageContext.request.contextPath}/bbesData/realtime.do",
+            type: 'POST',
+            success: function (data) {
+            var realtime=JSON.parse(data);//最新的数据
+            var realtime_volt48;
+            var realtime_abel48;
+            var realtime_temperature;
+            var realtime_conductivity;
+            var realtime_pressure;
+            var realtime_salinity;
+            
+            if (realtime[0].tIME==lasttime){
+            	timeflag = timeflag + 3000;
+            	realtime_volt48 = {
+           				name:realtime[0].tIME+timeflag,
+           				value:[realtime[0].tIME+timeflag,0]
+            		}
+            	realtime_abel48={
+                		name:realtime[0].tIME+timeflag,
+                		value:[realtime[0].tIME+timeflag,0]
+                }
+            	realtime_temperature={
+            			name:realtime[0].tIME+timeflag,
+                		value:[realtime[0].tIME+timeflag,0]
+            	}
+            	realtime_conductivity={
+            			name:realtime[0].tIME+timeflag,
+                		value:[realtime[0].tIME+timeflag,0]
+            	}
+            	realtime_pressure={
+            			name:realtime[0].tIME+timeflag,
+                		value:[realtime[0].tIME+timeflag,0]
+            	}
+            	realtime_salinity={
+            			name:realtime[0].tIME+timeflag,
+                		value:[realtime[0].tIME+timeflag,0]
+            	}
+            }else{
+            	realtime_volt48 = {
+           				name:realtime[0].tIME,
+           				value:[realtime[0].tIME,realtime[0].volt48]
+            		}
+            	
+            	realtime_abel48={
+                		name:realtime[0].tIME,
+                		value:[realtime[0].tIME,realtime[0].abel48]
+                }
+            	realtime_temperature={
+            			name:realtime[0].tIME,
+                		value:[realtime[0].tIME,realtime[0].temperature]
+            	}
+            	realtime_conductivity={
+            			name:realtime[0].tIME,
+                		value:[realtime[0].tIME,realtime[0].conductivity]
+            	}
+            	realtime_pressure={
+            			name:realtime[0].tIME,
+                		value:[realtime[0].tIME,realtime[0].pressure]
+            	}
+            	realtime_salinity={
+            			name:realtime[0].tIME,
+                		value:[realtime[0].tIME,realtime[0].salinity]
+            	}
+            	lasttime=realtime[0].tIME;
+            	timeflag = 0;
+            }
+            volt.shift();
+    		volt.push(realtime_volt48);
+    		abel.shift();
+    		abel.push(realtime_abel48);
+    		temperature.shift();
+    		temperature.push(realtime_temperature);
+    		conductivity.shift();
+    		conductivity.push(realtime_conductivity);
+    		pressure.shift();
+    		pressure.push(realtime_pressure);
+    		salinity.shift();
+    		salinity.push(realtime_salinity);
+    		
+    		realtime_myChart1.setOption({
+    	        series: [{
+    	            data: volt
+    	        }]
+    	    });
+    		realtime_myChart2.setOption({
+    	        series: [{
+    	            data: abel
+    	        }]
+    	    });
+    		realtime_myChart3.setOption({
+    	        series: [{
+    	            data: temperature
+    	        }]
+    	    });
+    		realtime_myChart4.setOption({
+    	        series: [{
+    	            data: conductivity
+    	        }]
+    	    });
+    		realtime_myChart5.setOption({
+    	        series: [{
+    	            data: pressure
+    	        }]
+    	    });
+    		realtime_myChart6.setOption({
+    	        series: [{
+    	            data: salinity
+    	        }]
+    	    });
+            },
+            error : function(jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            },
+        });
+    }
  </script>
   <div class="row alert alert-info" style="margin:0px; padding:3px">
 		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">数据趋势查询</div>
@@ -591,31 +1106,20 @@
 	//container1
 	var dom1 = document.getElementById("container1");
 	var myChart = echarts.init(dom1);
-	var app = {};
-	option = null;
-	function randomData() {
-	    now = new Date(+now + oneDay);
-	    value = value + Math.random() * 21 - 10;
-	    return {
-	        name: now.toString(),
-	        value: [
-	            [now.getFullYear(), now.getMonth() + 1, now.getDate()].join('/'),
-	            Math.round(value)
-	        ]
-	    }
+	option1 = null;
+	var volt = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].volt48]
+		}
+		volt.push(bbes);
 	}
-	
-	var data = [];
-	var now = +new Date(2019, 9, 3);
-	var oneDay = 24 * 3600 * 1000;
-	var value = Math.random() * 1000;
-	for (var i = 0; i < 1000; i++) {
-	    data.push(randomData());
-	}
-	
-	option = {
+	option1 = {
 	    title: {
-	        text: ''
+	        text: '近期趋势'
 	    },
 	    tooltip: {
 	        trigger: 'axis',
@@ -646,56 +1150,294 @@
 	        type: 'line',
 	        showSymbol: false,
 	        hoverAnimation: false,
-	        data: data
+	        data: volt
 	    }]
 	};
 	
-	setInterval(function () {
-	
-	    for (var i = 0; i < 5; i++) {
-	        data.shift();
-	        data.push(randomData());
-	    }
-	
-	    myChart.setOption({
-	        series: [{
-	            data: data
-	        }]
-	    });
-	}, 1000);;
-	if (option && typeof option === "object") {
-	    myChart.setOption(option, true);
+	if (option1 && typeof option1 === "object") {
+	    myChart.setOption(option1, true);
 	}
+	
 	
 	//container2
 	var dom2 = document.getElementById("container2");
 	var myChart2 = echarts.init(dom2);
-	if (option && typeof option === "object") {
-	    myChart2.setOption(option, true);
+	option2 = null;
+	var abel = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].abel48]
+		}
+		abel.push(bbes);
 	}
+	option2 = {
+		    title: {
+		        text: '近期趋势'
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        formatter: function (params) {
+		            params = params[0];
+		            var date = new Date(params.name);
+		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+		        },
+		        axisPointer: {
+		            animation: false
+		        }
+		    },
+		    xAxis: {
+		        type: 'time',
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        boundaryGap: [0, '100%'],
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    series: [{
+		        name: '模拟数据',
+		        type: 'line',
+		        showSymbol: false,
+		        hoverAnimation: false,
+		        data: abel
+		    }]
+		};
+	
+	if (option2 && typeof option2 === "object") {
+	    myChart2.setOption(option2, true);
+	}
+	
+	
 	//container3
 	var dom3 = document.getElementById("container3");
 	var myChart3 = echarts.init(dom3);
-	if (option && typeof option === "object") {
-	    myChart3.setOption(option, true);
+	option3 = null;
+	var temperature = [];
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].temperature]
+		}
+		temperature.push(bbes);
 	}
+	option3 = {
+		    title: {
+		        text: '近期趋势'
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        formatter: function (params) {
+		            params = params[0];
+		            var date = new Date(params.name);
+		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+		        },
+		        axisPointer: {
+		            animation: false
+		        }
+		    },
+		    xAxis: {
+		        type: 'time',
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        boundaryGap: [0, '100%'],
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    series: [{
+		        name: '模拟数据',
+		        type: 'line',
+		        showSymbol: false,
+		        hoverAnimation: false,
+		        data: temperature
+		    }]
+		};
+	
+	if (option3 && typeof option3 === "object") {
+	    myChart3.setOption(option3, true);
+	}
+	
+	
 	//container4
 	var dom4 = document.getElementById("container4");
 	var myChart4 = echarts.init(dom4);
-	if (option && typeof option === "object") {
-	    myChart4.setOption(option, true);
+	
+	option4 = null;
+	var conductivity = [];//电导率
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].conductivity]
+		}
+		conductivity.push(bbes);
 	}
+	option4 = {
+		    title: {
+		        text: '近期趋势'
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        formatter: function (params) {
+		            params = params[0];
+		            var date = new Date(params.name);
+		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+		        },
+		        axisPointer: {
+		            animation: false
+		        }
+		    },
+		    xAxis: {
+		        type: 'time',
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        boundaryGap: [0, '100%'],
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    series: [{
+		        name: '模拟数据',
+		        type: 'line',
+		        showSymbol: false,
+		        hoverAnimation: false,
+		        data: conductivity
+		    }]
+		};
+	
+	if (option4 && typeof option4 === "object") {
+	    myChart4.setOption(option4, true);
+	}
+	
 	//container5
 	var dom5 = document.getElementById("container5");
 	var myChart5 = echarts.init(dom5);
-	if (option && typeof option === "object") {
-	    myChart5.setOption(option, true);
+	
+	option5 = null;
+	var pressure = [];//压力
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].pressure]
+		}
+		pressure.push(bbes);
 	}
+	option5 = {
+		    title: {
+		        text: '近期趋势'
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        formatter: function (params) {
+		            params = params[0];
+		            var date = new Date(params.name);
+		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+		        },
+		        axisPointer: {
+		            animation: false
+		        }
+		    },
+		    xAxis: {
+		        type: 'time',
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        boundaryGap: [0, '100%'],
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    series: [{
+		        name: '模拟数据',
+		        type: 'line',
+		        showSymbol: false,
+		        hoverAnimation: false,
+		        data: pressure
+		    }]
+		};
+	
+	if (option5 && typeof option5 === "object") {
+	    myChart5.setOption(option5, true);
+	}
+	
+	
 	//container6
 	var dom6 = document.getElementById("container6");
 	var myChart6 = echarts.init(dom6);
-	if (option && typeof option === "object") {
-	    myChart6.setOption(option, true);
+	
+	option6 = null;
+	var salinity = [];//盐度
+	//放入实际的数据
+	for(var i=0;i<bbesDataList.length;i++){
+		//console.log("时间："+bbesDataList[i].tIME);
+		var bbes = {
+				name:bbesDataList[i].tIME,
+				value:[bbesDataList[i].tIME,bbesDataList[i].salinity]
+		}
+		salinity.push(bbes);
+	}
+	option6 = {
+		    title: {
+		        text: '近期趋势'
+		    },
+		    tooltip: {
+		        trigger: 'axis',
+		        formatter: function (params) {
+		            params = params[0];
+		            var date = new Date(params.name);
+		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+		        },
+		        axisPointer: {
+		            animation: false
+		        }
+		    },
+		    xAxis: {
+		        type: 'time',
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    yAxis: {
+		        type: 'value',
+		        boundaryGap: [0, '100%'],
+		        splitLine: {
+		            show: false
+		        }
+		    },
+		    series: [{
+		        name: '模拟数据',
+		        type: 'line',
+		        showSymbol: false,
+		        hoverAnimation: false,
+		        data: salinity
+		    }]
+		};
+	
+	if (option6 && typeof option6 === "object") {
+	    myChart6.setOption(option6, true);
 	}
  </script>
 <div class="row" style="padding:15px; padding-top:0px;" >
@@ -716,7 +1458,7 @@
             <th>培养袋12</th>
         </tr>
         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
+        	<td><a href="#">2019-04-12 14:57:48</a></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
@@ -730,121 +1472,9 @@
              <td><span class="label label-sm label-warning">培养中</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>    
         </tr>
-		<tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-           <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-             <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-         
-        
-        </tr>
         <tr>
         <td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-           	<td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-             <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-        
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-             <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-       
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-     
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-             <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-      
-        </tr>
-        <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-     
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-success">培养完成</span></td>
@@ -856,154 +1486,11 @@
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
             <td><span class="label label-sm label-success">培养完成</span></td>
             <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-       
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-        </tr>
-         <tr>
-        <td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-      
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-           <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-        
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-    
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
- 
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-           <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-    
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-        
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td> 
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-      
-        </tr>
-         <tr>
-        	<td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-    
         </tr>
         <tfoot>
         	<tr>
-        		<td colspan="100%" align="center">
+        	
+        		 <td colspan="100%" align="center">
         		 <ul class="pagination">
 				    <li>
 				      <a href="#" aria-label="Previous">

@@ -68,9 +68,34 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<result property="CO2_sensor_status" column="CO2_sensor_status"/>
 		<result property="CH4_sensor_status" column="CH4_sensor_status"/>
 	</resultMap>
+	<!-- 查询培养带的数据 -->
+	<sql id="bag_Column_List">
+		TIME, Cultivating_bag_1, Cultivating_bag_2, Cultivating_bag_3, Cultivating_bag_4, Cultivating_bag_5,Cultivating_bag_6,
+		Cultivating_bag_7,Cultivating_bag_8,Cultivating_bag_9,Cultivating_bag_10,Cultivating_bag_11,Cultivating_bag_12
+	</sql>
+	<!--查询数据库中最新的100条数据--> 
 	<select id="getList" parameterType="Map" resultMap="BbesDataResult">
-		<!-- select * from bbes_data 查询数据库中前10条数据--> 
-		select * from bbes_data limit 0,10
+		select * from bbes_data order by TIME DESC limit 100
+	</select>
+	
+	<!-- 根据分页数据start 和size查询数据 -->
+	<select id="findByPage" parameterType="Map" resultMap="BbesDataResult">
+		select
+		<include refid="bag_Column_List" />
+		from bbes_data
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	
+	<!-- 查询用户记录总数 -->
+	<select id="selectCount" resultType="int">
+		select count(*) from bbes_data
+	</select>
+	
+	<!-- 显示实时的数据,查询出最新一条的数据 -->
+	<select id="realtime"  parameterType="Map" resultMap="BbesDataResult">
+	select * from bbes_data order by TIME DESC limit 1
 	</select>
 	
 </mapper> 
