@@ -30,7 +30,7 @@ public class InitComponent implements ApplicationContextAware,ServletContextList
 	 * @param application
 	 */
 	public void refreshSystem(ServletContext application){
-		Main.InitMain();
+		//Main.InitMain();
 	}
 
 	public void contextInitialized(ServletContextEvent sce) {

@@ -353,7 +353,12 @@
 										历史数据查询
 									</a>
 								</li>
-								
+								<li>
+									<a href="jsp/realtime_stream.jsp" target="mainframe">
+										<i class="icon-double-angle-right"></i>
+										实时流
+									</a>
+								</li>
                             </ul>
 						</li>
 						
