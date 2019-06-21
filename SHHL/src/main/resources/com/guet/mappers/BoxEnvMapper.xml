@@ -34,4 +34,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from sanya_shenhaisuo_box_environment
 	</select>
 	
+	<!-- 分页查询数据 -->
+	<select id="queryPageData" parameterType="Map" resultMap="BoxEnvResult">
+		select * from sanya_shenhaisuo_box_environment
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+		order by TIME desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	<select id="queryPageCount" parameterType="Map" resultType="Integer">
+		select count(*) from sanya_shenhaisuo_box_environment
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+	</select>
+	
 </mapper> 

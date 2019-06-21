@@ -61,7 +61,7 @@ public class BbesDataController {
 		AjaxResult result = new AjaxResult();
 		 paramMap.put("start", (pageno-1) * pagesize);
          paramMap.put("size", pagesize);
-         if(startTime != null){
+         if(startTime != null && endTime != null){
         	 paramMap.put("startTime", DateUtil.formatString(startTime, "yyyy-MM-dd HH:mm:ss"));
         	 paramMap.put("endTime", DateUtil.formatString(endTime, "yyyy-MM-dd HH:mm:ss"));
          }

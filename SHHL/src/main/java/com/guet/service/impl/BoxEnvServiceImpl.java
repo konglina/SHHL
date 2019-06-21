@@ -4,6 +4,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 import org.springframework.stereotype.Service;
 import com.guet.dao.BoxEnvDao;
+import com.guet.entity.BbesData;
 import com.guet.entity.BoxEnv;
 import com.guet.service.BoxEnvService;
 
@@ -15,5 +16,14 @@ public class BoxEnvServiceImpl implements BoxEnvService{
 		// TODO Auto-generated method stub
 		return boxEnvDao.getList(map);
 	}
+	public List<BoxEnv> queryPageData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return boxEnvDao.queryPageData(map);
+	}
+
+	public int queryPageCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return boxEnvDao.queryPageCount(map);
+	}	
 
 }
