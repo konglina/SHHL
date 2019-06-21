@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,7 +46,21 @@
 		</ul><!-- .breadcrumb -->					
 </div>
 
-<h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
+<!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5> -->
+ <div class="row alert alert-info" style="margin:0px; padding:3px">
+		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">实时数据</div>
+		 <div class="col-sm-5" style="padding-top:5px">
+	    	
+	   </div> 
+	   
+	   <div class="col-sm-5" style="padding-top:5px;padding-bottom:2px;">
+	    	
+	   </div>
+	  
+	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
+		   	<button type="button" class="btn btn-success" onClick="javascript:window.location='${pageContext.request.contextPath}/jsp/sensor_bbes_history.jsp'">查看历史数据</button>
+		 </div>
+	</div>
 	<!-- BBES_shishi_start -->
 <div  style="padding:2px; margin:0px;"  >
 <div class="row" style="" >
@@ -142,11 +157,11 @@
 								</c:choose>
 								</td>
 								<td>
-								<c:choose>
-								<c:when test="${newbbes.cultivating_bag_10==0}"><span class="label label-sm label-warning">培养中</span></c:when>
-								<c:when test="${newbbes.cultivating_bag_10==1}"><span class="label label-sm label-success">培养完成</span></c:when>
-								<c:when test="${newbbes.cultivating_bag_10==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
-								<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
+									<c:choose>
+									<c:when test="${newbbes.cultivating_bag_10==0}"><span class="label label-sm label-warning">培养中</span></c:when>
+									<c:when test="${newbbes.cultivating_bag_10==1}"><span class="label label-sm label-success">培养完成</span></c:when>
+									<c:when test="${newbbes.cultivating_bag_10==2}"><span class="label label-sm label-info arrowed arrowed-righ">等待</span></c:when>
+									<c:otherwise><span class="label label-sm label-warning">未知</span></c:otherwise>
 								</c:choose>
 								</td>
 								<td>
@@ -446,7 +461,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电压
           </div>
               <div class="panel-body">
-             		<div id="realtime_container1" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="voltage_container" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -456,7 +471,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电流
           </div>
               <div class="panel-body">
-             		<div id="realtime_container2" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="current_container" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -466,7 +481,7 @@
             <span class="glyphicon glyphicon-refresh"></span>温度
           </div>
               <div class="panel-body">
-             		<div id="realtime_container3" class="col-sm-12" style="height: 300px;"></div>
+             		<div id="temperature_container" class="col-sm-12" style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -478,7 +493,7 @@
             <span class="glyphicon glyphicon-refresh"></span>电导率
           </div>
               <div class="panel-body">
-             		<div id="realtime_container4"  style="height: 300px;"></div>
+             		<div id="conductivity_container"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -488,7 +503,7 @@
             <span class="glyphicon glyphicon-refresh"></span>压力
           </div>
               <div class="panel-body">
-             		<div id="realtime_container5"  style="height: 300px;"></div>
+             		<div id="pressure_container"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
@@ -498,15 +513,16 @@
             <span class="glyphicon glyphicon-refresh"></span>盐度
           </div>
               <div class="panel-body">
-             		<div id="realtime_container6"  style="height: 300px;"></div>
+             		<div id="salinity_container"  style="height: 300px;"></div>
               </div>
         </div>
 	</div>
 </div>
 </div>
 <script type="text/javascript">
+	//电压
 	//实时显示数据realtime_dom1
-	var realtime_dom1 = document.getElementById("realtime_container1");
+	var realtime_dom1 = document.getElementById("voltage_container");
 	var realtime_myChart1 = echarts.init(realtime_dom1);
 	realtime_option1 = null;
 	var volt = [];//电压的数据
@@ -564,7 +580,7 @@
 	
 	
 	//container2
-	var realtime_dom2 = document.getElementById("realtime_container2");
+	var realtime_dom2 = document.getElementById("current_container");
 	var realtime_myChart2 = echarts.init(realtime_dom2);
 	realtime_option2 = null;
 	var abel = [];//电流的数据
@@ -619,7 +635,7 @@
 	}
 	
 	//container3
-	var realtime_dom3 = document.getElementById("realtime_container3");
+	var realtime_dom3 = document.getElementById("temperature_container");
 	var realtime_myChart3 = echarts.init(realtime_dom3);
 	
 	realtime_option3 = null;
@@ -675,7 +691,7 @@
 	
 	
 	//container4
-	var realtime_dom4 = document.getElementById("realtime_container4");
+	var realtime_dom4 = document.getElementById("conductivity_container");
 	var realtime_myChart4 = echarts.init(realtime_dom4);
 	
 	realtime_option4 = null;
@@ -729,7 +745,7 @@
 	    realtime_myChart4.setOption(realtime_option4, true);
 	}
 	//container5
-	var realtime_dom5 = document.getElementById("realtime_container5");
+	var realtime_dom5 = document.getElementById("pressure_container");
 	var realtime_myChart5 = echarts.init(realtime_dom5);
 	
 	realtime_option5 = null;
@@ -783,7 +799,7 @@
 		realtime_myChart5.setOption(realtime_option5, true);
 	}
 	//container6
-	var realtime_dom6 = document.getElementById("realtime_container6");
+	var realtime_dom6 = document.getElementById("salinity_container");
 	var realtime_myChart6 = echarts.init(realtime_dom6);
 	
 	realtime_option6 = null;
@@ -963,145 +979,7 @@
         });
     }
  </script>
-  <div class="row alert alert-info" style="margin:0px; padding:3px">
-		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">数据趋势查询</div>
-		 <div class="col-sm-2" style="padding-top:5px">
-	    	<div class="input-group input-group-sm">
-	    		<span class="input-group-addon">
-					开始&nbsp;
-				</span>
-				<input type="text" id="test1" class="form-control">
-				<span class="input-group-addon">
-					<i class="icon-calendar"></i>
-				</span>
-			</div>
-	   </div> 
-	   
-	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
-	    	<div class="input-group input-group-sm">
-	    		<span class="input-group-addon">
-					结束&nbsp;
-				</span>
-				<input type="text" id="test2" class="form-control">
-				<span class="input-group-addon">
-					<i class="icon-calendar"></i>
-				</span>
-			</div>
-	   </div>
-	  
-	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
-		   	<input type="button" class="btn btn-danger" value="查询"/>
-		 </div>
-	</div>
-
-<div  style="padding:2px; margin:0px;"  >
-<div class="row" style="margin-top:15px;">
-	<div class="col-sm-4" style="">
-		 <div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电压
-          </div>
-              <div class="panel-body">
-             		<div id="container1" class="col-sm-12" style="height: 300px;"></div>
-              </div>
-        </div>
-	</div>
-	<div class="col-sm-4" style="">
-		 <div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电流
-          </div>
-              <div class="panel-body">
-             		<div id="container2" class="col-sm-12" style="height: 300px;"></div>
-              </div>
-        </div>
-	</div>
-	<div class="col-sm-4" style="">
-		 <div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>温度
-          </div>
-              <div class="panel-body">
-             		<div id="container3" class="col-sm-12" style="height: 300px;"></div>
-              </div>
-        </div>
-	</div>
-</div>
-<div class="row" style="">
-	<div class="col-sm-4" style="">
-		 <div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>电导率
-          </div>
-              <div class="panel-body">
-             		<div id="container4"  style="height: 300px;"></div>
-              </div>
-        </div>
-	</div>
-	<div class="col-sm-4" style="">
-		 <div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>压力
-          </div>
-              <div class="panel-body">
-             		<div id="container5"  style="height: 300px;"></div>
-              </div>
-        </div>
-	</div>
-	<div class="col-sm-4" style="">
-		 <div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>盐度
-          </div>
-              <div class="panel-body">
-             		<div id="container6"  style="height: 300px;"></div>
-              </div>
-        </div>
-	</div>
-</div>
-
-<div class="row alert alert-info" style="margin:0px; padding:3px">
-		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">数据状态查询</div>
-		 <div class="col-sm-2" style="padding-top:5px">
-	    	<div class="input-group input-group-sm">
-	    		<span class="input-group-addon">
-					开始&nbsp;
-				</span>
-				<input type="text" id="test3" class="form-control">
-				<span class="input-group-addon">
-					<i class="icon-calendar"></i>
-				</span>
-			</div>
-	   </div> 
-	   
-	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
-	    	<div class="input-group input-group-sm">
-	    		<span class="input-group-addon">
-					结束&nbsp;
-				</span>
-				<input type="text" id="test4" class="form-control">
-				<span class="input-group-addon">
-					<i class="icon-calendar"></i>
-				</span>
-			</div>
-	   </div>
-	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
-	    	<div class="input-group input-group-sm">
-	    		<span class="input-group-addon">
-					指标&nbsp;
-				</span>
-	    	<select class="form-control">
-	        	<option>培养袋状态</option>
-	            <option>泵状态</option>
-	            <option>阀状态</option> 
-	        </select>
-	    	</div>
-	    </div>
-	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
-		   	<input type="button" class="btn btn-danger" value="查询"/>
-		 </div>
-</div>
-</div>
+  
 <script type="text/javascript">
 	//container1
 	var dom1 = document.getElementById("container1");
@@ -1440,80 +1318,7 @@
 	    myChart6.setOption(option6, true);
 	}
  </script>
-<div class="row" style="padding:15px; padding-top:0px;" >
-			<table class="table table-condensed table-striped table-bordered table-hover">
-    	<tr >
-        	<th>时间</th>
-            <th>培养袋1</th>
-            <th>培养袋2</th>
-            <th>培养袋3</th>
-            <th>培养袋4</th>
-          	<th>培养袋5</th>
-            <th>培养袋6</th>
-            <th>培养袋7</th>
-            <th>培养袋8</th>
-            <th>培养袋9</th>
-            <th>培养袋10</th>
-            <th>培养袋11</th>
-            <th>培养袋12</th>
-        </tr>
-        <tr>
-        	<td><a href="#">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-             <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>    
-        </tr>
-        <tr>
-        <td><a href="${pageContext.request.contextPath}/view/system/staff_info/staffinfo_show.jsp">2019-04-12 14:57:48</a></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td> 
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-warning">培养中</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td> 
-            <td><span class="label label-sm label-success">培养完成</span></td>
-            <td><span class="label label-sm label-info arrowed arrowed-righ">等待</span></td>   
-        </tr>
-        <tfoot>
-        	<tr>
-        	
-        		 <td colspan="100%" align="center">
-        		 <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
-        	</td>
-        	</tr>
-        	
-        </tfoot> 
-    </table>	
-</div>
+
  <script>
 //执行一个laydate实例
 laydate.render({

@@ -88,6 +88,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		</if>
 	</select>
 	
+	
 	<!-- 查询用户记录总数 -->
 	<select id="selectCount" resultType="int">
 		select count(*) from bbes_data
@@ -98,4 +99,25 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from bbes_data order by TIME DESC limit 1
 	</select>
 	
+	<!-- 分页查询数据 -->
+	<select id="queryPageData" parameterType="Map" resultMap="BbesDataResult">
+		select * from bbes_data
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+		order by TIME desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	<select id="queryPageCount" parameterType="Map" resultType="Integer">
+		select count(*) from bbes_data
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+	</select>
 </mapper> 

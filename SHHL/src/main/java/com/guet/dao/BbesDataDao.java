@@ -16,4 +16,17 @@ public interface BbesDataDao {
 	 * @return
 	 */
 	public List<BbesData> findByPage(Map<String,Object> map);
+	
+	/**
+	 * 分页查询
+	 * @param map
+	 * @return
+	 */
+	public List<BbesData> queryPageData(Map<String , Object> map);
+	/**
+	 * 查询总记录数
+	 * @param map
+	 * @return
+	 */
+	public int queryPageCount(Map<String, Object> map);
 }

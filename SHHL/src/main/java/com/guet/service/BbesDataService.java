@@ -11,4 +11,9 @@ public interface BbesDataService {
 	
 	public int selectCount();
 	public PageBean<BbesData> findByPage(int currentPage);
+	
+	
+
+	public List<BbesData> queryPageData(Map<String , Object> map);
+	public int queryPageCount(Map<String, Object> map);
 }

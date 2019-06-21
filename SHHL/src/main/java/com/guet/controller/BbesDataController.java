@@ -1,5 +1,6 @@
 package com.guet.controller;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -13,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
+import com.guet.entity.AjaxResult;
 import com.guet.entity.BbesData;
+import com.guet.entity.Page;
 import com.guet.service.BbesDataService;
+import com.guet.util.DateUtil;
 import com.sun.net.httpserver.Authenticator.Success;
 
 import org.springframework.ui.Model;
@@ -46,5 +50,49 @@ public class BbesDataController {
 	public String  main(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,Model model){
 		model.addAttribute("pagemsg", bbesDataService.findByPage(currentPage));//回显分页数据
 		return "sensor_bbes";
+	}
+	@RequestMapping("/pageQuery")
+	@ResponseBody
+	public Object pageQuery(Integer pageno, Integer pagesize ,String startTime, String endTime) throws Exception{
+		/*System.out.println("startTime=" + startTime);
+		System.out.println("endTime=" + endTime);*/
+		//1.准备分页参数
+		Map<String, Object> paramMap = new HashMap<String, Object>();
+		AjaxResult result = new AjaxResult();
+		 paramMap.put("start", (pageno-1) * pagesize);
+         paramMap.put("size", pagesize);
+         if(startTime != null){
+        	 paramMap.put("startTime", DateUtil.formatString(startTime, "yyyy-MM-dd HH:mm:ss"));
+        	 paramMap.put("endTime", DateUtil.formatString(endTime, "yyyy-MM-dd HH:mm:ss"));
+         }
+        //2.分页查询数据
+         List<BbesData> bbesDatas = bbesDataService.queryPageData(paramMap);
+         for(BbesData bbesData : bbesDatas){
+        	 System.out.println(bbesData);
+         }
+         //3.计算总页码数
+         int totalsize = bbesDataService.queryPageCount(paramMap);//总记录数
+         int totalno = 0; 
+         if(totalsize % pagesize == 0) {
+             totalno = totalsize / pagesize;
+	     }else {
+	         totalno = totalsize / pagesize + 1;
+	     }
+        Page<BbesData> page = new Page<BbesData>();
+        page.setDatas(bbesDatas);
+        page.setTotalsize(totalsize);
+        page.setTotalno(totalno);
+        page.setPageno(pageno);
+        page.setPagesize(pagesize);
+        
+       /* System.out.println(bbesDatas);*/
+    	result.setSuccess(true);
+    	result.setData(page);
+        
+		return result;
+	}
+	@RequestMapping("/history")
+	public String getBbesDataHistory(){
+		return "sensor_bbes_history";
 	}
 }

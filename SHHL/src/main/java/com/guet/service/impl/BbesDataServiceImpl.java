@@ -62,5 +62,15 @@ public class BbesDataServiceImpl implements BbesDataService{
 	public List<BbesData> realtime(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		return bbesDataDao.realtime(map);
+	}
+
+	public List<BbesData> queryPageData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return bbesDataDao.queryPageData(map);
+	}
+
+	public int queryPageCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return bbesDataDao.queryPageCount(map);
 	}	
 }
