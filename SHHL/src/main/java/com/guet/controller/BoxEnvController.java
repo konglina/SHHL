@@ -61,7 +61,7 @@ public class BoxEnvController {
 	     }else {
 	         totalno = totalsize / pagesize + 1;
 	     }
-        Page<BoxEnv> page = new Page<BoxEnv>();
+        Page<BoxEnv, Object> page = new Page<BoxEnv, Object>();
         page.setDatas(boxEnvs);
         page.setTotalsize(totalsize);
         page.setTotalno(totalno);

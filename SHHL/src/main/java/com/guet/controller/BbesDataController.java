@@ -83,7 +83,7 @@ public class BbesDataController {
 	         totalno = totalsize / pagesize + 1;
 	     }
         
-        Page<BbesData> page = new Page<BbesData>();
+        Page<BbesData, BbesData2> page = new Page<BbesData, BbesData2>();
         page.setDatas(bbesDatas);
         page.setTotalsize(totalsize);
         page.setTotalno(totalno);

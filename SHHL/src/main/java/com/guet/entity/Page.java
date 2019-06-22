@@ -7,13 +7,13 @@ import java.util.List;
  *
  * @param <T>
  */
-public class Page<T> { //T为目标类
+public class Page<T,U> { //T为目标类
     private List<T> datas; //数据
     private Integer totalsize;//总记录数
     private Integer totalno; //总页码数
     private Integer pageno; //当前页
     private Integer pagesize; //每页的大小
-    private List<BbesData2> datas2;// 6项指标数据
+    private List<U> datas2;// 6项指标数据
     public List<T> getDatas() {
          return datas;
     }
@@ -44,10 +44,10 @@ public class Page<T> { //T为目标类
     public void setPagesize(Integer pagesize) {
          this.pagesize = pagesize;
     }
-	public List<BbesData2> getDatas2() {
+	public List<U> getDatas2() {
 		return datas2;
 	}
-	public void setDatas2(List<BbesData2> datas2) {
+	public void setDatas2(List<U> datas2) {
 		this.datas2 = datas2;
 	}
     
