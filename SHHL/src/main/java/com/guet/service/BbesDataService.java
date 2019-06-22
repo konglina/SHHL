@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.guet.entity.BbesData;
+import com.guet.entity.BbesData2;
 import com.guet.entity.PageBean;
 public interface BbesDataService {
 	public List<BbesData> getList(Map<String, Object> map);

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.dao.BbesData2Dao">
+	<resultMap type="BbesData2" id="BbesData2Result">
+		<result property="TIME" column="TIME"/>
+		<result property="Volt48" column="Volt48"/>
+		<result property="Abel48" column="Abel48"/>
+		<result property="Temperature" column="Temperature"/>
+		<result property="Conductivity" column="Conductivity"/>
+		<result property="Pressure" column="Pressure"/>
+		<result property="Salinity" column="Salinity"/>
+	</resultMap>
+	<!-- 查询历史数据 -->
+	<select id="queryData" parameterType="Map" resultMap="BbesData2Result">
+		select TIME,Volt48,Abel48,Temperature,Conductivity,Pressure,Salinity from bbes_data
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+		order by TIME desc limit 10000
+	</select>
+</mapper> 

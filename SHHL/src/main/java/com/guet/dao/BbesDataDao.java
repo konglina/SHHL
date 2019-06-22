@@ -1,7 +1,8 @@
 package com.guet.dao;
 import java.util.List;
 import java.util.Map;
-import com.guet.entity.BbesData;;
+import com.guet.entity.BbesData;
+import com.guet.entity.BbesData2;;
 public interface BbesDataDao {
 	public List<BbesData> getList(Map<String, Object> map);
 	public List<BbesData> realtime(Map<String, Object> map);
@@ -29,4 +30,5 @@ public interface BbesDataDao {
 	 * @return
 	 */
 	public int queryPageCount(Map<String, Object> map);
+
 }

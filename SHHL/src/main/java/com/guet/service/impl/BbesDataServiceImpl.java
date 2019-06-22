@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.guet.dao.BbesDataDao;
 import com.guet.dao.BoxEnvDao;
 import com.guet.entity.BbesData;
+import com.guet.entity.BbesData2;
 import com.guet.entity.PageBean;
 import com.guet.service.BbesDataService;
 /**
@@ -72,5 +73,5 @@ public class BbesDataServiceImpl implements BbesDataService{
 	public int queryPageCount(Map<String, Object> map) {
 		// TODO Auto-generated method stub
 		return bbesDataDao.queryPageCount(map);
-	}	
+	}
 }

@@ -13,6 +13,7 @@ public class Page<T> { //T为目标类
     private Integer totalno; //总页码数
     private Integer pageno; //当前页
     private Integer pagesize; //每页的大小
+    private List<BbesData2> datas2;// 6项指标数据
     public List<T> getDatas() {
          return datas;
     }
@@ -43,6 +44,12 @@ public class Page<T> { //T为目标类
     public void setPagesize(Integer pagesize) {
          this.pagesize = pagesize;
     }
+	public List<BbesData2> getDatas2() {
+		return datas2;
+	}
+	public void setDatas2(List<BbesData2> datas2) {
+		this.datas2 = datas2;
+	}
     
     
 }
