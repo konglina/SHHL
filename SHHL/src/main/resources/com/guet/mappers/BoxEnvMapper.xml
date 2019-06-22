@@ -33,7 +33,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getList" parameterType="Map" resultMap="BoxEnvResult">
 		select * from sanya_shenhaisuo_box_environment
 	</select>
-	
 	<!-- 分页查询数据 -->
 	<select id="queryPageData" parameterType="Map" resultMap="BoxEnvResult">
 		select * from sanya_shenhaisuo_box_environment
@@ -54,6 +53,5 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
 			</if>
 		</where>
-	</select>
-	
+	</select>	
 </mapper> 
