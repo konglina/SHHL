@@ -7,11 +7,6 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
-
-import org.apache.ibatis.executor.ReuseExecutor;
-import org.omg.PortableInterceptor.SUCCESSFUL;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,7 +20,7 @@ import com.guet.entity.Page;
 import com.guet.service.BbesData2Service;
 import com.guet.service.BbesDataService;
 import com.guet.util.DateUtil;
-import com.sun.net.httpserver.Authenticator.Success;
+
 
 import org.springframework.ui.Model;
 @Controller
@@ -47,7 +42,7 @@ public class BbesDataController {
 	
 	@RequestMapping("/realtime")
 	@ResponseBody
-	public String realtime(BbesData bbesData){
+	public String realtime(BbesData bbesData,Model model){
 		Map<String, Object> map = new HashMap<String, Object>();
 		List<BbesData> bbesDataList = bbesDataService.realtime(map);
 		return JSON.toJSONString(bbesDataList);

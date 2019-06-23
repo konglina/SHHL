@@ -48,8 +48,8 @@
 <form method="POST" action="${pageContext.request.contextPath}/boxenv/pageQuery.do">
 	<!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">查询历史数据</h5> -->
 	<div class="row alert alert-info" style="margin:0px; padding:3px">
-			<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">选择时间范围</div>
-			<div class="col-sm-3" style="padding-top:5px">
+			<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">历史数据查询</div>
+			<div class="col-sm-2" style="padding-top:5px">
 		    	<div class="input-group input-group-sm">
 		    		<!-- <span class="input-group-addon">
 						开始时间&nbsp;
@@ -61,7 +61,7 @@
 				</div>
 		   </div> 
 		   
-		   <div class="col-sm-3" style="padding-top:5px;padding-bottom:2px;">
+		   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
 		    	<div class="input-group input-group-sm">
 		    		<!-- <span class="input-group-addon">
 						结束时间&nbsp;
@@ -76,13 +76,13 @@
 		   <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
 			   	<input type="button" id="queryBtn" class="btn btn-danger" value="查询"/>
 		   </div>
-		   <div class="col-sm-3" style="padding-top:5px;padding-bottom:2px;">
+		   <div class="col-sm-6" style="padding-top:5px;padding-bottom:2px;">
 		    	
 		   </div>
 		  
 	</div>
 </form>
-
+<div  style="padding:2px; margin:0px;"  >
 <div class="row" style="padding:15px; padding-top:0px;" >
 			<table class="table table-condensed table-striped table-bordered table-hover">
 		<thead id="dataHead">
@@ -106,7 +106,7 @@
     </table>	
 </div>
 
-
+</div>
 
 <script type="text/javascript">
 	var likeflag = false;

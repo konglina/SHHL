@@ -37,8 +37,6 @@ public class BoxEnvController {
 	@RequestMapping("/pageQuery")
 	@ResponseBody
 	public Object pageQuery(Integer pageno, Integer pagesize ,String startTime, String endTime) throws Exception{
-		/*System.out.println("startTime=" + startTime);
-		System.out.println("endTime=" + endTime);*/
 		//1.准备分页参数
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		AjaxResult result = new AjaxResult();
