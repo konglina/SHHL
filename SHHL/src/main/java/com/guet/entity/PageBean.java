@@ -10,8 +10,7 @@ public class PageBean<T> {
     private int pageSize;//每页显示的记录数
     private int totalCount;//总记录数
     private int totalPage;//总页数
-    private List<T> lists;//每页的显示的数据
-	
+    private List<T> datas;//每页的显示的数据
 	public int getCurrPage() {
 		return currPage;
 	}
@@ -36,10 +35,12 @@ public class PageBean<T> {
 	public void setTotalPage(int totalPage) {
 		this.totalPage = totalPage;
 	}
-	public List<T> getLists() {
-		return lists;
+	public List<T> getDatas() {
+		return datas;
 	}
-	public void setLists(List<T> lists) {
-		this.lists = lists;
+	public void setDatas(List<T> datas) {
+		this.datas = datas;
 	}
+    
+    
 }
