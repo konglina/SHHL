@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
-<!DOCTYPE html> 
-<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> -->
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -54,15 +53,14 @@
 	</div>
 	<div class="row">
 		<div class="col-sm-8">
-			<object type='application/x-vlc-plugin' pluginspage="http://www.videolan.org/" id='vlc' events='false' width="720" height="410">
-		    <param name='mrl' value='rtsp://[账号]:[密码]@[设备IP地址]/MPEG-4/ch1/main/av_stream'/>
+			<object type='application/x-vlc-plugin' pluginspage="http://www.videolan.org/" id='vlc' width="720" height="410">
+		    <param name='mrl' value='rtsp://admin:admin123@45.13.39.79:554/h264/ch0/main/av_stream'/>
 		    <param name='volume' value='50'/>
 		    <param name='autoplay' value='true'/>
 		    <param name='loop' value='false'/>
 		    <param name='fullscreen' value='false'/>
 		    <param name='controls' value='false'/>
 		</object>
-		<video src="http://localhost:18080/testVideo" width="600" height="450" autoplay="autoplay" loop="loop"></video>
 		</div>
 	</div>
 	<div class="row">
@@ -72,7 +70,7 @@
 	                height=420px
 	                id="vlc"
 	                events="true">
-			        <param name="mrl" value="" />
+			        <param name="mrl" value="rtsp://admin:admin123@45.13.39.79:554/h264/ch0/main/av_stream" />
 			        <param name="showdisplay" value="true" />
 			        <param name="autoloop" value="true" />
 			        <param name="autoplay" value="true" />
@@ -86,6 +84,19 @@
 			                     name="vlc">
 			        </embed>
 		        </object>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12">
+		<object type='application/x-vlc-plugin' id='vlc' events='True' width="720" height="540"
+			pluginspage="http://www.videolan.org" codebase="http://downloads.videolan.org/pub/videolan/vlc-webplugins/2.0.6/npapi-vlc-2.0.6.tar.xz"> 
+			<param name='mrl' value=rtsp://[username]:[password]@[ip]:[port]/[codec]/[channel]/[subtype]/av_stream'/> 
+			<param name='volume' value='50' />
+			<param name='autoplay' value='true' />
+			<param name='loop' value='false' />
+			<param name='fullscreen' value='false' />
+		</object>
+
 		</div>
 	</div>
 </div>
