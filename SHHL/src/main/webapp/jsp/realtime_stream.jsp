@@ -88,27 +88,27 @@
          		<table class="table table-bordered">
          			<tr>
          				<td>IP地址</td>
-         				<td>192.168.1.1</td>
+         				<td id="loginip">45.13.39.79</td>
          			</tr>
          			<tr>
          				<td>端口号</td>
-         				<td>192.168.1.1</td>
+         				<td id="port">80</td>
          			</tr>
          			<tr>
          				<td>用户名</td>
-         				<td>192.168.1.12</td>
+         				<td id="username">admin</td>
          			</tr>
          			<tr>
          				<td>密码</td>
-         				<td>192.168.1.1</td>
+         				<td id="password">admin123</td>
          			</tr>
          			<tr>
-         				<td>设备端口</td>
-         				<td>192.168.1.1</td>
+         				<td>码流类型</td>
+         				<td id="streamtype">1</td>
          			</tr>
          			<tr>
-         				<td>窗口分割数</td>
-         				<td>192.168.1.1</td>
+         				<td>通道列表</td>
+         				<td id="channels">true</td>
          			</tr>
          		</table>
         	   

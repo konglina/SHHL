@@ -50,7 +50,7 @@ public class BbesDataController {
 	
 	@RequestMapping("/getlistBypage")
 	public String  main(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,Model model){
-		model.addAttribute("pagemsg", bbesDataService.findByPage(currentPage));//回显分页数据
+		//model.addAttribute("pagemsg", bbesDataService.findByPage(currentPage));//回显分页数据
 		return "sensor_bbes";
 	}
 	@RequestMapping("/pageQuery")
