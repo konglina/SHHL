@@ -378,119 +378,25 @@
 									</a>
 								</li>
 								<li>
-									<a href="jsp/sensor_uva.jsp" target="mainframe">
+									<a href="${pageContext.request.contextPath}/uvaData/getlist.do" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										UVA
 									</a>
 								</li>
 								<li>
-									<a href="jsp/sensor_ysi.jsp" target="mainframe">
+									<a href="${pageContext.request.contextPath}/ysiData/getlist.do" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										YSI
 									</a>
 								</li>
 								<li>
-									<a href="jsp/sensor_spectrograph.jsp" target="mainframe">
+									<a href="${pageContext.request.contextPath}/spectrographData/getlist.do" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										光谱仪
 									</a>
 								</li>
                             </ul>
 						</li>
-						
-
-					<!-- 	<li>
-							<a href="#" class="dropdown-toggle">
-								<i class="icon-desktop"></i>
-								<span class="menu-text"> UI 组件 </span>
-
-								<b class="arrow icon-angle-down"></b>
-							</a>
-
-							<ul class="submenu">
-								<li>
-									<a href="test.html">
-										<i class="icon-double-angle-right"></i>
-										组件
-									</a>
-								</li>
-
-								<li>
-									<a href="buttons.html">
-										<i class="icon-double-angle-right"></i>
-										按钮 &amp; 图表
-									</a>
-								</li>
-
-								<li>
-									<a href="treeview.html">
-										<i class="icon-double-angle-right"></i>
-										树菜单
-									</a>
-								</li>
-
-								<li>
-									<a href="jquery-ui.html">
-										<i class="icon-double-angle-right"></i>
-										jQuery UI
-									</a>
-								</li>
-
-								<li>
-									<a href="nestable-list.html">
-										<i class="icon-double-angle-right"></i>
-										可拖拽列表
-									</a>
-								</li>
-
-								<li>
-									<a href="#" class="dropdown-toggle">
-										<i class="icon-double-angle-right"></i>
-
-										三级菜单
-										<b class="arrow icon-angle-down"></b>
-									</a>
-
-									<ul class="submenu">
-										<li>
-											<a href="#">
-												<i class="icon-leaf"></i>
-												第一级
-											</a>
-										</li>
-
-										<li>
-											<a href="#" class="dropdown-toggle">
-												<i class="icon-pencil"></i>
-
-												第四级
-												<b class="arrow icon-angle-down"></b>
-											</a>
-
-											<ul class="submenu">
-												<li>
-													<a href="#">
-														<i class="icon-plus"></i>
-														添加产品
-													</a>
-												</li>
-
-												<li>
-													<a href="#">
-														<i class="icon-eye-open"></i>
-														查看商品
-													</a>
-												</li>
-											</ul>
-										</li>
-									</ul>
-								</li>
-							</ul>
-						</li> -->
-
-						
-
-						
 					</ul><!-- /.nav-list -->
 
 					<div class="sidebar-collapse" id="sidebar-collapse">
@@ -563,9 +469,6 @@
 				<i class="icon-double-angle-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
-
-
-		
 
 		<script type="text/javascript">
 			window.jQuery || document.write("<script src='static/assets/js/jquery-2.0.3.min.js'>"+"<"+"script>");
@@ -684,12 +587,6 @@
 				}
 				
 			 });
-			
-			
-			
-			
-			
-			
 				var d1 = [];
 				for (var i = 0; i < Math.PI * 2; i += 0.5) {
 					d1.push([i, Math.sin(i)]);

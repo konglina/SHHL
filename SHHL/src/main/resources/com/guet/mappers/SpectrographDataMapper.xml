@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.dao.SpectrographDataDao">
+	<resultMap type="SpectrographData" id="SpectrographDataResult">
+		<result property="states" column="states"/>
+		<result property="consistency" column="consistency"/>
+	</resultMap>
+	
+	<!--查询数据库中最新的20条数据--> 
+	<select id="getList" parameterType="Map" resultMap="SpectrographDataResult">
+		select * from spectrograph_data order by TIME DESC limit 20
+	</select>
+</mapper>

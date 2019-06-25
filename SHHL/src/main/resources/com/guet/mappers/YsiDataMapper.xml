@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.guet.dao.YsiDataDao">
+	<resultMap type="YsiData" id="YsiDataResult">
+		<result property="TIME" column="TIME"/>
+		<result property="Turbidity" column="Turbidity"/>
+		<result property="TSS" column="TSS"/>
+		<result property="Chlorophyll" column="Chlorophyll"/>
+		<result property="BGA_PE" column="BGA_PE"/>
+		<result property="ODO" column="ODO"/>
+		<result property="Temperature" column="Temperature"/>
+		<result property="Specific_Conductance" column="Specific_Conductance"/>
+		<result property="Salinity" column="Salinity"/>
+		<result property="pH" column="pH"/>
+		<result property="ORP" column="ORP"/>
+		<result property="Pressure" column="Pressure"/>
+		<result property="Depth" column="Depth"/>
+	</resultMap>
+	
+	<!--查询数据库中最新的20条数据--> 
+	<select id="getList" parameterType="Map" resultMap="YsiDataResult">
+		select * from ysi_data order by TIME DESC limit 20
+	</select>
+	
+	<!-- 显示实时的数据,查询出最新一条的数据 -->
+	<select id="realtime"  parameterType="Map" resultMap="YsiDataResult">
+	select * from ysi_data order by TIME DESC limit 1
+	</select>
+	
+	<!-- 分页查询数据 -->
+	<select id="queryPageData" parameterType="Map" resultMap="YsiDataResult">
+		select * from ysi_data
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+		order by TIME desc
+		<if test="start!=null and size!=null">
+			limit #{start},#{size}
+		</if>
+	</select>
+	<select id="queryPageCount" parameterType="Map" resultType="Integer">
+		select count(*) from ysi_data
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+	</select>
+</mapper>
