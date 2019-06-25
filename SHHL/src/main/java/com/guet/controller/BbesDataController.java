@@ -48,11 +48,6 @@ public class BbesDataController {
 		return JSON.toJSONString(bbesDataList);
 	}
 	
-	@RequestMapping("/getlistBypage")
-	public String  main(@RequestParam(value="currentPage",defaultValue="1",required=false)int currentPage,Model model){
-		//model.addAttribute("pagemsg", bbesDataService.findByPage(currentPage));//回显分页数据
-		return "sensor_bbes";
-	}
 	@RequestMapping("/pageQuery")
 	@ResponseBody
 	public Object pageQuery(Integer pageno, Integer pagesize ,String startTime, String endTime, boolean update, HttpServletRequest request) throws Exception{

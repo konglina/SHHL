@@ -454,6 +454,7 @@
 	if (option6 && typeof option6 === "object") {
 	    myChart6.setOption(option6, true);
 	}
+	
 	var likeflag = false;
 	$(function () {
 	    pageQuery(1);//当页面加载完成查询第一页
@@ -596,7 +597,7 @@
                               time = Y + M + D + h + m + s;
                               //alert(time); 
                               
-                              content += '<tr>';
+                            content += '<tr>';
                             content += '<td>'+(i+1)+'</td>';
                             content += '<td>'+ time +'</td>';  
                             content += '<td>';

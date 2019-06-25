@@ -119,7 +119,21 @@
     <div class="col-sm-8">
     	<div class="panel panel-default" >
           <div class="panel-heading" style=" padding:3px;height:30px;"  >
-            <span class="glyphicon glyphicon-refresh"></span>近期数据趋势
+            <span class="glyphicon glyphicon-refresh">近期数据趋势</span>
+            <select id="selectChart" onchange="chooseChart(this.options[this.options.selectedIndex].value)">
+			    <option value ="Turbidity">Turbidity</option>
+			    <option value ="TSS">TSS</option>
+			    <option value ="Chlorophyll">Chlorophyll</option>
+			    <option value ="BGA_PE">BGA_PE</option>
+			    <option value ="ODO">ODO</option>
+			    <option value ="Temperature">Temperature</option>
+			    <option value ="Conductance">Specific Conductance</option>
+			    <option value ="Salinity">Salinity</option>
+			    <option value ="pH">pH</option>
+			    <option value ="ORP">ORP</option>
+			    <option value ="Pressure">Pressure</option>
+			    <option value ="Depth">Depth</option>
+  			</select>
           </div>
               <div class="panel-body">
              		<div id="ysi_shishi" style="width: 100%;height:520px;"></div>
@@ -127,7 +141,7 @@
         </div>
     </div>
     	<script type="text/javascript">
-        // 基于准备好的dom，初始化echarts实例
+        //基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('ysi_shishi'));
     	//格式化时间的函数
         Date.prototype.format = function(fmt) { 
@@ -152,144 +166,208 @@
         }
       	//放入实际的数据
       	var bbesDataList=JSON.parse('<%=request.getAttribute("ysiDataList")%>');
-        var time = new Array();
-        var turbidity = new Array();
-        var tts = new Array();
-        var chlorophyll = new Array();
-        var bga_pe = new Array();
-        var odo = new Array();
-        var temperature = new Array();
-        var conductance = new Array();
-        var salinity = new Array();
-        var ph = new Array();
-        var orp = new Array();
-        var pressure = new Array();
-        var deth = new Array();
+        var turbidity = []; 
+        var tts = [];
+        var chlorophyll = [];
+        var bga_pe = [];
+        var odo = [];
+        var temperature = [];
+        var conductance = [];
+        var salinity = [];
+        var ph = [];
+        var orp = [];
+        var pressure = [];
+        var depth = [];
         for(var i=0;i<bbesDataList.length;i++){
-        	time[i] = new Date(bbesDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss");
-        	turbidity[i] = bbesDataList[i].turbidity;
-        	tts[i]=bbesDataList[i].tts;
-        	chlorophyll[i]=bbesDataList[i].chlorophyll;
-        	bga_pe[i]=bbesDataList[i].bGA_PE;
-        	odo[i]=bbesDataList[i].oDO;
-        	temperature[i]=bbesDataList[i].temperature;
-        	conductance[i]=bbesDataList[i].specific_Conductance;
-        	salinity[i]=bbesDataList[i].salinity;
-        	ph[i]=bbesDataList[i].pH;
-        	orp[i]=bbesDataList[i].oRP;
-        	pressure[i]=bbesDataList[i].pressure;
-        	deth[i]=bbesDataList[i].deth;
+        	var tur = {
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].turbidity]
+        	};
+        	turbidity.push(tur);
+        	var t = {
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].tSS]
+        	}
+        	tts.push(t);
+        	var c={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].chlorophyll]
+        	}
+        	chlorophyll.push(c);
+        	var bga ={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].bGA_PE]
+        	}
+        	bga_pe.push(bga);
+        	var od={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].oDO]
+        	}
+        	odo.push(od);
+        	var temp = {
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].oDO]
+        	}
+        	temperature.push(temp);
+        	var con={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].specific_Conductance]
+        	}
+        	conductance.push(con);
+        	var sal={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].salinity]
+        	}
+        	salinity.push(sal);
+        	var p={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].pH]
+        	}
+        	ph.push(p);
+        	var or={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].oRP]
+        	}
+        	orp.push(or);
+        	var pre={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].pressure]
+        	}
+        	pressure.push(pre);
+        	var de={
+        			name: bbesDataList[i].tIME,
+                	value: [bbesDataList[i].tIME,bbesDataList[i].depth]
+        	}
+        	depth.push(de);
         }
-        var option = {
+        var option={};
+        option = {
         	    title: {
-        	        text: ''
+        	        text: '实时数据'
         	    },
         	    tooltip: {
-        	        trigger: 'axis'
-        	    },
-        	    legend: {
-        	        data:['Turbidity','TTS','Chlorophyll','BGA-PE','ODO','Temperature','Specific Conductance','Salinity','pH','ORP','Pressure', 'Deth']
-        	    },
-        	    grid: {
-        	        left: '3%',
-        	        right: '4%',
-        	        bottom: '3%',
-        	        containLabel: true
-        	    },
-        	    toolbox: {
-        	        feature: {
-        	            saveAsImage: {}
+        	        trigger: 'axis',
+        	        formatter: function (params) {
+        	            params = params[0];
+        	            var date = new Date(params.name);
+        	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+        	        },
+        	        axisPointer: {
+        	            animation: false
         	        }
         	    },
         	    xAxis: {
-        	        type: 'category',
-        	        boundaryGap: false,
-        	    	data:time
+        	        type: 'time',
+        	        splitLine: {
+        	            show: false
+        	        }
         	    },
         	    yAxis: {
         	        type: 'value',
-        	        axisLabel:{
-        	        	show : false
+        	        boundaryGap: [0, '100%'],
+        	        splitLine: {
+        	            show: false
         	        }
         	    },
-        	    series: [
-        	        {
-        	            name:'Turbidity',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:turbidity
-        	        },
-        	        {
-        	            name:'TTS',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:tts
-        	        },
-        	        {
-        	            name:'Chlorophyll',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:chlorophyll
-        	        },
-        	        {
-        	            name:'BGA-PE',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:bga_pe
-        	        },
-        	        {
-        	            name:'ODO',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:odo
-        	        },
-        	        {
-        	            name:'Temperature',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:temperature
-        	        },
-        	        {
-        	            name:'Specific Conductance',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:conductance
-        	        },
-        	        {
-        	            name:'Salinity',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:salinity
-        	        },
-        	        {
-        	            name:'pH',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:ph
-        	        },
-        	        {
-        	            name:'ORP',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:orp
-        	        },
-        	        {
-        	            name:'Pressure',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:pressure
-        	        },
-        	        {
-        	            name:'Deth',
-        	            type:'line',
-        	            stack: '总量',
-        	            data:deth
-        	        }
-        	        
-        	    ]
+        	    
+        	    series: [{
+        	        name: '模拟数据',
+        	        type: 'line',
+        	        showSymbol: false,
+        	        hoverAnimation: false,
+        	        data: turbidity
+        	    }]
         	};
-        // 使用刚指定的配置项和数据显示图表。
-        myChart.setOption(option);
+     	// 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option,true);
+     	
+     	
+        function updataChart(chartDatas){
+        	console.log(chartDatas);
+        	myChart = echarts.init(document.getElementById('ysi_shishi'));
+        	option = {
+            	    title: {
+            	        text: '实时数据'
+            	    },
+            	    tooltip: {
+            	        trigger: 'axis',
+            	        formatter: function (params) {
+            	            params = params[0];
+            	            var date = new Date(params.name);
+            	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
+            	        },
+            	        axisPointer: {
+            	            animation: false
+            	        }
+            	    },
+            	    xAxis: {
+            	        type: 'time',
+            	        splitLine: {
+            	            show: false
+            	        }
+            	    },
+            	    yAxis: {
+            	        type: 'value',
+            	        boundaryGap: [0, '100%'],
+            	        splitLine: {
+            	            show: false
+            	        }
+            	    },
+            	    series: [{
+            	        name: '模拟数据',
+            	        type: 'line',
+            	        showSymbol: false,
+            	        hoverAnimation: false,
+            	        data: chartDatas
+            	    }]
+            	};
+        	myChart.clear();
+        	myChart.setOption(option,true);
+        }
+        
+        function chooseChart(s){
+        	console.log(s);
+        	switch(s){
+        	case "Turbidity":
+        		updataChart(turbidity);
+        		break;
+        	case "TSS":
+        		updataChart(tts);
+        		break;
+        	case "Chlorophyll":
+        		updataChart(chlorophyll);
+        		break;
+        	case "BGA_PE":
+        		updataChart(bga_pe);
+        		break;
+        	case "ODO":
+        		updataChart(odo);
+        		break;
+        	case "Temperature":
+        		updataChart(temperature);
+        		break;
+        	case "Conductance":
+        		updataChart(conductance);
+        		break;
+        	case "Salinity":
+        		updataChart(salinity);
+        		break;
+        	case "pH":
+        		updataChart(ph);
+        		break;
+        	case "ORP":
+        		updataChart(orp);
+        		break;
+        	case "Pressure":
+        		updataChart(pressure);
+        		break;
+        	case "Depth":
+        		updataChart(depth);
+        		break;
+        	default:
+        		break;
+        	}
+        }
         
       	//实时的刷新数据，10秒刷新一次
     	$(document).ready(function () {
@@ -332,6 +410,8 @@
             });
         }
     	</script>
+    	
+    	
     	</div>
 	</div>
       <!--备注-->
@@ -406,7 +486,7 @@
 </div>
 <script type="text/javascript">
 	var dom = document.getElementById("container");
-	var myChart = echarts.init(dom);
+	var myChart1 = echarts.init(dom);
 	var app = {};
 	option = null;
 	function randomData() {
@@ -473,14 +553,14 @@
 	        data.push(randomData());
 	    }
 	
-	    myChart.setOption({
+	    myChart1.setOption({
 	        series: [{
 	            data: data
 	        }]
 	    });
 	}, 1000);;
 	if (option && typeof option === "object") {
-	    myChart.setOption(option, true);
+		myChart1.setOption(option, true);
 	}
 	
 	//格式化时间的函数
