@@ -78,26 +78,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from bbes_data order by TIME DESC limit 100
 	</select>
 	
-	<!-- 根据分页数据start 和size查询数据 -->
-	<select id="findByPage" parameterType="Map" resultMap="BbesDataResult">
-		select
-		<include refid="bag_Column_List" />
-		from bbes_data
-		<if test="start!=null and size!=null">
-			limit #{start},#{size}
-		</if>
-	</select>
-	
-	
-	<!-- 查询用户记录总数 -->
-	<select id="selectCount" resultType="int">
-		select count(*) from bbes_data
-	</select>
-	
 	<!-- 显示实时的数据,查询出最新一条的数据 -->
 	<select id="realtime"  parameterType="Map" resultMap="BbesDataResult">
 	select * from bbes_data order by TIME DESC limit 1
 	</select>
+	
 	
 	<!-- 分页查询数据 -->
 	<select id="queryPageData" parameterType="Map" resultMap="BbesDataResult">

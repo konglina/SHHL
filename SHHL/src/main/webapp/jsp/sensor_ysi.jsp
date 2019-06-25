@@ -61,66 +61,59 @@
              
              		<table id="sample-table-1" class="table table-striped table-bordered table-hover" style="margin: 0px;padding: 0px">
     	<tr >
-        	<th>日期</th>
-        	<td>2019-04-12</td>
+        	<th>时间</th>
+        	<td id="date">${newysi.TIME}</td>
         </tr>
-        <tr>
-        	<th>时刻</th>
-            <td>6:01</td>    
-        </tr>    
         <tr >
             <th>Turbidity</th>
-            <td>0.21</td>
+            <td id="Turbidity">${newysi.turbidity}</td>
         </tr>
         <tr>
-            <th>TTS</th>
-            <td>0.00</td>      
+            <th>TSS</th>
+            <td id="TSS">${newysi.TSS}</td>      
         </tr>   
         <tr >
             <th>Chlorophyll</th>
-            <td>0.01</td>
+            <td id="Chlorophyll">${newysi.chlorophyll}</td>
         </tr>
         <tr>
             <th>BGA-PE</th>
-            <td>0.01</td>      
+            <td id="BGA_PE">${newysi.BGA_PE}</td>      
         </tr>   
         <tr >
             <th>ODO</th> 
-            <td>100.43</td>
+            <td id="ODO">${newysi.ODO}</td>
         </tr>
         <tr>
             <th>Temperature</th>    
-            <td>27.78</td>    
+            <td id="Temperature">${newysi.temperature}</td>    
         </tr>      
         <tr >
             <th>Specific Conductance</th>
-            <td>51589.16</td> 
+            <td id="Conductance">${newysi.specific_Conductance}</td> 
         </tr>
         <tr>
             <th>Salinity</th>
-            <td>33.83</td>
+            <td id="Salinity">${newysi.salinity}</td>
         </tr>    
         <tr >
             <th>pH</th>
-            <td>7.95</td>
+            <td id="pH">${newysi.pH}</td>
         </tr>
         <tr>
             <th>ORP</th>
-            <td>-4.98</td>      
+            <td id="ORP">${newysi.ORP}</td>      
         </tr>    
         <tr >
             <th>Pressure</th>
-            <td>7.92</td> 
+            <td id="Pressure">${newysi.pressure}</td> 
         </tr>
         <tr>
-            <th>Deth</th>
-            <td>5.45</td>      
+            <th>Depth</th>
+            <td id="Depth">${newysi.depth}</td>      
         </tr>    
-        
     </table>
-              
         </div>
-		
     </div>
     
     <div class="col-sm-8">
@@ -136,8 +129,57 @@
     	<script type="text/javascript">
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.getElementById('ysi_shishi'));
-		
-       
+    	//格式化时间的函数
+        Date.prototype.format = function(fmt) { 
+             var o = { 
+                "M+" : this.getMonth()+1,                 //月份 
+                "d+" : this.getDate(),                    //日 
+                "h+" : this.getHours(),                   //小时 
+                "m+" : this.getMinutes(),                 //分 
+                "s+" : this.getSeconds(),                 //秒 
+                "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+                "S"  : this.getMilliseconds()             //毫秒 
+            }; 
+            if(/(y+)/.test(fmt)) {
+                    fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+            }
+             for(var k in o) {
+                if(new RegExp("("+ k +")").test(fmt)){
+                     fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+                 }
+             }
+            return fmt; 
+        }
+      	//放入实际的数据
+      	var bbesDataList=JSON.parse('<%=request.getAttribute("ysiDataList")%>');
+        var time = new Array();
+        var turbidity = new Array();
+        var tts = new Array();
+        var chlorophyll = new Array();
+        var bga_pe = new Array();
+        var odo = new Array();
+        var temperature = new Array();
+        var conductance = new Array();
+        var salinity = new Array();
+        var ph = new Array();
+        var orp = new Array();
+        var pressure = new Array();
+        var deth = new Array();
+        for(var i=0;i<bbesDataList.length;i++){
+        	time[i] = new Date(bbesDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss");
+        	turbidity[i] = bbesDataList[i].turbidity;
+        	tts[i]=bbesDataList[i].tts;
+        	chlorophyll[i]=bbesDataList[i].chlorophyll;
+        	bga_pe[i]=bbesDataList[i].bGA_PE;
+        	odo[i]=bbesDataList[i].oDO;
+        	temperature[i]=bbesDataList[i].temperature;
+        	conductance[i]=bbesDataList[i].specific_Conductance;
+        	salinity[i]=bbesDataList[i].salinity;
+        	ph[i]=bbesDataList[i].pH;
+        	orp[i]=bbesDataList[i].oRP;
+        	pressure[i]=bbesDataList[i].pressure;
+        	deth[i]=bbesDataList[i].deth;
+        }
         var option = {
         	    title: {
         	        text: ''
@@ -162,7 +204,7 @@
         	    xAxis: {
         	        type: 'category',
         	        boundaryGap: false,
-        	        data: ['周一','周二','周三','周四','周五','周六','周日']
+        	    	data:time
         	    },
         	    yAxis: {
         	        type: 'value',
@@ -175,234 +217,123 @@
         	            name:'Turbidity',
         	            type:'line',
         	            stack: '总量',
-        	            data:[120, 132, 101, 134, 90, 230, 210]
+        	            data:turbidity
         	        },
         	        {
         	            name:'TTS',
         	            type:'line',
         	            stack: '总量',
-        	            data:[220, 182, 191, 234, 290, 330, 310]
+        	            data:tts
         	        },
         	        {
         	            name:'Chlorophyll',
         	            type:'line',
         	            stack: '总量',
-        	            data:[150, 232, 201, 154, 190, 330, 410]
+        	            data:chlorophyll
         	        },
         	        {
         	            name:'BGA-PE',
         	            type:'line',
         	            stack: '总量',
-        	            data:[320, 332, 301, 334, 390, 330, 320]
+        	            data:bga_pe
         	        },
         	        {
         	            name:'ODO',
         	            type:'line',
         	            stack: '总量',
-        	            data:[820, 932, 901, 934, 1290, 1330, 1320]
+        	            data:odo
         	        },
         	        {
         	            name:'Temperature',
         	            type:'line',
         	            stack: '总量',
-        	            data:[825, 954, 985, 947, 1324, 1255, 1185]
+        	            data:temperature
         	        },
         	        {
         	            name:'Specific Conductance',
         	            type:'line',
         	            stack: '总量',
-        	            data:[835, 964, 995, 937, 1200, 1255, 1200]
+        	            data:conductance
         	        },
         	        {
         	            name:'Salinity',
         	            type:'line',
         	            stack: '总量',
-        	            data:[845, 964, 995, 957, 1424, 1355, 1085]
+        	            data:salinity
         	        },
         	        {
         	            name:'pH',
         	            type:'line',
         	            stack: '总量',
-        	            data:[855, 974, 1005, 1147, 1224, 1355, 1285]
+        	            data:ph
         	        },
         	        {
         	            name:'ORP',
         	            type:'line',
         	            stack: '总量',
-        	            data:[865, 854, 1085, 1047, 1124, 1055, 985]
+        	            data:orp
         	        },
         	        {
         	            name:'Pressure',
         	            type:'line',
         	            stack: '总量',
-        	            data:[870, 754, 1185, 1247, 1424, 1555, 1385]
+        	            data:pressure
         	        },
         	        {
         	            name:'Deth',
         	            type:'line',
         	            stack: '总量',
-        	            data:[885, 954, 985, 1347, 1224, 1155, 1085]
+        	            data:deth
         	        }
         	        
         	    ]
         	};
-
-
         // 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option);
+        
+      	//实时的刷新数据，10秒刷新一次
+    	$(document).ready(function () {
+            setInterval("startRequest()", 10000);//10s一次
+        });
+        function startRequest() {
+            $.ajax({
+                url:  "${pageContext.request.contextPath}/ysiData/realtime.do",
+                type: 'POST',
+                success: function (data) {
+                	 var realtime=JSON.parse(data);//最新的数据
+                	$("#Turbidity").empty();
+                 	$("#Turbidity").text(realtime[0].turbidity);
+                 	$("#TSS").empty();
+                 	$("#TSS").text(realtime[0].tSS);
+                 	$("#Chlorophyll").empty();
+                 	$("#Chlorophyll").text(realtime[0].chlorophyll);
+                 	$("#BGA_PE").empty();
+                 	$("#BGA_PE").text(realtime[0].bGA_PE);
+                 	$("#ODO").empty();
+                 	$("#ODO").text(realtime[0].oDO);
+                 	$("#Temperature").empty();
+                 	$("#Temperature").text(realtime[0].temperature);
+                 	$("#Conductance").empty();
+                 	$("#Conductance").text(realtime[0].specific_Conductance);
+                 	$("#Salinity").empty();
+                 	$("#Salinity").text(realtime[0].salinity);
+                 	$("#pH").empty();
+                 	$("#pH").text(realtime[0].pH);
+                 	$("#ORP").empty();
+                 	$("#ORP").text(realtime[0].oRP);
+                 	$("#Pressure").empty();
+                 	$("#Pressure").text(realtime[0].pressure);
+                 	$("#Depth").empty();
+                 	$("#Depth").text(realtime[0].depth);
+                }, 
+                error : function(jqXHR) {
+                    alert("发生错误：" + jqXHR.status);
+                },
+            });
+        }
     	</script>
     	</div>
 	</div>
-	<!-- shishi_end -->
-    <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5>
-	<div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">编号</label>
-                <div class="col-sm-5">
-                	<input type="text" readonly="readonly" name="staffId" class="form-control input-sm" placeholder="自动生成编号"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">姓名</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffName" class="form-control input-sm" placeholder="请输入姓名"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    开始2
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">年龄</label>
-                <div class="col-sm-3">
-                	<input type="text" name="staffAge" class="form-control input-sm" placeholder="请输入年龄"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">性别</label>
-                <div class="col-sm-5">
-                	<select name="staffSex">
-                    	<option>保密</option>
-                        <option>男</option>
-                        <option>女</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    结束2
-     开始3
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">籍贯</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffNativePlace" class="form-control input-sm" placeholder="请输入籍贯"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">身份证号码</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffIdcard" class="form-control input-sm" placeholder="请输入籍贯"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    结束3
-      开始4
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">出生日期</label>
-                <div class="col-sm-5">
-                	<input type="text" readonly="readonly" name="staffBirthday" class="form-control input-sm" onclick="WdatePicker()" placeholder="请输入出生日期"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">办公电话</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffOfficePhone" class="form-control input-sm" placeholder="请输入办公电话"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    结束4
-      开始5
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">电子邮件</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffEmail" class="form-control input-sm" placeholder="请输入电子邮件"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">移动电话</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffMobilePhone" class="form-control input-sm" placeholder="请输入移动电话"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    结束5
-      开63
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">家庭住址</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffAddr" class="form-control input-sm" placeholder="请输入家庭住址"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">QQ</label>
-                <div class="col-sm-9">
-                	<input type="text" name="staffQq" class="form-control input-sm" placeholder="请输入QQ"/>
-                </div>
-            </div>
-        </div>
-    </div>
-    结束6
-      开76
-    <div class="row">
-    	<div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">入职时间</label>
-                <div class="col-sm-5">
-                	<input type="text" readonly="readonly" name="staffEntryTime" class="form-control input-sm " onclick="WdatePicker()" placeholder="请输入入职时间"/>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-5">
-        	<div class="form-group">
-            	<label class="col-sm-3 control-label">教育水平</label>
-                <div class="col-sm-9">
-                	<select class="form-control" name="staffEduLevel">
-                    	<option>保密</option>
-                        <option>博士</option>
-                        <option>硕士</option>
-                        <option>本科</option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    <!--结束7-->
-    <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
       <!--备注-->
     <div class="row alert alert-info" style="margin:0px; padding:3px">
 		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">历史数据查询</div>
@@ -411,7 +342,7 @@
 	    		<span class="input-group-addon">
 					开始&nbsp;
 				</span>
-				<input type="text" id="test1" class="form-control">
+				<input type="text" id="startTime" class="form-control">
 				<span class="input-group-addon">
 					<i class="icon-calendar"></i>
 				</span>
@@ -423,213 +354,45 @@
 	    		<span class="input-group-addon">
 					结束&nbsp;
 				</span>
-				<input type="text" id="test2" class="form-control">
+				<input type="text" id="endTime" class="form-control">
 				<span class="input-group-addon">
 					<i class="icon-calendar"></i>
 				</span>
 			</div>
 	   </div>
-	  
-	   <div class="col-sm-2" style="padding-top:5px;padding-bottom:2px;">
-	    	<div class="input-group input-group-sm">
-	    		<span class="input-group-addon">
-					指标&nbsp;
-				</span>
-	    	<select class="form-control">
-	    		<option>请选择...</option>
-	        	<option>Turbidity</option>
-	            <option>TTS</option>
-	            <option>Chlorophyll</option>
-	            <option>BGA-PE</option>
-	            <option>ODO</option>
-	            <option>Temperature</option>
-	            <option>Specific Conductance</option>
-	            <option>Salinity</option>
-	            <option>pH</option>
-	            <option>ORP</option>
-	            <option>Pressure</option>
-	            <option>Deth</option>
-	        </select>
-	    	</div>
-	    </div>
 	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
-		   	<input type="button" class="btn btn-danger" value="查询"/>
+		   	<input id="queryBtn" type="button" class="btn btn-danger" value="查询"/>
 		 </div>
 	</div>
 </form>
 <div class="row"  style="padding:15px; padding-top:0px;margin-top:2px;" >
 		<table class="table table-condensed table-striped table-bordered table-hover">
-    	<tr >
-        	<th>Time</th>
-            <th>Turbidity</th>
-            <th>TTS</th>
-            <th>Chlorophyll</th>
-            <th>BGA-PE</th>
-            <th>ODO</th>
-            <th>Temperature</th>
-            <th>Specific Conductance</th>
-            <th>Salinity</th>
-            <th>pH</th>
-            <th>ORP</th>
-            <th>Pressure</th>
-            <th>Deth</th> 
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:57:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>13</td>
-           
-        </tr>
-		<tr>
-        	<td><a href="#">2019-06-09 14:59:48</a></td>
-            <td>27</td>
-            <td>14</td>
-            <td>25</td>
-            <td>16</td>
-            <td>27</td>
-            <td>18</td>
-            <td>29</td>
-            <td>11</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>13</td>
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 15:00:48</a></td>
-            <td>20</td>
-            <td>22</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>30</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>18</td> 
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:01:48</a></td>
-            <td>30</td>
-            <td>22</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>44</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>23</td> 
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:02:48</a></td>
-            <td>22</td>
-            <td>25</td>
-            <td>23</td>
-            <td>24</td>
-            <td>20</td>
-            <td>23</td>
-            <td>30</td>
-            <td>23</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>13</td>
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:03:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>13</td>
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:04:48</a></td>
-            <td>5</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>13</td>
-        </tr>
-        <tr>
-        	<td><a href="#">2019-06-09 14:05:48</a></td>
-            <td>36</td>
-            <td>25</td>
-            <td>45</td>
-            <td>36</td>
-            <td>13</td>
-            <td>26</td>
-            <td>20</td>
-            <td>25</td>
-            <td>23</td>
-            <td>22</td>
-            <td></td>
-            <td>13</td>
-        </tr>
-         <tr>
-        	<td><a href="#">2019-06-09 14:06:48</a></td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td>26</td>
-            <td>13</td>
-            <td></td>
-            <td>13</td>
-        </tr>
+		<thead>
+			<tr>
+		       	<th>Time</th>
+		           <th>Turbidity</th>
+		           <th>TSS</th>
+		           <th>Chlorophyll</th>
+		           <th>BGA-PE</th>
+		           <th>ODO</th>
+		           <th>Temperature</th>
+		           <th>Specific Conductance</th>
+		           <th>Salinity</th>
+		           <th>pH</th>
+		           <th>ORP</th>
+		           <th>Pressure</th>
+		           <th>Deth</th> 
+		       </tr>
+		</thead>
+		<tbody id="dataBody">
+		
+		</tbody>
         <tfoot>
         	<tr>
         		<td colspan="100%" align="center">
         		 <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
+        		 
+				 </ul>
         	</td>
         	</tr>
         </tfoot>
@@ -719,14 +482,131 @@
 	if (option && typeof option === "object") {
 	    myChart.setOption(option, true);
 	}
+	
+	//格式化时间的函数
+    Date.prototype.format = function(fmt) { 
+         var o = { 
+            "M+" : this.getMonth()+1,                 //月份 
+            "d+" : this.getDate(),                    //日 
+            "h+" : this.getHours(),                   //小时 
+            "m+" : this.getMinutes(),                 //分 
+            "s+" : this.getSeconds(),                 //秒 
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+            "S"  : this.getMilliseconds()             //毫秒 
+        }; 
+        if(/(y+)/.test(fmt)) {
+                fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+        }
+         for(var k in o) {
+            if(new RegExp("("+ k +")").test(fmt)){
+                 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+             }
+         }
+        return fmt; 
+    }
+	
+	var likeflag = false;
+	$(function () {
+	    pageQuery(1);//当页面加载完成查询第一页
+	    $("#queryBtn").click(function(){
+	    	var startTime = $("#startTime").val();
+	    	var endTime = $("#endTime").val();
+	    	if(startTime != "" && endTime != " "){
+	    		likeflag = true;
+	    	}
+	    	pageQuery(1);
+	    });
+	});
+	function pageQuery(pageno){
+		var jsonData = {"pageno":pageno, "pagesize":10};
+       	var update = false;
+       	if(pageno==1){
+       		update = true;
+       		jsonData.update = update;
+       	}else{
+       		jsonData.update = update;
+       	}
+        if(likeflag == true){
+        	jsonData.startTime = $("#startTime").val();
+        	jsonData.endTime = $("#endTime").val(); 	
+        }
+        var state = $("#state").val();
+        $.ajax({
+            type:"POST",
+            url :"${pageContext.request.contextPath}/ysiData/pageQuery.do",
+            data: jsonData,
+            success:function(result){
+            	var pageObj = result.data; //拿到json对象中的data
+            	 var datas = pageObj.datas; //拿到data中的datas（集合）
+            	var content = "";//拼接表格
+            	for(var i=0;i<datas.length;i++){
+            		content += '<tr>';
+            		content += '<th>'+new Date(datas[i].time).format("yyyy-MM-dd hh:mm:ss")+'</th>';
+            		content += '<th>'+datas[i].turbidity+'</th>';
+            		content += '<th>'+datas[i].tss+'</th>';
+            		content += '<th>'+datas[i].chlorophyll+'</th>';
+            		content += '<th>'+datas[i].bga_PE+'</th>';
+            		content += '<th>'+datas[i].odo+'</th>';
+            		content += '<th>'+datas[i].temperature+'</th>';
+            		content += '<th>'+datas[i].specific_Conductance+'</th>';
+            		content += '<th>'+datas[i].salinity+'</th>';
+            		content += '<th>'+datas[i].pH+'</th>';
+            		content += '<th>'+datas[i].orp+'</th>';
+            		content += '<th>'+datas[i].pressure+'</th>';
+            		content += '<th>'+datas[i].depth+'</th>';
+            		content +='</tr>';
+            	}
+            	 $("#dataBody").html(content);
+            	 
+            	 var totalno = pageObj.totalPage;
+                 var pageContent = "";
+                 //首页
+                 pageContent += '<li onclick="pageQuery('+1+')"><a href="#">首页</a></li>';
+                 //上一页
+                 if( pageno == 1){
+                     pageContent += '<li class="disabled"><a href="#">上一页</a></li>';
+                 }else{
+                     pageContent += '<li onclick="pageQuery('+(pageno -1)+')"><a href="#">上一页</a></li>';
+                 }
+                 //中间部分
+                 for( var i = pageno - 2; i< pageno + 2; i++){
+                     if(i<1||i>totalno){
+                          continue;
+                     }
+                     if( pageno == i){
+                          pageContent += '<li class="active"><a href="#">'+i+'</a></li>';
+                     }else{
+                          pageContent += '<li onclick="pageQuery('+i+')"><a href="#">'+i+'</a></li>';
+                     }
+                 }
+                 //下一页
+                 if(pageno == totalno){
+                     pageContent += '<li class="disabled"><a href="#">下一页</a></li>';
+                 }else{
+                     pageContent += '<li onclick="pageQuery('+(pageno + 1 )+')"><a href="#">下一页</a></li>';
+                 }
+                 //尾页
+                 pageContent += '<li onclick="pageQuery('+totalno+')"><a href="#">尾页</a></li>';
+                 pageContent += '<li><a>共' + pageObj.totalPage + '页</a></li>';
+                 $(".pagination").html(pageContent);
+            },
+            error : function(jqXHR) {
+                alert("发生错误：" + jqXHR.status);
+            },
+        });
+	}
  </script>
  <script>
 //执行一个laydate实例
 laydate.render({
-  elem: '#test1' //指定元素
+  elem: '#startTime',//指定元素
+  type:'datetime',
+  format:'yyyy-MM-dd HH:mm:ss'
 });
 laydate.render({
-	  elem: '#test2' //指定元素
+	  elem: '#endTime', //指定元素
+	  type:'datetime',
+	  format:'yyyy-MM-dd HH:mm:ss'
 	});
 </script>
 </body>
