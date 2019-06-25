@@ -396,7 +396,7 @@ function clickStartRealPlay() {
 	if (0 == iRet) {
 		szInfo = "开始预览成功！";
 	} else {
-		szInfo = "开始预览失败！";
+		szInfo = "开始预览失败！,请检查网络和设备信息！";
 	}
 	showOPInfo(szIP + " " + szInfo);
 }
