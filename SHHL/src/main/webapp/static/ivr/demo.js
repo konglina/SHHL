@@ -10,7 +10,7 @@ $(function () {
 	}
 	
 	// 初始化插件参数及插入插件
-	WebVideoCtrl.I_InitPlugin(100%, 100%, {
+	WebVideoCtrl.I_InitPlugin("100%", "100%", {
         iWndowType: 1,
 		cbSelWnd: function (xmlDoc) {
 			g_iWndIndex = $(xmlDoc).find("SelectWnd").eq(0).text();
@@ -150,14 +150,12 @@ function changeWndNum(iType) {
 	iType = parseInt(iType, 10);
 	WebVideoCtrl.I_ChangeWndNum(iType);
 }
-
 // 登录
 function clickLogin() {
 	var szIP = $("#loginip").val(),
 		szPort = $("#port").val(),
 		szUsername = $("#username").val(),
 		szPassword = $("#password").val();
-
 	if ("" == szIP || "" == szPort) {
 		return;
 	}
@@ -283,7 +281,7 @@ function getChannelInfo() {
 			showOPInfo(szIP + " 获取数字通道成功！");
 		},
 		error: function () {
-			showOPInfo(szIP + " 获取数字通道失败！");
+			//showOPInfo(szIP + " 获取数字通道失败！");
 		}
 	});
 	// 零通道
@@ -305,7 +303,7 @@ function getChannelInfo() {
 			showOPInfo(szIP + " 获取零通道成功！");
 		},
 		error: function () {
-			showOPInfo(szIP + " 获取零通道失败！");
+			//showOPInfo(szIP + " 获取零通道失败！");
 		}
 	});
 }
@@ -381,7 +379,6 @@ function clickStartRealPlay() {
 		iChannelID = parseInt($("#channels").val(), 10),
 		bZeroChannel = $("#channels option").eq($("#channels").get(0).selectedIndex).attr("bZero") == "true" ? true : false,
 		szInfo = "";
-
 	if ("" == szIP) {
 		return;
 	}
@@ -401,7 +398,6 @@ function clickStartRealPlay() {
 	} else {
 		szInfo = "开始预览失败！";
 	}
-
 	showOPInfo(szIP + " " + szInfo);
 }
 

@@ -354,9 +354,9 @@
 									</a>
 								</li>
 								<li>
-									<a href="jsp/realtime_stream.jsp" target="mainframe">
+									<a href="${pageContext.request.contextPath}/boxenv/realtime_stream.do" target="mainframe">
 										<i class="icon-double-angle-right"></i>
-										实时流
+										视频监控
 									</a>
 								</li>
                             </ul>

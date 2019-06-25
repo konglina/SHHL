@@ -1,5 +1,6 @@
 package com.guet.controller;
 
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Map;
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -14,6 +16,7 @@ import com.guet.entity.AjaxResult;
 import com.guet.entity.BbesData;
 import com.guet.entity.BoxEnv;
 import com.guet.entity.Page;
+import com.guet.init.getConfigInfo;
 import com.guet.service.BoxEnvService;
 import com.guet.util.DateUtil;
 
@@ -71,6 +74,23 @@ public class BoxEnvController {
     	result.setData(page);
         
 		return result;
+	}
+	@RequestMapping("realtime_stream")
+	public String realtime(Model model){
+		
+		try {
+			String ip = getConfigInfo.getInfo("device.ip");
+			String username = getConfigInfo.getInfo("device.username");
+			String password = getConfigInfo.getInfo("device.password");
+			model.addAttribute("ip", ip);
+			model.addAttribute("username", username);
+			model.addAttribute("password", password);
+			System.out.println(ip + "," + username + "," + password);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "realtime_stream";
 	}
 	
 }
