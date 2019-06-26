@@ -6,230 +6,299 @@ import java.sql.Timestamp;
 
 public class BoxEnv {
 	private Timestamp TIME;
-	private BigDecimal InVoltage;
-	private BigDecimal InCurrent;
-	private BigDecimal Humidity;
-	private BigDecimal Leakage;
-	private BigDecimal Temperature1;
-	private BigDecimal Temperature2;
-	private BigDecimal Temperature3;
-	private BigDecimal Temperature4;
-	private BigDecimal OutVoltage1;
-	private BigDecimal OutVoltage2;
-	private BigDecimal OutVoltage3;
-	private BigDecimal OutVoltage4;
-	private BigDecimal OutVoltage5;
-	private BigDecimal OutVoltage6;
-	private BigDecimal OutVoltage7;
-	private BigDecimal OutVoltage8;
-	private BigDecimal OutCurrent1;
-	private BigDecimal OutCurrent2;
-	private BigDecimal OutCurrent3;
-	private BigDecimal OutCurrent4;
-	private BigDecimal OutCurrent5;
-	private BigDecimal OutCurrent6;
-	private BigDecimal OutCurrent7;
-	private BigDecimal OutCurrent8;
+	private BigDecimal inVoltage;
+	private BigDecimal inCurrent;
+	private BigDecimal humidity;
+	private BigDecimal leakage;
+	private BigDecimal temperature1;
+	private BigDecimal temperature2;
+	private BigDecimal temperature3;
+	private BigDecimal temperature4;
+	private BigDecimal outVoltage1;
+	private BigDecimal outVoltage2;
+	private BigDecimal outVoltage3;
+	private BigDecimal outVoltage4;
+	private BigDecimal outVoltage5;
+	private BigDecimal outVoltage6;
+	private BigDecimal outVoltage7;
+	private BigDecimal outVoltage8;
+	private BigDecimal outCurrent1;
+	private BigDecimal outCurrent2;
+	private BigDecimal outCurrent3;
+	private BigDecimal outCurrent4;
+	private BigDecimal outCurrent5;
+	private BigDecimal outCurrent6;
+	private BigDecimal outCurrent7;
+	private BigDecimal outCurrent8;
 	
 	
 	public BoxEnv() {
 		super();
 	}
-	public BoxEnv(Timestamp tIME, BigDecimal inVoltage, BigDecimal inCurrent, BigDecimal humidity, BigDecimal leakage,
-			BigDecimal temperature1, BigDecimal temperature2, BigDecimal temperature3, BigDecimal temperature4,
-			BigDecimal outVoltage1, BigDecimal outVoltage2, BigDecimal outVoltage3, BigDecimal outVoltage4,
-			BigDecimal outVoltage5, BigDecimal outVoltage6, BigDecimal outVoltage7, BigDecimal outVoltage8,
-			BigDecimal outCurrent1, BigDecimal outCurrent2, BigDecimal outCurrent3, BigDecimal outCurrent4,
-			BigDecimal outCurrent5, BigDecimal outCurrent6, BigDecimal outCurrent7, BigDecimal outCurrent8) {
-		super();
-		TIME = tIME;
-		InVoltage = inVoltage;
-		InCurrent = inCurrent;
-		Humidity = humidity;
-		Leakage = leakage;
-		Temperature1 = temperature1;
-		Temperature2 = temperature2;
-		Temperature3 = temperature3;
-		Temperature4 = temperature4;
-		OutVoltage1 = outVoltage1;
-		OutVoltage2 = outVoltage2;
-		OutVoltage3 = outVoltage3;
-		OutVoltage4 = outVoltage4;
-		OutVoltage5 = outVoltage5;
-		OutVoltage6 = outVoltage6;
-		OutVoltage7 = outVoltage7;
-		OutVoltage8 = outVoltage8;
-		OutCurrent1 = outCurrent1;
-		OutCurrent2 = outCurrent2;
-		OutCurrent3 = outCurrent3;
-		OutCurrent4 = outCurrent4;
-		OutCurrent5 = outCurrent5;
-		OutCurrent6 = outCurrent6;
-		OutCurrent7 = outCurrent7;
-		OutCurrent8 = outCurrent8;
-	}
+
+
 	public Timestamp getTIME() {
 		return TIME;
 	}
+
+
 	public void setTIME(Timestamp tIME) {
 		TIME = tIME;
 	}
+
+
 	public BigDecimal getInVoltage() {
-		return InVoltage;
+		return inVoltage;
 	}
+
+
 	public void setInVoltage(BigDecimal inVoltage) {
-		InVoltage = inVoltage;
+		this.inVoltage = inVoltage;
 	}
+
+
 	public BigDecimal getInCurrent() {
-		return InCurrent;
+		return inCurrent;
 	}
+
+
 	public void setInCurrent(BigDecimal inCurrent) {
-		InCurrent = inCurrent;
+		this.inCurrent = inCurrent;
 	}
+
+
 	public BigDecimal getHumidity() {
-		return Humidity;
+		return humidity;
 	}
+
+
 	public void setHumidity(BigDecimal humidity) {
-		Humidity = humidity;
+		this.humidity = humidity;
 	}
+
+
 	public BigDecimal getLeakage() {
-		return Leakage;
+		return leakage;
 	}
+
+
 	public void setLeakage(BigDecimal leakage) {
-		Leakage = leakage;
+		this.leakage = leakage;
 	}
+
+
 	public BigDecimal getTemperature1() {
-		return Temperature1;
+		return temperature1;
 	}
+
+
 	public void setTemperature1(BigDecimal temperature1) {
-		Temperature1 = temperature1;
+		this.temperature1 = temperature1;
 	}
+
+
 	public BigDecimal getTemperature2() {
-		return Temperature2;
+		return temperature2;
 	}
+
+
 	public void setTemperature2(BigDecimal temperature2) {
-		Temperature2 = temperature2;
+		this.temperature2 = temperature2;
 	}
+
+
 	public BigDecimal getTemperature3() {
-		return Temperature3;
+		return temperature3;
 	}
+
+
 	public void setTemperature3(BigDecimal temperature3) {
-		Temperature3 = temperature3;
+		this.temperature3 = temperature3;
 	}
+
+
 	public BigDecimal getTemperature4() {
-		return Temperature4;
+		return temperature4;
 	}
+
+
 	public void setTemperature4(BigDecimal temperature4) {
-		Temperature4 = temperature4;
+		this.temperature4 = temperature4;
 	}
+
+
 	public BigDecimal getOutVoltage1() {
-		return OutVoltage1;
+		return outVoltage1;
 	}
+
+
 	public void setOutVoltage1(BigDecimal outVoltage1) {
-		OutVoltage1 = outVoltage1;
+		this.outVoltage1 = outVoltage1;
 	}
+
+
 	public BigDecimal getOutVoltage2() {
-		return OutVoltage2;
+		return outVoltage2;
 	}
+
+
 	public void setOutVoltage2(BigDecimal outVoltage2) {
-		OutVoltage2 = outVoltage2;
+		this.outVoltage2 = outVoltage2;
 	}
+
+
 	public BigDecimal getOutVoltage3() {
-		return OutVoltage3;
+		return outVoltage3;
 	}
+
+
 	public void setOutVoltage3(BigDecimal outVoltage3) {
-		OutVoltage3 = outVoltage3;
+		this.outVoltage3 = outVoltage3;
 	}
+
+
 	public BigDecimal getOutVoltage4() {
-		return OutVoltage4;
+		return outVoltage4;
 	}
+
+
 	public void setOutVoltage4(BigDecimal outVoltage4) {
-		OutVoltage4 = outVoltage4;
+		this.outVoltage4 = outVoltage4;
 	}
+
+
 	public BigDecimal getOutVoltage5() {
-		return OutVoltage5;
+		return outVoltage5;
 	}
+
+
 	public void setOutVoltage5(BigDecimal outVoltage5) {
-		OutVoltage5 = outVoltage5;
+		this.outVoltage5 = outVoltage5;
 	}
+
+
 	public BigDecimal getOutVoltage6() {
-		return OutVoltage6;
+		return outVoltage6;
 	}
+
+
 	public void setOutVoltage6(BigDecimal outVoltage6) {
-		OutVoltage6 = outVoltage6;
+		this.outVoltage6 = outVoltage6;
 	}
+
+
 	public BigDecimal getOutVoltage7() {
-		return OutVoltage7;
+		return outVoltage7;
 	}
+
+
 	public void setOutVoltage7(BigDecimal outVoltage7) {
-		OutVoltage7 = outVoltage7;
+		this.outVoltage7 = outVoltage7;
 	}
+
+
 	public BigDecimal getOutVoltage8() {
-		return OutVoltage8;
+		return outVoltage8;
 	}
+
+
 	public void setOutVoltage8(BigDecimal outVoltage8) {
-		OutVoltage8 = outVoltage8;
+		this.outVoltage8 = outVoltage8;
 	}
+
+
 	public BigDecimal getOutCurrent1() {
-		return OutCurrent1;
+		return outCurrent1;
 	}
+
+
 	public void setOutCurrent1(BigDecimal outCurrent1) {
-		OutCurrent1 = outCurrent1;
+		this.outCurrent1 = outCurrent1;
 	}
+
+
 	public BigDecimal getOutCurrent2() {
-		return OutCurrent2;
+		return outCurrent2;
 	}
+
+
 	public void setOutCurrent2(BigDecimal outCurrent2) {
-		OutCurrent2 = outCurrent2;
+		this.outCurrent2 = outCurrent2;
 	}
+
+
 	public BigDecimal getOutCurrent3() {
-		return OutCurrent3;
+		return outCurrent3;
 	}
+
+
 	public void setOutCurrent3(BigDecimal outCurrent3) {
-		OutCurrent3 = outCurrent3;
+		this.outCurrent3 = outCurrent3;
 	}
+
+
 	public BigDecimal getOutCurrent4() {
-		return OutCurrent4;
+		return outCurrent4;
 	}
+
+
 	public void setOutCurrent4(BigDecimal outCurrent4) {
-		OutCurrent4 = outCurrent4;
+		this.outCurrent4 = outCurrent4;
 	}
+
+
 	public BigDecimal getOutCurrent5() {
-		return OutCurrent5;
+		return outCurrent5;
 	}
+
+
 	public void setOutCurrent5(BigDecimal outCurrent5) {
-		OutCurrent5 = outCurrent5;
+		this.outCurrent5 = outCurrent5;
 	}
+
+
 	public BigDecimal getOutCurrent6() {
-		return OutCurrent6;
+		return outCurrent6;
 	}
+
+
 	public void setOutCurrent6(BigDecimal outCurrent6) {
-		OutCurrent6 = outCurrent6;
+		this.outCurrent6 = outCurrent6;
 	}
+
+
 	public BigDecimal getOutCurrent7() {
-		return OutCurrent7;
+		return outCurrent7;
 	}
+
+
 	public void setOutCurrent7(BigDecimal outCurrent7) {
-		OutCurrent7 = outCurrent7;
+		this.outCurrent7 = outCurrent7;
 	}
+
+
 	public BigDecimal getOutCurrent8() {
-		return OutCurrent8;
+		return outCurrent8;
 	}
+
+
 	public void setOutCurrent8(BigDecimal outCurrent8) {
-		OutCurrent8 = outCurrent8;
+		this.outCurrent8 = outCurrent8;
 	}
+
+
 	@Override
 	public String toString() {
-		return "BoxEnv [TIME=" + TIME + ", InVoltage=" + InVoltage + ", InCurrent=" + InCurrent + ", Humidity="
-				+ Humidity + ", Leakage=" + Leakage + ", Temperature1=" + Temperature1 + ", Temperature2="
-				+ Temperature2 + ", Temperature3=" + Temperature3 + ", Temperature4=" + Temperature4 + ", OutVoltage1="
-				+ OutVoltage1 + ", OutVoltage2=" + OutVoltage2 + ", OutVoltage3=" + OutVoltage3 + ", OutVoltage4="
-				+ OutVoltage4 + ", OutVoltage5=" + OutVoltage5 + ", OutVoltage6=" + OutVoltage6 + ", OutVoltage7="
-				+ OutVoltage7 + ", OutVoltage8=" + OutVoltage8 + ", OutCurrent1=" + OutCurrent1 + ", OutCurrent2="
-				+ OutCurrent2 + ", OutCurrent3=" + OutCurrent3 + ", OutCurrent4=" + OutCurrent4 + ", OutCurrent5="
-				+ OutCurrent5 + ", OutCurrent6=" + OutCurrent6 + ", OutCurrent7=" + OutCurrent7 + ", OutCurrent8="
-				+ OutCurrent8 + "]";
+		return "BoxEnv [TIME=" + TIME + ", inVoltage=" + inVoltage + ", inCurrent=" + inCurrent + ", humidity="
+				+ humidity + ", leakage=" + leakage + ", temperature1=" + temperature1 + ", temperature2="
+				+ temperature2 + ", temperature3=" + temperature3 + ", temperature4=" + temperature4 + ", outVoltage1="
+				+ outVoltage1 + ", outVoltage2=" + outVoltage2 + ", outVoltage3=" + outVoltage3 + ", outVoltage4="
+				+ outVoltage4 + ", outVoltage5=" + outVoltage5 + ", outVoltage6=" + outVoltage6 + ", outVoltage7="
+				+ outVoltage7 + ", outVoltage8=" + outVoltage8 + ", outCurrent1=" + outCurrent1 + ", outCurrent2="
+				+ outCurrent2 + ", outCurrent3=" + outCurrent3 + ", outCurrent4=" + outCurrent4 + ", outCurrent5="
+				+ outCurrent5 + ", outCurrent6=" + outCurrent6 + ", outCurrent7=" + outCurrent7 + ", outCurrent8="
+				+ outCurrent8 + "]";
 	}
 	
-	
+		
 }

@@ -17,7 +17,7 @@ public interface BoxEnvDao {
 	public List<BoxEnv> queryPageData(Map<String , Object> map);
 	/**
 	 * 查询总记录数
-	 * @param map
+	 * @param map开始预览失败
 	 * @return
 	 */
 	public int queryPageCount(Map<String, Object> map);

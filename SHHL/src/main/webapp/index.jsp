@@ -342,7 +342,7 @@
 							</a>
                             <ul class="submenu">
                           		<li>
-									<a href="jsp/jiebohe_shishi.jsp" target="mainframe">
+									<a href="${pageContext.request.contextPath}/boxenv/list.do" target="mainframe">
 										<i class="icon-double-angle-right"></i>
 										实时数据
 									</a>
