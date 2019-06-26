@@ -28,6 +28,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			limit #{start},#{size}
 		</if>
 	</select>
+	
+	<!-- 显示实时的数据,查询出最新一条的数据 -->
+	<select id="realtime"  parameterType="Map" resultMap="UvaDataResult">
+	select * from uva_data order by TIME DESC limit 1
+	</select>
+	
 	<select id="queryPageCount" parameterType="Map" resultType="Integer">
 		select count(*) from uva_data
 		<where>

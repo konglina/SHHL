@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.alibaba.fastjson.JSON;
 import com.guet.entity.AjaxResult;
-import com.guet.entity.BbesData2;
 import com.guet.entity.PageBean;
 import com.guet.entity.UvaData;
 import com.guet.service.UvaDataService;
@@ -34,6 +33,14 @@ public class UvaDataController {
 			model.addAttribute("newuva",uvaDataList.get(0));
 		}
 		return "sensor_uva";
+	}
+	
+	@RequestMapping("/realtime")
+	@ResponseBody
+	public String realtime(UvaData uvaData,Model model){
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<UvaData> uvaDataList = uvaDataService.realtime(map);
+		return JSON.toJSONString(uvaDataList);
 	}
 	
 	@RequestMapping("/pageQuery")

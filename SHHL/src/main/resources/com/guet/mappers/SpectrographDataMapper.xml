@@ -34,6 +34,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 		</where>
 	</select>
+	<!-- 显示实时的数据,查询出最新一条的数据 -->
+	<select id="realtime"  parameterType="Map" resultMap="SpectrographDataResult">
+	select * from spectrograph_data order by TIME DESC limit 1
+	</select>
 	<!-- 查询历史数据 -->
 	<select id="queryData" parameterType="Map" resultMap="SpectrographDataResult">
 		select * from spectrograph_data

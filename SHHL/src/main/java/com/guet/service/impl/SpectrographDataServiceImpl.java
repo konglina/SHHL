@@ -31,5 +31,9 @@ public class SpectrographDataServiceImpl implements SpectrographDataService{
 		// TODO Auto-generated method stub
 		return spectrographDataDao.queryData(map);
 	}
+	public List<SpectrographData> realtime(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return spectrographDataDao.realtime(map);
+	}
 
 }

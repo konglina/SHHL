@@ -46,15 +46,15 @@
     					<th class="col-sm-4">浓度</th>
     				</tr>
     				<tr class="row">
-    					<td class="col-sm-4">${newspectrograph.TIME}</td>
-    					<td class="col-sm-4">
+    					<td class="col-sm-4" id="time">${newspectrograph.TIME}</td>
+    					<td class="col-sm-4" id="states">
     					<c:choose>
     						<c:when test="${newspectrograph.states<=30}"><span class="label label-sm label-warning" style="background-color:#ffde33">${newspectrograph.states}</span></c:when>
 							<c:when test="${newspectrograph.states<=70&&newspectrograph.states>=30 }"><span class="label label-sm label-warning" style="background-color:#ff9933">${newspectrograph.states}</span></c:when>
 							<c:when test="${newspectrograph.states>=70}"><span style = "background-color:#cc0033" class="label label-sm label-warning" style="background-color:#cc0033">${newspectrograph.states}</span></c:when>
     					</c:choose>
     					</td>
-    					<td class="col-sm-4">${newspectrograph.consistency}</td>
+    					<td class="col-sm-4" id="consistency">${newspectrograph.consistency}</td>
     				</tr>
     			</table>
     		</div>
@@ -205,8 +205,6 @@
 							title : {
 								text:"近期浓度趋势"
 							},
-							
-							
 							 xAxis: {
 								 type: 'category',
 							        boundaryGap: false,
@@ -223,9 +221,39 @@
 							        
 							    }]
 						};
-
 						// 使用刚指定的配置项和数据显示图表。
 						myChart.setOption(option);
+						
+						//定时刷新,在此处初始化data
+						$(document).ready(function () {
+					        setInterval("startRequest()", 3000);//3s一次
+					    });
+						function startRequest(){
+							 $.ajax({
+						            url:  "${pageContext.request.contextPath}/spectrographData/realtime.do",
+						            type: 'POST',
+						            success: function (data) {
+						            	var realtime=JSON.parse(data);//最新的数据
+						            	$("#time").empty();
+					                 	$("#time").text(new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"));
+					                 	var statesHtml;
+										if(realtime[0].states<=30){
+					                 		statesHtml = '<span class="label label-sm label-warning" style="background-color:#ffde33">'+realtime[0].states+'</span>';
+					                 	}else if(realtime[0].states>=30&&realtime[0].states<=70){
+					                 		statesHtml = '<span class="label label-sm label-warning" style="background-color:#ff9933">'+realtime[0].states+'</span>';
+					                 	}else{
+					                 		statesHtml ='<span style = "background-color:#cc0033" class="label label-sm label-warning" style="background-color:#cc0033">'+realtime[0].states+'</span>';
+					                 	}
+					                 	$("#states").empty();
+					                 	$("#states").html(statesHtml);
+					                 	$("#consistency").empty();
+					                 	$("#consistency").text(realtime[0].consistency);
+						            },
+						            error : function(jqXHR) {
+						                alert("发生错误：" + jqXHR.status);
+						            },
+						        });
+							 }
 					</script>
 				</div>
     	</div>
@@ -243,8 +271,6 @@ laydate.render({
 	type:'datetime',
 	format:'yyyy-MM-dd HH:mm:ss'
 	});
-	
-
 </script>
 </body>
 </html>

@@ -292,7 +292,6 @@
      	
      	
         function updataChart(chartDatas){
-        	console.log(chartDatas);
         	myChart = echarts.init(document.getElementById('ysi_shishi'));
         	option = {
             	    title: {
@@ -335,7 +334,6 @@
         }
         
         function chooseChart(s){
-        	console.log(s);
         	switch(s){
         	case "Turbidity":
         		updataChart(turbidity);

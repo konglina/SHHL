@@ -36,6 +36,14 @@ public class SpectrographDataController {
 		return "sensor_spectrograph";
 	}
 	
+	@RequestMapping("/realtime")
+	@ResponseBody
+	public String realtime(SpectrographData bbesData,Model model){
+		Map<String, Object> map = new HashMap<String, Object>();
+		List<SpectrographData> spectrographDataList = spectrographDataService.realtime(map);
+		return JSON.toJSONString(spectrographDataList);
+	}
+	
 	@RequestMapping("/pageQuery")
 	@ResponseBody
 	public Object pageQuery(Integer pageno, Integer pagesize ,String startTime, String endTime, boolean update, HttpServletRequest request) throws Exception{

@@ -56,7 +56,7 @@
 	</div>
 		<div class="col-sm-5">
 			<label class="col-sm-2 control-label">系统时间:</label>
-            <div class="col-sm-3 control-label" >
+            <div class="col-sm-3 control-label" id="time">
             ${newuva.TIME}
         	</div>
         </div>
@@ -87,16 +87,15 @@
                  }
                 return fmt; 
             }
-        	var data = [];
+        	var voltage = [];
+        	var dataTime = [];
 			for(var i=0;i<uvaDataList.length;i++){
-				data.push(uvaDataList[i].voltage);
-			}
-			var dataTime = [];
-			for(var i=0;i<uvaDataList.length;i++){
+				voltage.push(uvaDataList[i].voltage);
 				dataTime.push(new Date(uvaDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 			}
+			
         	// 指定图表的配置项和数据
-        	var option = {
+        	var option1 = {
             	title: {
                 	text: '电压数据（mV nA）',
                 	left: 'center'
@@ -114,12 +113,12 @@
             	    },
             	series: [{
                 	name: 'voltage',
-                	data: data,
+                	data: voltage,
                     type: 'line'
             	}]
         	};
         	// 使用刚指定的配置项和数据显示图表。
-        	myChart1.setOption(option);
+        	myChart1.setOption(option1);
     	</script>
     	<!-- 电压波形结束 -->
     	
@@ -128,18 +127,14 @@
 		<script type="text/javascript">
         	// 基于准备好的dom，初始化echarts实例
         	var myChart2 = echarts.init(document.getElementById('dianliu_shishi'));
-			var data = [];
-			
-			for(var i=0;i<uvaDataList.length;i++){
-				data.push(uvaDataList[i].current);
-			}
-			
+			var current = [];
 			var dataTime = [];
 			for(var i=0;i<uvaDataList.length;i++){
+				current.push(uvaDataList[i].current);
 				dataTime.push(new Date(uvaDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 			}
         	// 指定图表的配置项和数据
-        	var option = {
+        	var option2 = {
             	title: {
                 	text: '电流数据（mV nA）',
                 	left: 'center'
@@ -156,12 +151,74 @@
             	    type: 'value'
             	    },
             	series: [{
-                	data: data,
+                	data: current,
                     type: 'line'
             	}]
         	};
         	// 使用刚指定的配置项和数据显示图表。
-        	myChart2.setOption(option);
+        	myChart2.setOption(option2);
+        	
+        	//实时的刷新数据，3秒刷新一次
+        	//保存上一次的时间，对比时间可得是否更新
+        	var lasttime = "${newuva.TIME}";
+        	var timeflag =0;
+        	//定时刷新,在此处初始化data
+        	$(document).ready(function () {
+                setInterval("startRequest()", 3000);//3s一次
+            });
+        	function startRequest(){
+        		 $.ajax({
+        	            url:  "${pageContext.request.contextPath}/uvaData/realtime.do",
+        	            type: 'POST',
+        	            success: function (data) {
+        	            	var realtime=JSON.parse(data);//最新的数据
+        	            	//如果时间时间没变，那么数据未更新
+        	            	if(realtime[0].tIME==lasttime){
+        	            		timeflag = timeflag + 3000;
+        	            		voltage.push(0);
+        	            		current.push(0);
+        	            		dataTime.push(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"));
+        	            		$("#time").empty();
+                             	$("#time").text(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"));
+        	            	}else{
+        	            		voltage.push(realtime[0].voltage);
+        	            		current.push(realtime[0].current);
+        	            		dataTime.push(new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"));
+        	            		lasttime=realtime[0].tIME;
+        	                	timeflag = 0;
+        	                	$("#time").empty();
+                             	$("#time").text(new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"));
+        	            	}
+        	            	voltage.shift();
+        	            	current.shift();
+        	            	dataTime.shift();
+        	            	
+        	            	
+        	            	myChart1.setOption({
+        	            		xAxis: {
+        	                	    type: 'category',
+        	                	    data: dataTime
+        	                	   },
+        	        	        series: [{
+        	        	            data: voltage
+        	        	        }]
+        	        	    });
+        	            	
+        	            	myChart2.setOption({
+        	            		xAxis: {
+        	                	    type: 'category',
+        	                	    data: dataTime
+        	                	   },
+        	        	        series: [{
+        	        	            data: current
+        	        	        }]
+        	        	    });
+        	            },
+        	            error : function(jqXHR) {
+        	                alert("发生错误：" + jqXHR.status);
+        	            },
+        	        });
+        	    }
     	</script>
     	<!-- 电流波形结束 -->
 	</div>

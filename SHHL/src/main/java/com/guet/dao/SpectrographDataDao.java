@@ -2,6 +2,8 @@ package com.guet.dao;
 
 import java.util.List;
 import java.util.Map;
+
+import com.guet.entity.BbesData;
 import com.guet.entity.SpectrographData;
 
 public interface SpectrographDataDao {
@@ -11,6 +13,12 @@ public interface SpectrographDataDao {
 	 * @return
 	 */
 	public List<SpectrographData> getList(Map<String, Object> map);
+	/**
+	 * 获取最新的一条数据
+	 * @param map
+	 * @return
+	 */
+	public List<SpectrographData> realtime(Map<String, Object> map);
 	
 	/**
 	 * 分页查询

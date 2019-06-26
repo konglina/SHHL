@@ -31,5 +31,9 @@ public class UvaDataServiceImpl implements UvaDataService{
 		// TODO Auto-generated method stub
 		return uvaDataDao.queryData(map);
 	}
+	public List<UvaData> realtime(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return uvaDataDao.realtime(map);
+	}
 
 }
