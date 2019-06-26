@@ -50,7 +50,6 @@ public class BbesDataController {
 	@RequestMapping("/pageQuery")
 	@ResponseBody
 	public Object pageQuery(Integer pageno, Integer pagesize ,String startTime, String endTime, boolean update, HttpServletRequest request) throws Exception{
-		System.out.println("update=" + update);
 		//1.准备分页参数
 		Map<String, Object> paramMap = new HashMap<String, Object>();
 		AjaxResult result = new AjaxResult();

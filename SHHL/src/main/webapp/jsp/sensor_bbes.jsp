@@ -50,13 +50,9 @@
  <div class="row alert alert-info" style="margin:0px; padding:3px">
 		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">实时数据</div>
 		 <div class="col-sm-5" style="padding-top:5px">
-	    	
 	   </div> 
-	   
 	   <div class="col-sm-5" style="padding-top:5px;padding-bottom:2px;">
-	    	
 	   </div>
-	  
 	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
 		   	<button type="button" class="btn btn-success" onClick="javascript:window.location='${pageContext.request.contextPath}/jsp/sensor_bbes_history.jsp'">查看历史数据</button>
 		 </div>
@@ -528,7 +524,6 @@
 	//放入实际的数据
 	var bbesDataList=JSON.parse('<%=request.getAttribute("bbesDataList")%>');
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].volt48]
@@ -584,7 +579,6 @@
 	var abel = [];//电流的数据
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].abel48]
@@ -851,11 +845,12 @@
 		realtime_myChart6.setOption(realtime_option6, true);
 	}
 	
+	
+	
 	//实时的刷新数据，3秒刷新一次
 	//保存上一次的时间，对比时间可得是否更新
 	var lasttime = "${newbbes.TIME}";
 	var timeflag =0;
-	var flag=true;
 	//定时刷新,在此处初始化data
 	$(document).ready(function () {
         setInterval("startRequest()", 3000);//3s一次
@@ -1010,7 +1005,6 @@
         	$("#pump5").empty();
         	$("#pump5").html(pump[4]);
         	
-        	console.log(solenoid[23]);
         	$("#solenoid1").empty();
         	$("#solenoid1").html(solenoid[0]);
         	$("#solenoid2").empty();
@@ -1177,7 +1171,6 @@
 	var volt = [];
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].volt48]
@@ -1233,7 +1226,6 @@
 	var abel = [];
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].abel48]
@@ -1289,7 +1281,6 @@
 	var temperature = [];
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].temperature]
@@ -1346,7 +1337,6 @@
 	var conductivity = [];//电导率
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].conductivity]
@@ -1402,7 +1392,6 @@
 	var pressure = [];//压力
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].pressure]
@@ -1459,7 +1448,6 @@
 	var salinity = [];//盐度
 	//放入实际的数据
 	for(var i=0;i<bbesDataList.length;i++){
-		//console.log("时间："+bbesDataList[i].tIME);
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].salinity]

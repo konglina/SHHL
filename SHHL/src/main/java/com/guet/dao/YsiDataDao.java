@@ -2,7 +2,6 @@ package com.guet.dao;
 
 import java.util.List;
 import java.util.Map;
-
 import com.guet.entity.YsiData;;
 
 public interface YsiDataDao {
@@ -26,4 +25,10 @@ public interface YsiDataDao {
 	 * @return
 	 */
 	public int queryPageCount(Map<String, Object> map);
+	/**
+	 * 查询历史数据
+	 * @param map
+	 * @return
+	 */
+	public List<YsiData> queryData(Map<String , Object> map);
 }

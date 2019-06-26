@@ -11,6 +11,7 @@ public class PageBean<T> {
     private int totalCount;//总记录数
     private int totalPage;//总页数
     private List<T> datas;//每页的显示的数据
+    private List<T> datas2;//显示历史数据...
 	public int getCurrPage() {
 		return currPage;
 	}
@@ -41,6 +42,10 @@ public class PageBean<T> {
 	public void setDatas(List<T> datas) {
 		this.datas = datas;
 	}
-    
-    
+	public List<T> getDatas2() {
+		return datas2;
+	}
+	public void setDatas2(List<T> datas2) {
+		this.datas2 = datas2;
+	}
 }

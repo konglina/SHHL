@@ -6,7 +6,6 @@ import com.guet.entity.BbesData2;;
 public interface BbesDataDao {
 	public List<BbesData> getList(Map<String, Object> map);
 	public List<BbesData> realtime(Map<String, Object> map);
-	
 	/**
 	 * 分页查询
 	 * @param map
