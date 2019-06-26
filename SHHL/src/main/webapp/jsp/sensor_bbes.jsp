@@ -50,13 +50,9 @@
  <div class="row alert alert-info" style="margin:0px; padding:3px">
 		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">实时数据</div>
 		 <div class="col-sm-5" style="padding-top:5px">
-	    	
 	   </div> 
-	   
 	   <div class="col-sm-5" style="padding-top:5px;padding-bottom:2px;">
-	    	
 	   </div>
-	  
 	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
 		   	<button type="button" class="btn btn-success" onClick="javascript:window.location='${pageContext.request.contextPath}/jsp/sensor_bbes_history.jsp'">查看历史数据</button>
 		 </div>

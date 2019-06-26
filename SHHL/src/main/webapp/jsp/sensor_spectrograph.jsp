@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -24,7 +25,16 @@
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
 	<!-- shishi_start -->
 	<div>
-    	<h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:3px;">实时数据</h5>
+	 <div class="row alert alert-info" style="margin:0px; padding:3px">
+		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">实时数据</div>
+		 <div class="col-sm-5" style="padding-top:5px">
+	   </div> 
+	   <div class="col-sm-5" style="padding-top:5px;padding-bottom:2px;">
+	   </div>
+	     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
+		   	<button type="button" class="btn btn-success" onClick="javascript:window.location='${pageContext.request.contextPath}/jsp/sensor_spectrograph_history.jsp'">查看历史数据</button>
+		 </div>
+	</div>
     	<div style="margin: 0px;padding: 3px">
     		<!-- shishi_table -->
     		<div >
@@ -36,9 +46,15 @@
     					<th class="col-sm-4">浓度</th>
     				</tr>
     				<tr class="row">
-    					<td class="col-sm-4">2019-6-9 17:46</td>
-    					<td class="col-sm-4"><span class="label label-sm label-warning">35</span></td>
-    					<td class="col-sm-4">1.82</td>
+    					<td class="col-sm-4">${newspectrograph.TIME}</td>
+    					<td class="col-sm-4">
+    					<c:choose>
+    						<c:when test="${newspectrograph.states<=30}"><span class="label label-sm label-warning" style="background-color:#ffde33">${newspectrograph.states}</span></c:when>
+							<c:when test="${newspectrograph.states<=70&&newspectrograph.states>=30 }"><span class="label label-sm label-warning" style="background-color:#ff9933">${newspectrograph.states}</span></c:when>
+							<c:when test="${newspectrograph.states>=70}"><span style = "background-color:#cc0033" class="label label-sm label-warning" style="background-color:#cc0033">${newspectrograph.states}</span></c:when>
+    					</c:choose>
+    					</td>
+    					<td class="col-sm-4">${newspectrograph.consistency}</td>
     				</tr>
     			</table>
     		</div>
@@ -57,28 +73,39 @@
 				</div>
 					<script type="text/javascript">
 						// 基于准备好的dom，初始化echarts实例
-						var a =0;
-						
 						var myChart = echarts.init(document.getElementById('shishi_zhuangtai'));
+						var spectrographDataList=JSON.parse('<%=request.getAttribute("spectrographDataList")%>');
+						
+						//格式化时间的函数
+			            Date.prototype.format = function(fmt) { 
+			                 var o = { 
+			                    "M+" : this.getMonth()+1,                 //月份 
+			                    "d+" : this.getDate(),                    //日 
+			                    "h+" : this.getHours(),                   //小时 
+			                    "m+" : this.getMinutes(),                 //分 
+			                    "s+" : this.getSeconds(),                 //秒 
+			                    "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+			                    "S"  : this.getMilliseconds()             //毫秒 
+			                }; 
+			                if(/(y+)/.test(fmt)) {
+			                        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+			                }
+			                 for(var k in o) {
+			                    if(new RegExp("("+ k +")").test(fmt)){
+			                         fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+			                     }
+			                 }
+			                return fmt; 
+			            }
 						
 						var data = [];
-						
-						for(var i = 0;i<30;i++){
-							data.push(Math.random()*100+1)
+						for(var i=0;i<spectrographDataList.length;i++){
+							data.push(spectrographDataList[i].states);
 						}
-						
 						var dataTime = [];
-						var time = new Date();
-						for(var i = 0;i<30;i++){
-							m = 0+i*2
-							value = [2019,time.getMonth(),9].join('/')+" 22:"+m
-							
-							
-							 
-							dataTime.push(value)
+						for(var i=0;i<spectrographDataList.length;i++){
+							dataTime.push(new Date(spectrographDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 						}
-						
-						
 						// 指定图表的配置项和数据
 						var option = {
 								title: {
@@ -94,7 +121,6 @@
 						            splitLine: {
 						                show: false
 						            },
-						           
 						        },
 						        toolbox: {
 						            left: 'center',
@@ -132,7 +158,7 @@
 						            }
 						        },
 						        series: {
-						            name: 'Beijing AQI',
+						            name: 'states',
 						            type: 'line',
 						            data: data,
 						            markLine: {
@@ -149,7 +175,6 @@
 						            }
 						        }
 						};
-
 						// 使用刚指定的配置项和数据显示图表。
 						myChart.setOption(option);
 					</script>
@@ -165,28 +190,16 @@
 				</div>
 					<script type="text/javascript">
 						// 基于准备好的dom，初始化echarts实例
-						var myChart = echarts.init(document
-								.getElementById('shishi_nongdu'));
-						
+						var myChart = echarts.init(document.getElementById('shishi_nongdu'));
 						var data = [];
 						
-						for(var i = 0;i<30;i++){
-							data.push(1.82+Math.random()-0.5)
+						for(var i=0;i<spectrographDataList.length;i++){
+							data.push(spectrographDataList[i].consistency);
 						}
-						
 						var dataTime = [];
-						var time = new Date();
-						for(var i = 0;i<30;i++){
-							m = 0+i*2
-							value = [2019,time.getMonth(),9].join('/')+" 22:"+m
-							
-							
-							 
-							dataTime.push(value)
+						for(var i=0;i<spectrographDataList.length;i++){
+							dataTime.push(new Date(spectrographDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 						}
-						
-						
-
 						// 指定图表的配置项和数据
 						var option = {
 							title : {
@@ -217,134 +230,21 @@
 				</div>
     	</div>
 	</div>
-	
-	<!-- shishi_end -->
-    <!--结束7-->
-    <!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0px; margin-bottom:5px">历史数据查询</h5> -->
-      <!--备注-->
-   
- <div class="page-content">
-<div class="row alert alert-info" style="margin:0px; padding:3px">
-	<div class="col-sm-1" style="padding-top:9px">历史数据查询</div>
-    <div class="col-sm-2" style="padding-top:4px;">
-    	<div class="input-group input-group-sm">
-    		<span class="input-group-addon">
-				开始&nbsp;
-			</span>
-			<input type="text" id="test1" class="form-control">
-			<span class="input-group-addon">
-				<i class="icon-calendar"></i>
-			</span>
-		</div>
-   </div> 
-   
-   <div class="col-sm-2" style="padding-top:4px;">
-    	<div class="input-group input-group-sm">
-    		<span class="input-group-addon">
-				结束&nbsp;
-			</span>
-			<input type="text" id="test2" class="form-control">
-			<span class="input-group-addon">
-				<i class="icon-calendar"></i>
-			</span>
-		</div>
-   </div>
-   <div class="col-sm-1" style="padding-top:4px;">
-   	<input type="button" class="btn btn-danger" value="查询"/>
-   </div>
-   
-</div>
-</div>
-<div class="row" style="padding:15px; padding-top:0px;margin-top:3px;" >
-	<table class="table table-condensed table-striped table-bordered table-hover">
-    	<tr class = "row">
-        	<th class="col-sm-4">时间</th>
-            <th class="col-sm-4">状态</th>
-            <th class="col-sm-4">浓度</th>
-           
-         
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:57:48</a></td>
-            <td><span class="label label-sm label-warning" background-color="#ff9933">53</span></td>
-            <td>13</td>
-           
-        </tr>
-		<tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:59:48</a></td>
-            <td><span style = "background-color:#cc0033" class="label label-sm label-warning" background-color="#cc0033">71</span></td>
-            <td>13</td>
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 15:00:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ffde33">26</span></td>
-            <td>2.3</td> 
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:01:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ff9933">35</span></td>
-            <td>2.0</td> 
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:02:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ff9933">34</span></td>
-            <td>1.4</td>
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:03:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ff9933">40</span></td>
-            <td>1.32</td>
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:04:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ffde33">26</span></td>
-            <td>1.30</td>
-        </tr>
-        <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:05:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ff9933">35</span></td>
-            <td>1.50</td>
-        </tr>
-         <tr class = "row">
-        	<td class="col-sm-4"><a href="#">2019-06-09 14:06:48</a></td>
-            <td><span class="label label-sm label-warning" style="background-color:#ff9933">37</span></td>
-            <td>1.82</td>
-        </tr>
-        <tfoot>
-        	<tr>
-        		<td colspan="100%" align="center">
-        		 <ul class="pagination">
-				    <li>
-				      <a href="#" aria-label="Previous">
-				        <span aria-hidden="true">&laquo;</span>
-				      </a>
-				    </li>
-				    <li><a href="#">1</a></li>
-				    <li><a href="#">2</a></li>
-				    <li><a href="#">3</a></li>
-				    <li><a href="#">4</a></li>
-				    <li><a href="#">5</a></li>
-				    <li>
-				      <a href="#" aria-label="Next">
-				        <span aria-hidden="true">&raquo;</span>
-				      </a>
-				    </li>
-				  </ul>
-        	</td>
-        	</tr>
-        </tfoot>
-    </table>
-    	
-</div>
 </form>
 <script>
 //执行一个laydate实例
-	laydate.render({
-	  elem: '#test1' //指定元素
+laydate.render({
+	elem: '#startTime',//指定元素
+	type:'datetime',
+	format:'yyyy-MM-dd HH:mm:ss'
+});
+laydate.render({
+	elem: '#endTime', //指定元素
+	type:'datetime',
+	format:'yyyy-MM-dd HH:mm:ss'
 	});
-	laydate.render({
-		  elem: '#test2' //指定元素
-		});
+	
+
 </script>
 </body>
 </html>

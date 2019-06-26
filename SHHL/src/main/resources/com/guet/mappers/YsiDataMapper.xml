@@ -50,4 +50,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			</if>
 		</where>
 	</select>
+	<!-- 查询历史数据 -->
+	<select id="queryData" parameterType="Map" resultMap="YsiDataResult">
+		select * from ysi_data
+		<where>
+			<if test="startTime!=null and endTime!=null">
+				 TIME <![CDATA[>=]]>#{startTime} and TIME <![CDATA[<=]]>#{endTime}
+			</if>
+		</where>
+		order by TIME desc limit 10000
+	</select>
 </mapper>

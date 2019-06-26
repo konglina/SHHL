@@ -18,6 +18,7 @@ import com.guet.entity.BbesData;
 import com.guet.entity.BbesData2;
 import com.guet.entity.Page;
 import com.guet.entity.PageBean;
+import com.guet.entity.UvaData;
 import com.guet.entity.YsiData;
 import com.guet.service.YsiDataService;
 import com.guet.util.DateUtil;
@@ -73,6 +74,10 @@ public class YsiDataController {
         page.setTotalPage(totalno);
         page.setCurrPage(pageno);
         page.setPageSize(pagesize);
+        if(update){
+        	List<YsiData> ysiData2s = ysiDataService.queryData(paramMap);
+        	page.setDatas2(ysiData2s);
+        }
     	result.setSuccess(true);
     	result.setData(page);
 		return result;

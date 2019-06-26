@@ -32,5 +32,9 @@ public class YsiDataServiceImpl implements YsiDataService{
 		// TODO Auto-generated method stub
 		return ysiDataDao.queryPageCount(map);
 	}
+	public List<YsiData> queryData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return ysiDataDao.queryData(map);
+	}
 
 }

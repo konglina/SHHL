@@ -19,5 +19,17 @@ public class SpectrographDataServiceImpl implements SpectrographDataService{
 		// TODO Auto-generated method stub
 		return spectrographDataDao.getList(map);
 	}
+	public List<SpectrographData> queryPageData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return spectrographDataDao.queryPageData(map);
+	}
+	public int queryPageCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return spectrographDataDao.queryPageCount(map);
+	}
+	public List<SpectrographData> queryData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return spectrographDataDao.queryData(map);
+	}
 
 }

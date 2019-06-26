@@ -90,7 +90,6 @@
 		   <div class="col-sm-3" style="padding-top:5px;padding-bottom:2px;">
 		    	
 		   </div>
-		  
 		     <div class="col-sm-1" style="padding-top:4px;padding-bottom:2px;">
 			   	<a href="${pageContext.request.contextPath}/bbesData/getlist.do" class="btn btn-warning">返回上一级</a>
 			 </div>
@@ -492,7 +491,6 @@
                           var pageObj = result.data; //拿到json对象中的data
                        
                           var datas = pageObj.datas; //拿到data中的datas（集合）
-                          
                           if(pageno ==1){
                         	  var datas2 = pageObj.datas2; //拿到data中的datas2（集合）
                         	  var data = [];//电压数据

@@ -19,5 +19,17 @@ public class UvaDataServiceImpl implements UvaDataService{
 		// TODO Auto-generated method stub
 		return uvaDataDao.getList(map);
 	}
+	public List<UvaData> queryPageData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return uvaDataDao.queryPageData(map);
+	}
+	public int queryPageCount(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return uvaDataDao.queryPageCount(map);
+	}
+	public List<UvaData> queryData(Map<String, Object> map) {
+		// TODO Auto-generated method stub
+		return uvaDataDao.queryData(map);
+	}
 
 }
