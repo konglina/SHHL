@@ -36,7 +36,7 @@
 		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
 			</li>
 
 			<li>
@@ -54,7 +54,7 @@
 		    		<!-- <span class="input-group-addon">
 						开始时间&nbsp;
 					</span> -->
-					<input type="text" id="startTime" name="startTime" placeholder="开始时间" class="layer-date form-control">
+					<input type="text" id="startTime" name="startTime" autocomplete="off" placeholder="开始时间" class="layer-date form-control">
 					<span class="input-group-addon">
 						<i class="icon-calendar"></i>
 					</span>
@@ -66,7 +66,7 @@
 		    		<!-- <span class="input-group-addon">
 						结束时间&nbsp;
 					</span> -->
-					<input type="text" id="endTime" name="endTime" placeholder="结束时间" class="form-control">
+					<input type="text" id="endTime" name="endTime" autocomplete="off" placeholder="结束时间" class="form-control">
 					<span class="input-group-addon">
 						<i class="icon-calendar"></i>
 					</span>
@@ -187,30 +187,30 @@
                               content += '<tr>';
                             content += '<td>'+(i+1)+'</td>';
                             content += '<td>'+ time +'</td>';  
-                            content += '<td>'+ bbesData.inVoltage +'</td>'; 
-                            content += '<td>'+ bbesData.inCurrent +'</td>'; 
-                            content += '<td>'+ bbesData.humidity +'</td>';
-                            content += '<td>'+ bbesData.leakage +'</td>';
-                            content += '<td>'+ bbesData.temperature1 +'</td>';
-                            content += '<td>'+ bbesData.temperature2 +'</td>';
-                            content += '<td>'+ bbesData.temperature3 +'</td>';
-                            content += '<td>'+ bbesData.temperature4 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage1 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage2 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage3 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage4 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage5 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage6 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage7 +'</td>';
-                            content += '<td>'+ bbesData.outVoltage8 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent1 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent2 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent3 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent4 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent5 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent6 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent7 +'</td>';
-                            content += '<td>'+ bbesData.outCurrent8 +'</td>';
+                            content += '<td>'+ bbesData.inVoltage.toFixed(2); +'</td>'; 
+                            content += '<td>'+ bbesData.inCurrent.toFixed(2) +'</td>'; 
+                            content += '<td>'+ bbesData.humidity.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.leakage.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.temperature1.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.temperature2.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.temperature3.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.temperature4.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage1.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage2.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage3.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage4.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage5.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage6.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage7.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outVoltage8.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent1.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent2.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent3.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent4.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent5.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent6.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent7.toFixed(2) +'</td>';
+                            content += '<td>'+ bbesData.outCurrent8.toFixed(2) +'</td>';
                             content += '</tr>';
                           
                           }

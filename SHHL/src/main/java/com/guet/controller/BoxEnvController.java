@@ -36,6 +36,7 @@ public class BoxEnvController {
 		BoxEnv boxEnv = boxEnvDao2.getNewest(con);
 		model.addAttribute("boxEnv", boxEnv);
 		model.addAttribute("boxEnvJson", JSON.toJSONString(boxEnv));
+		//System.out.println("boxEnv=" + boxEnv);
 		dbUtil.closeCon(con);
 		return "box_realtime";
 	}
@@ -46,6 +47,7 @@ public class BoxEnvController {
 
 		con = dbUtil.getCon();
 		BoxEnv boxEnv = boxEnvDao2.getNewest(con);
+		System.out.println("boxEnv=" + boxEnv);
 		dbUtil.closeCon(con);
 		if(boxEnv != null){
 			result.setSuccess(true);
@@ -111,7 +113,7 @@ public class BoxEnvController {
 			model.addAttribute("ip", ip);
 			model.addAttribute("username", username);
 			model.addAttribute("password", password);
-			System.out.println(ip + "," + username + "," + password);
+			/*System.out.println(ip + "," + username + "," + password);*/
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

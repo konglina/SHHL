@@ -36,7 +36,7 @@
 		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
 			</li>
 
 			<li>
@@ -54,7 +54,7 @@
 		    		<!-- <span class="input-group-addon">
 						开始时间&nbsp;
 					</span> -->
-					<input type="text" id="startTime" name="startTime" placeholder="开始时间" class="layer-date form-control">
+					<input type="text" id="startTime" name="startTime" autocomplete="off" placeholder="开始时间" class="layer-date form-control">
 					<span class="input-group-addon">
 						<i class="icon-calendar"></i>
 					</span>
@@ -66,7 +66,7 @@
 		    		<!-- <span class="input-group-addon">
 						结束时间&nbsp;
 					</span> -->
-					<input type="text" id="endTime" name="endTime" placeholder="结束时间" class="form-control">
+					<input type="text" id="endTime" name="endTime" autocomplete="off" placeholder="结束时间" class="form-control">
 					<span class="input-group-addon">
 						<i class="icon-calendar"></i>
 					</span>
@@ -1237,6 +1237,7 @@
 	  elem: '#startTime', //指定元素
 	  type:'datetime',
 	  format:'yyyy-MM-dd HH:mm:ss'
+	  
 	});
 	var endDate = laydate.render({
 		elem: '#endTime',

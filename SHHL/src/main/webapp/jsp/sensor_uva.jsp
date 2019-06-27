@@ -30,7 +30,7 @@
 		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
 			</li>
 
 			<li>

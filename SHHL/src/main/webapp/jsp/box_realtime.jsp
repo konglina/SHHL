@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -29,7 +30,7 @@
 			<li>
 				<a href="#">接驳盒</a>
 			</li>
-			<li class="active">实时数据查询</li>
+			<li class="active">实时数据</li>
 		</ul><!-- .breadcrumb -->					
 </div>
 
@@ -54,14 +55,14 @@
             <th>温度4</th>
         </tr>
         <tr>
-        	<td>${boxEnv.TIME}</td>
-         	<td id="inCurrent">${boxEnv.inCurrent}</td>
-         	<td id="inVoltage">${boxEnv.inVoltage}</td>
-         	<td id="humidity">${boxEnv.humidity}</td>
-         	<td id="temperature1">${boxEnv.temperature1}</td>
-         	<td id="temperature2">${boxEnv.temperature2}</td>
-         	<td id="temperature3">${boxEnv.temperature3}</td>
-         	<td id="temperature4">${boxEnv.temperature4}</td>
+        	<td id="time"><fmt:formatDate value="${boxEnv.TIME}" type="date" pattern="yyyy-MM-dd HH:mm:ss"/></td>
+         	<td id="inCurrent"><fmt:formatNumber type="number" value="${boxEnv.inCurrent}" pattern="0.00" maxFractionDigits="2"/></td>
+         	<td id="inVoltage"><fmt:formatNumber type="number" value="${boxEnv.inVoltage}" pattern="0.00" maxFractionDigits="2"/></td>
+         	<td id="humidity"><fmt:formatNumber type="number" value="${boxEnv.humidity}" pattern="0.00" maxFractionDigits="2"/></td>
+         	<td id="temperature1"><fmt:formatNumber type="number" value="${boxEnv.temperature1}" pattern="0.00" maxFractionDigits="2"/></td>
+         	<td id="temperature2"><fmt:formatNumber type="number" value="${boxEnv.temperature2}" pattern="0.00" maxFractionDigits="2"/></td>
+         	<td id="temperature3"><fmt:formatNumber type="number" value="${boxEnv.temperature3}" pattern="0.00" maxFractionDigits="2"/></td>
+         	<td id="temperature4"><fmt:formatNumber type="number" value="${boxEnv.temperature4}" pattern="0.00" maxFractionDigits="2"/></td>
             
         </tr>    
     </table>
@@ -91,26 +92,26 @@
         </tr>
         <tr>
         	<td>电压</td>
-            <td id="outVoltage1">${boxEnv.outVoltage1}</td>
-            <td id="outVoltage2">${boxEnv.outVoltage2}</td>
-            <td id="outVoltage3">${boxEnv.outVoltage3}</td>
-            <td id="outVoltage4">${boxEnv.outVoltage4}</td>
-            <td id="outVoltage5">${boxEnv.outVoltage5}</td>
-            <td id="outVoltage6">${boxEnv.outVoltage6}</td> 
-            <td id="outVoltage7">${boxEnv.outVoltage7}</td> 
-            <td id="outVoltage8">${boxEnv.outVoltage8}</td>
+            <td id="outVoltage1"><fmt:formatNumber type="number" value="${boxEnv.outVoltage1}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outVoltage2"><fmt:formatNumber type="number" value="${boxEnv.outVoltage2}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outVoltage3"><fmt:formatNumber type="number" value="${boxEnv.outVoltage3}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outVoltage4"><fmt:formatNumber type="number" value="${boxEnv.outVoltage4}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outVoltage5"><fmt:formatNumber type="number" value="${boxEnv.outVoltage5}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outVoltage6"><fmt:formatNumber type="number" value="${boxEnv.outVoltage6}" pattern="0.00" maxFractionDigits="2"/></td> 
+            <td id="outVoltage7"><fmt:formatNumber type="number" value="${boxEnv.outVoltage7}" pattern="0.00" maxFractionDigits="2"/></td> 
+            <td id="outVoltage8"><fmt:formatNumber type="number" value="${boxEnv.outVoltage8}" pattern="0.00" maxFractionDigits="2"/></td>
             
         </tr>
         <tr>
         	<td>电流</td>
-            <td id="outCurrent1">${boxEnv.outCurrent1}</td>
-            <td id="outCurrent2">${boxEnv.outCurrent2}</td>
-            <td id="outCurrent3">${boxEnv.outCurrent3}</td>
-            <td id="outCurrent4">${boxEnv.outCurrent4}</td>
-            <td id="outCurrent5">${boxEnv.outCurrent5}</td>
-            <td id="outCurrent6">${boxEnv.outCurrent6}</td> 
-            <td id="outCurrent7">${boxEnv.outCurrent7}</td> 
-            <td id="outCurrent8">${boxEnv.outCurrent8}</td>
+            <td id="outCurrent1"><fmt:formatNumber type="number" value="${boxEnv.outCurrent1}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outCurrent2"><fmt:formatNumber type="number" value="${boxEnv.outCurrent2}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outCurrent3"><fmt:formatNumber type="number" value="${boxEnv.outCurrent3}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outCurrent4"><fmt:formatNumber type="number" value="${boxEnv.outCurrent4}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outCurrent5"><fmt:formatNumber type="number" value="${boxEnv.outCurrent5}" pattern="0.00" maxFractionDigits="2"/></td>
+            <td id="outCurrent6"><fmt:formatNumber type="number" value="${boxEnv.outCurrent6}" pattern="0.00" maxFractionDigits="2"/></td> 
+            <td id="outCurrent7"><fmt:formatNumber type="number" value="${boxEnv.outCurrent7}" pattern="0.00" maxFractionDigits="2"/></td> 
+            <td id="outCurrent8"><fmt:formatNumber type="number" value="${boxEnv.outCurrent8}" pattern="0.00" maxFractionDigits="2"/></td>
             
         </tr>
           
@@ -127,14 +128,14 @@
         var myChart = echarts.init(document.getElementById('dianya'));
         var boxNewest=JSON.parse('<%=request.getAttribute("boxEnvJson")%>');
         var voltageData = [];
-        voltageData.push(boxNewest.outVoltage1);
-        voltageData.push(boxNewest.outVoltage2);
-        voltageData.push(boxNewest.outVoltage3);
-        voltageData.push(boxNewest.outVoltage4);
-        voltageData.push(boxNewest.outVoltage5);
-        voltageData.push(boxNewest.outVoltage6);
-        voltageData.push(boxNewest.outVoltage7);
-        voltageData.push(boxNewest.outVoltage8);
+        voltageData.push(boxNewest.outVoltage1.toFixed(2));
+        voltageData.push(boxNewest.outVoltage2.toFixed(2));
+        voltageData.push(boxNewest.outVoltage3.toFixed(2));
+        voltageData.push(boxNewest.outVoltage4.toFixed(2));
+        voltageData.push(boxNewest.outVoltage5.toFixed(2));
+        voltageData.push(boxNewest.outVoltage6.toFixed(2));
+        voltageData.push(boxNewest.outVoltage7.toFixed(2));
+        voltageData.push(boxNewest.outVoltage8.toFixed(2));
         // 指定图表的配置项和数据
         var option = {
             title: {
@@ -175,14 +176,14 @@
         var myChart2 = echarts.init(document.getElementById('dianliu'));
 		var currentData = [];
 		
-		currentData.push(boxNewest.outCurrent1);
-		currentData.push(boxNewest.outCurrent2);
-		currentData.push(boxNewest.outCurrent3);
-		currentData.push(boxNewest.outCurrent4);
-		currentData.push(boxNewest.outCurrent5);
-		currentData.push(boxNewest.outCurrent6);
-		currentData.push(boxNewest.outCurrent7);
-		currentData.push(boxNewest.outCurrent8);
+		currentData.push(boxNewest.outCurrent1.toFixed(2));
+		currentData.push(boxNewest.outCurrent2.toFixed(2));
+		currentData.push(boxNewest.outCurrent3.toFixed(2));
+		currentData.push(boxNewest.outCurrent4.toFixed(2));
+		currentData.push(boxNewest.outCurrent5.toFixed(2));
+		currentData.push(boxNewest.outCurrent6.toFixed(2));
+		currentData.push(boxNewest.outCurrent7.toFixed(2));
+		currentData.push(boxNewest.outCurrent8.toFixed(2));
         // 指定图表的配置项和数据
         var option = {
             title: {
@@ -229,55 +230,68 @@
                   success: function (result) {
                      	if(result.success){
                      		var boxEnv = result.data;
+                     		
+                   		    var date = new Date(boxEnv.time);
+                            var Y = date.getFullYear() + '-'
+                            var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-'
+                            var D = (date.getDate() < 10 ? '0' + date.getDate() : date.getDate()) + ' '
+                            var h = (date.getHours() < 10 ? '0' + date.getHours() : date.getHours()) + ':'
+                            var m = (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes()) + ':'
+                            var s = (date.getSeconds() < 10 ? '0' + date.getSeconds() : date.getSeconds())
+                            var time = Y + M + D + h + m + s;
+                            
+                            $("#time").empty();
+                     		$("#time").text(time);
+                     		
                      		$("#inCurrent").empty();
-                     		$("#inCurrent").text(boxEnv.inCurrent);
+                     		$("#inCurrent").text((boxEnv.inCurrent).toFixed(2));
                      		$("#inVoltage").empty();
-                     		$("#inVoltage").text(boxEnv.inVoltage);
+                     		$("#inVoltage").text(boxEnv.inVoltage.toFixed(2));
                      		$("#humidity").empty();
-                     		$("#humidity").text(boxEnv.humidity);
+                     		$("#humidity").text(boxEnv.humidity.toFixed(2));
                      		$("#temperature1").empty();
-                     		$("#temperature1").text(boxEnv.temperature1);
+                     		$("#temperature1").text(boxEnv.temperature1.toFixed(2));
                      		$("#temperature2").empty();
-                     		$("#temperature2").text(boxEnv.temperature2);
+                     		$("#temperature2").text(boxEnv.temperature2.toFixed(2));
                      		$("#temperature3").empty();
-                     		$("#temperature3").text(boxEnv.temperature3);
+                     		$("#temperature3").text(boxEnv.temperature3.toFixed(2));
                      		$("#temperature4").empty();
-                     		$("#temperature4").text(boxEnv.temperature4);
+                     		$("#temperature4").text(boxEnv.temperature4.toFixed(2));
                      		
                      		$("#outVoltage1").empty();
-                     		$("#outVoltage1").text(boxEnv.outVoltage1);
+                     		$("#outVoltage1").text(boxEnv.outVoltage1.toFixed(2));
                      		$("#outVoltage2").empty();
-                     		$("#outVoltage2").text(boxEnv.outVoltage2);
+                     		$("#outVoltage2").text(boxEnv.outVoltage2.toFixed(2));
                      		$("#outVoltage3").empty();
-                     		$("#outVoltage3").text(boxEnv.outVoltage3);
+                     		$("#outVoltage3").text(boxEnv.outVoltage3.toFixed(2));
                      		$("#outVoltage4").empty();
-                     		$("#outVoltage4").text(boxEnv.outVoltage4);
+                     		$("#outVoltage4").text(boxEnv.outVoltage4.toFixed(2));
                      		$("#outVoltage5").empty();
-                     		$("#outVoltage5").text(boxEnv.outVoltage5);
+                     		$("#outVoltage5").text(boxEnv.outVoltage5.toFixed(2));
                      		$("#outVoltage6").empty();
-                     		$("#outVoltage6").text(boxEnv.outVoltage6);
+                     		$("#outVoltage6").text(boxEnv.outVoltage6.toFixed(2));
                      		$("#outVoltage7").empty();
-                     		$("#outVoltage7").text(boxEnv.outVoltage7);
+                     		$("#outVoltage7").text(boxEnv.outVoltage7.toFixed(2));
                      		$("#outVoltage8").empty();
-                     		$("#outVoltage8").text(boxEnv.outVoltage8);
+                     		$("#outVoltage8").text(boxEnv.outVoltage8.toFixed(2));
                      		
                      		
                      		$("#outCurrent1").empty();
-                     		$("#outCurrent1").text(boxEnv.outCurrent1);
+                     		$("#outCurrent1").text(boxEnv.outCurrent1.toFixed(2));
                      		$("#outCurrent2").empty();
-                     		$("#outCurrent2").text(boxEnv.outCurrent2);
+                     		$("#outCurrent2").text(boxEnv.outCurrent2.toFixed(2));
                      		$("#outCurrent3").empty();
-                     		$("#outCurrent3").text(boxEnv.outCurrent3);
+                     		$("#outCurrent3").text(boxEnv.outCurrent3.toFixed(2));
                      		$("#outCurrent4").empty();
-                     		$("#outCurrent4").text(boxEnv.outCurrent4);
+                     		$("#outCurrent4").text(boxEnv.outCurrent4.toFixed(2));
                      		$("#outCurrent5").empty();
-                     		$("#outCurrent5").text(boxEnv.outCurrent5);
+                     		$("#outCurrent5").text(boxEnv.outCurrent5.toFixed(2));
                      		$("#outCurrent6").empty();
-                     		$("#outCurrent6").text(boxEnv.outCurrent6);
+                     		$("#outCurrent6").text(boxEnv.outCurrent6.toFixed(2));
                      		$("#outCurrent7").empty();
-                     		$("#outCurrent7").text(boxEnv.outCurrent7);
+                     		$("#outCurrent7").text(boxEnv.outCurrent7.toFixed(2));
                      		$("#outCurrent8").empty();
-                     		$("#outCurrent8").text(boxEnv.outCurrent8);
+                     		$("#outCurrent8").text(boxEnv.outCurrent8.toFixed(2));
                      		
                      		var voltageData = [];
 	      	               	 voltageData.push(boxEnv.outVoltage1);

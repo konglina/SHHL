@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,7 +38,7 @@
 		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
 			</li>
 
 			<li>
@@ -71,55 +72,55 @@
              		<table id="sample-table-1" class="table table-striped table-bordered table-hover" style="margin: 0px;padding: 0px">
     	<tr >
         	<th>时间</th>
-        	<td id="date">${newysi.TIME}</td>
+        	<td id="date"><fmt:formatDate value="${newysi.TIME}" type="date" pattern="yyyy-MM-dd HH:mm:ss"/></td>
         </tr>
         <tr >
             <th>Turbidity</th>
-            <td id="Turbidity">${newysi.turbidity}</td>
+            <td id="Turbidity"><fmt:formatNumber type="number" value="${newysi.turbidity}" pattern="0.00" maxFractionDigits="2"/></td>
         </tr>
         <tr>
             <th>TSS</th>
-            <td id="TSS">${newysi.TSS}</td>      
+            <td id="TSS"><fmt:formatNumber type="number" value="${newysi.TSS}" pattern="0.00" maxFractionDigits="2"/></td>      
         </tr>   
         <tr >
             <th>Chlorophyll</th>
-            <td id="Chlorophyll">${newysi.chlorophyll}</td>
+            <td id="Chlorophyll"><fmt:formatNumber type="number" value="${newysi.chlorophyll}" pattern="0.00" maxFractionDigits="2"/></td>
         </tr>
         <tr>
             <th>BGA-PE</th>
-            <td id="BGA_PE">${newysi.BGA_PE}</td>      
+            <td id="BGA_PE"><fmt:formatNumber type="number" value="${newysi.BGA_PE}" pattern="0.00" maxFractionDigits="2"/></td>      
         </tr>   
         <tr >
             <th>ODO</th> 
-            <td id="ODO">${newysi.ODO}</td>
+            <td id="ODO"><fmt:formatNumber type="number" value="${newysi.ODO}" pattern="0.00" maxFractionDigits="2"/></td>
         </tr>
         <tr>
             <th>Temperature</th>    
-            <td id="Temperature">${newysi.temperature}</td>    
+            <td id="Temperature"><fmt:formatNumber type="number" value="${newysi.temperature}" pattern="0.00" maxFractionDigits="2"/></td>    
         </tr>      
         <tr >
             <th>Specific Conductance</th>
-            <td id="Conductance">${newysi.specific_Conductance}</td> 
+            <td id="Conductance"><fmt:formatNumber type="number" value="${newysi.specific_Conductance}" pattern="0.00" maxFractionDigits="2"/></td> 
         </tr>
         <tr>
             <th>Salinity</th>
-            <td id="Salinity">${newysi.salinity}</td>
+            <td id="Salinity"><fmt:formatNumber type="number" value="${newysi.salinity}" pattern="0.00" maxFractionDigits="2"/></td>
         </tr>    
         <tr >
             <th>pH</th>
-            <td id="pH">${newysi.pH}</td>
+            <td id="pH"><fmt:formatNumber type="number" value="${newysi.pH}" pattern="0.00" maxFractionDigits="2"/></td>
         </tr>
         <tr>
             <th>ORP</th>
-            <td id="ORP">${newysi.ORP}</td>      
+            <td id="ORP"><fmt:formatNumber type="number" value="${newysi.ORP}" pattern="0.00" maxFractionDigits="2"/></td>      
         </tr>    
         <tr >
             <th>Pressure</th>
-            <td id="Pressure">${newysi.pressure}</td> 
+            <td id="Pressure"><fmt:formatNumber type="number" value="${newysi.pressure}" pattern="0.00" maxFractionDigits="2"/></td> 
         </tr>
         <tr>
             <th>Depth</th>
-            <td id="Depth">${newysi.depth}</td>      
+            <td id="Depth"><fmt:formatNumber type="number" value="${newysi.depth}" pattern="0.00" maxFractionDigits="2"/></td>      
         </tr>    
     </table>
         </div>
@@ -127,9 +128,9 @@
     
     <div class="col-sm-8">
     	<div class="panel panel-default" >
-          <div class="panel-heading" style=" padding:3px;height:30px;"  >
+          <div class="panel-heading" style=" padding:3px;height:30px;">
             <span class="glyphicon glyphicon-refresh">近期数据趋势</span>
-            <select id="selectChart" onchange="chooseChart(this.options[this.options.selectedIndex].value)">
+             <select id="selectChart" onchange="chooseChart(this.options[this.options.selectedIndex].value)">
 			    <option value ="Turbidity">Turbidity</option>
 			    <option value ="TSS">TSS</option>
 			    <option value ="Chlorophyll">Chlorophyll</option>
@@ -142,9 +143,11 @@
 			    <option value ="ORP">ORP</option>
 			    <option value ="Pressure">Pressure</option>
 			    <option value ="Depth">Depth</option>
-  			</select>
+  			</select> 
           </div>
               <div class="panel-body">
+             
+               
              		<div id="ysi_shishi" style="width: 100%;height:520px;"></div>
               </div>
         </div>
@@ -599,29 +602,29 @@
                 	
                 	
                 	$("#Turbidity").empty();
-                 	$("#Turbidity").text(realtime[0].turbidity);
+                 	$("#Turbidity").text(realtime[0].turbidity.toFixed(2));
                  	$("#TSS").empty();
-                 	$("#TSS").text(realtime[0].tSS);
+                 	$("#TSS").text(realtime[0].tSS.toFixed(2));
                  	$("#Chlorophyll").empty();
-                 	$("#Chlorophyll").text(realtime[0].chlorophyll);
+                 	$("#Chlorophyll").text(realtime[0].chlorophyll.toFixed(2));
                  	$("#BGA_PE").empty();
-                 	$("#BGA_PE").text(realtime[0].bGA_PE);
+                 	$("#BGA_PE").text(realtime[0].bGA_PE.toFixed(2));
                  	$("#ODO").empty();
-                 	$("#ODO").text(realtime[0].oDO);
+                 	$("#ODO").text(realtime[0].oDO.toFixed(2));
                  	$("#Temperature").empty();
-                 	$("#Temperature").text(realtime[0].temperature);
+                 	$("#Temperature").text(realtime[0].temperature.toFixed(2));
                  	$("#Conductance").empty();
-                 	$("#Conductance").text(realtime[0].specific_Conductance);
+                 	$("#Conductance").text(realtime[0].specific_Conductance.toFixed(2));
                  	$("#Salinity").empty();
-                 	$("#Salinity").text(realtime[0].salinity);
+                 	$("#Salinity").text(realtime[0].salinity.toFixed(2));
                  	$("#pH").empty();
-                 	$("#pH").text(realtime[0].pH);
+                 	$("#pH").text(realtime[0].pH.toFixed(2));
                  	$("#ORP").empty();
-                 	$("#ORP").text(realtime[0].oRP);
+                 	$("#ORP").text(realtime[0].oRP.toFixed(2));
                  	$("#Pressure").empty();
-                 	$("#Pressure").text(realtime[0].pressure);
+                 	$("#Pressure").text(realtime[0].pressure.toFixed(2));
                  	$("#Depth").empty();
-                 	$("#Depth").text(realtime[0].depth);
+                 	$("#Depth").text(realtime[0].depth.toFixed(2));
                  	
                  	
                  	

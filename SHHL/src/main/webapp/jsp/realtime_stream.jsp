@@ -43,9 +43,9 @@
 			</li>
 
 			<li>
-				<a href="#">实时监控</a>
+				<a href="#">接驳盒</a>
 			</li>
-			<li class="active">视频预览</li>
+			<li class="active">视频监控</li>
 		</ul><!-- .breadcrumb -->					
 </div>
 

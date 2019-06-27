@@ -36,7 +36,7 @@
 		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
 			</li>
 
 			<li>
@@ -50,10 +50,7 @@
 	<div class="col-sm-1" style="padding-top:9px">历史数据查询</div>
     <div class="col-sm-2" style="padding-top:4px;">
     	<div class="input-group input-group-sm">
-    		<span class="input-group-addon">
-				开始&nbsp;
-			</span>
-			<input type="text" id="startTime" class="form-control">
+			<input type="text" id="startTime" autocomplete="off" placeholder="开始时间" class="form-control">
 			<span class="input-group-addon">
 				<i class="icon-calendar"></i>
 			</span>
@@ -61,10 +58,7 @@
    </div> 
    <div class="col-sm-2" style="padding-top:4px;">
     	<div class="input-group input-group-sm">
-    		<span class="input-group-addon">
-				结束&nbsp;
-			</span>
-			<input type="text" id="endTime" class="form-control">
+			<input type="text" id="endTime" autocomplete="off" placeholder="结束时间" class="form-control">
 			<span class="input-group-addon">
 				<i class="icon-calendar"></i>
 			</span>
@@ -323,9 +317,9 @@
 	        	var content = "";//拼接表格
 	        	for(var i=0;i<datas.length;i++){
 	        		content += '<tr>';
-	        		content += '<th>'+new Date(datas[i].time).format("yyyy-MM-dd hh:mm:ss")+'</th>';
-	        		content += '<th>'+datas[i].states+'</th>';
-	        		content += '<th>'+datas[i].consistency+'</th>';
+	        		content += '<td>'+new Date(datas[i].time).format("yyyy-MM-dd hh:mm:ss")+'</td>';
+	        		content += '<td>'+datas[i].states.toFixed(2)+'</td>';
+	        		content += '<td>'+datas[i].consistency.toFixed(2)+'</td>';
 	        		content +='</tr>';
 	        	}
 	        	 $("#dataBody").html(content);

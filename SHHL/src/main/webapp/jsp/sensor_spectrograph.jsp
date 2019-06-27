@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>   
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,11 +16,22 @@
 <script src="${pageContext.request.contextPath}/static/laydate/laydate.js"></script>
 </head>
 <body>
-<div style="padding:0px; margin:0px;">
-	<ul class="breadcrumb" style="margin:0px; padding-left:20px">
-    	<li><a>传感器</a></li>
-        <li>光谱仪</li>
-    </ul>
+<div class="breadcrumbs" id="breadcrumbs">
+		<script type="text/javascript">
+			try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+		</script>
+
+		<ul class="breadcrumb" style="margin-bottom:0px;">
+			<li>
+				<i class="icon-home home-icon"></i>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
+			</li>
+
+			<li>
+				<a href="#">传感器</a>
+			</li>
+			<li class="active">光谱仪</li>
+		</ul>					
 </div>
 
 <form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
@@ -54,7 +66,7 @@
 							<c:when test="${newspectrograph.states>=70}"><span style = "background-color:#cc0033" class="label label-sm label-warning" style="background-color:#cc0033">${newspectrograph.states}</span></c:when>
     					</c:choose>
     					</td>
-    					<td class="col-sm-4" id="consistency">${newspectrograph.consistency}</td>
+    					<td class="col-sm-4" id="consistency"><fmt:formatNumber type="number" value="${newspectrograph.consistency}" pattern="0.00" maxFractionDigits="2"/></td>
     				</tr>
     			</table>
     		</div>

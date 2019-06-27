@@ -35,7 +35,7 @@
 		<ul class="breadcrumb" style="margin-bottom:0px;">
 			<li>
 				<i class="icon-home home-icon"></i>
-				<a href="#">Home</a>
+				<a href="${pageContext.request.contextPath}/boxenv/list.do">Home</a>
 			</li>
 			<li>
 				<a href="#">传感器</a>
@@ -51,7 +51,7 @@
 		    		<!-- <span class="input-group-addon">
 						开始时间&nbsp;
 					</span> -->
-					<input type="text" id="startTime" name="startTime" placeholder="开始时间" class="layer-date form-control">
+					<input type="text" id="startTime" name="startTime" autocomplete="off" placeholder="开始时间" class="layer-date form-control">
 					<span class="input-group-addon">
 						<i class="icon-calendar"></i>
 					</span>
@@ -62,7 +62,7 @@
 		    		<!-- <span class="input-group-addon">
 						结束时间&nbsp;
 					</span> -->
-					<input type="text" id="endTime" name="endTime" placeholder="结束时间" class="form-control">
+					<input type="text" id="endTime" name="endTime" autocomplete="off" placeholder="结束时间" class="form-control">
 					<span class="input-group-addon">
 						<i class="icon-calendar"></i>
 					</span>
@@ -338,19 +338,19 @@
             	var content = "";//拼接表格
             	for(var i=0;i<datas.length;i++){
             		content += '<tr>';
-            		content += '<th>'+new Date(datas[i].time).format("yyyy-MM-dd hh:mm:ss")+'</th>';
-            		content += '<th>'+datas[i].turbidity+'</th>';
-            		content += '<th>'+datas[i].tss+'</th>';
-            		content += '<th>'+datas[i].chlorophyll+'</th>';
-            		content += '<th>'+datas[i].bga_PE+'</th>';
-            		content += '<th>'+datas[i].odo+'</th>';
-            		content += '<th>'+datas[i].temperature+'</th>';
-            		content += '<th>'+datas[i].specific_Conductance+'</th>';
-            		content += '<th>'+datas[i].salinity+'</th>';
-            		content += '<th>'+datas[i].pH+'</th>';
-            		content += '<th>'+datas[i].orp+'</th>';
-            		content += '<th>'+datas[i].pressure+'</th>';
-            		content += '<th>'+datas[i].depth+'</th>';
+            		content += '<td>'+new Date(datas[i].time).format("yyyy-MM-dd hh:mm:ss")+'</td>';
+            		content += '<td>'+datas[i].turbidity.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].tss.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].chlorophyll.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].bga_PE.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].odo.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].temperature.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].specific_Conductance.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].salinity.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].pH.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].orp.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].pressure.toFixed(2)+'</td>';
+            		content += '<td>'+datas[i].depth.toFixed(2)+'</td>';
             		content +='</tr>';
             	}
             	 $("#dataBody").html(content);
