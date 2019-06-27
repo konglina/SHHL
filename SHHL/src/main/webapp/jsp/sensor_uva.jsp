@@ -89,11 +89,10 @@
             }
         	var voltage = [];
         	var dataTime = [];
-			for(var i=0;i<uvaDataList.length;i++){
+			for(var i=(uvaDataList.length-1);i>=0;i--){
 				voltage.push(uvaDataList[i].voltage);
 				dataTime.push(new Date(uvaDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 			}
-			
         	// 指定图表的配置项和数据
         	var option1 = {
             	title: {
@@ -129,7 +128,7 @@
         	var myChart2 = echarts.init(document.getElementById('dianliu_shishi'));
 			var current = [];
 			var dataTime = [];
-			for(var i=0;i<uvaDataList.length;i++){
+			for(var i=(uvaDataList.length-1);i>=0;i--){
 				current.push(uvaDataList[i].current);
 				dataTime.push(new Date(uvaDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 			}

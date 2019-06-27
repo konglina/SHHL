@@ -187,7 +187,7 @@
         var orp = [];
         var pressure = [];
         var depth = [];
-        for(var i=0;i<bbesDataList.length;i++){
+        for(var i=(bbesDataList.length-1);i>=0;i--){
         	var tur = {
         			name: bbesDataList[i].tIME,
                 	value: [bbesDataList[i].tIME,bbesDataList[i].turbidity]
@@ -289,8 +289,6 @@
         	};
      	// 使用刚指定的配置项和数据显示图表。
         myChart.setOption(option,true);
-     	
-     	
         function updataChart(chartDatas){
         	myChart = echarts.init(document.getElementById('ysi_shishi'));
         	option = {
@@ -376,6 +374,62 @@
         	}
         }
         
+        //选择实时显示的图表
+        function chooseRealtime(s){
+        	switch(s){
+        	case "Turbidity":
+        		displayRealtimeChart(turbidity);
+        		break;
+        	case "TSS":
+        		displayRealtimeChart(tts);
+        		break;
+        	case "Chlorophyll":
+        		displayRealtimeChart(chlorophyll);
+        		break;
+        	case "BGA_PE":
+        		displayRealtimeChart(bga_pe);
+        		break;
+        	case "ODO":
+        		displayRealtimeChart(odo);
+        		break;
+        	case "Temperature":
+        		displayRealtimeChart(temperature);
+        		break;
+        	case "Conductance":
+        		displayRealtimeChart(conductance);
+        		break;
+        	case "Salinity":
+        		displayRealtimeChart(salinity);
+        		break;
+        	case "pH":
+        		displayRealtimeChart(ph);
+        		break;
+        	case "ORP":
+        		displayRealtimeChart(orp);
+        		break;
+        	case "Pressure":
+        		displayRealtimeChart(pressure);
+        		break;
+        	case "Depth":
+        		displayRealtimeChart(depth);
+        		break;
+        	default:
+        		break;
+        	}
+        }
+        
+        function displayRealtimeChart(realTimedata){
+        	myChart.setOption({
+    	        series: [{
+    	            data: realTimedata
+    	        }]
+    	    });
+        }
+        //实时的刷新数据，10秒刷新一次
+    	//保存上一次的时间，对比时间可得是否更新
+    	var lasttime = "${newysi.TIME}";
+    	var timeflag =0;
+    	//定时刷新,在此处初始化data
       	//实时的刷新数据，10秒刷新一次
     	$(document).ready(function () {
             setInterval("startRequest()", 10000);//10s一次
@@ -385,7 +439,165 @@
                 url:  "${pageContext.request.contextPath}/ysiData/realtime.do",
                 type: 'POST',
                 success: function (data) {
-                	 var realtime=JSON.parse(data);//最新的数据
+                	var realtime=JSON.parse(data);//最新的数据
+                	//如果时间时间没变，那么数据未更新
+	            	if((new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"))==(new Date(lasttime).format("yyyy-MM-dd hh:mm:ss"))){
+	            		timeflag = timeflag + 10000;
+                    	var tur = {
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	};
+                    	turbidity.push(tur);
+                    	turbidity.shift();
+                    	var t = {
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	tts.push(t);
+                    	tts.shift();
+                    	var c={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	chlorophyll.push(c);
+                    	chlorophyll.shift();
+                    	var bga ={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	bga_pe.push(bga);
+                    	bga_pe.shift();
+                    	var od={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	odo.push(od);
+                    	odo.shift();
+                    	var temp = {
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	temperature.push(temp);
+                    	temperature.shift();
+                    	var con={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	conductance.push(con);
+                    	conductance.shift();
+                    	var sal={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	salinity.push(sal);
+                    	salinity.shift();
+                    	var p={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	ph.push(p);
+                    	ph.shift();
+                    	var or={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	orp.push(or);
+                    	orp.shift();
+                    	var pre={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	pressure.push(pre);
+                    	pressure.shift();
+                    	var de={
+                    			name: realtime[0].tIME+timeflag,
+                            	value: [realtime[0].tIME+timeflag,0]
+                    	}
+                    	depth.push(de);
+                    	depth.shift();
+	            		
+	            	}else{
+	            		var tur = {
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].turbidity]
+                    	};
+                    	turbidity.push(tur);
+                    	turbidity.shift();
+                    	var t = {
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].tSS]
+                    	}
+                    	tts.push(t);
+                    	tts.shift();
+                    	var c={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].chlorophyll]
+                    	}
+                    	chlorophyll.push(c);
+                    	chlorophyll.shift();
+                    	var bga ={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].bGA_PE]
+                    	}
+                    	bga_pe.push(bga);
+                    	bga_pe.shift();
+                    	var od={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].oDO]
+                    	}
+                    	odo.push(od);
+                    	odo.shift();
+                    	var temp = {
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].temperature]
+                    	}
+                    	temperature.push(temp);
+                    	temperature.shift();
+                    	var con={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].specific_Conductance]
+                    	}
+                    	conductance.push(con);
+                    	conductance.shift();
+                    	var sal={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].salinity]
+                    	}
+                    	salinity.push(sal);
+                    	salinity.shift();
+                    	var p={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].pH]
+                    	}
+                    	ph.push(p);
+                    	ph.shift();
+                    	var or={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].oRP]
+                    	}
+                    	orp.push(or);
+                    	orp.shift();
+                    	var pre={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].pressure]
+                    	}
+                    	pressure.push(pre);
+                    	pressure.shift();
+                    	var de={
+                    			name: realtime[0].tIME,
+                            	value: [realtime[0].tIME,realtime[0].depth]
+                    	}
+                    	depth.push(de);
+                    	depth.shift();
+                    	
+                    	
+	            		lasttime=realtime[0].tIME;
+	                	timeflag = 0;
+	            	}
+                	
+	            	chooseRealtime($('#selectChart option:selected').val());
+                	
+                	
                 	$("#Turbidity").empty();
                  	$("#Turbidity").text(realtime[0].turbidity);
                  	$("#TSS").empty();
@@ -410,6 +622,9 @@
                  	$("#Pressure").text(realtime[0].pressure);
                  	$("#Depth").empty();
                  	$("#Depth").text(realtime[0].depth);
+                 	
+                 	
+                 	
                 }, 
                 error : function(jqXHR) {
                     alert("发生错误：" + jqXHR.status);

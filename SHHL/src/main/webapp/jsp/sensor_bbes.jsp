@@ -80,7 +80,7 @@
 								<th>培养袋12</th>
 							</tr>
 							<tr>
-								<td><a href="#" class="time">${newbbes.TIME}</a></td>
+								<td><a href="#" class="time"></a></td>
 								<td id="cultivating_bag_1">
 								<!-- 假定1为培养完成，0为培养中,2为等待，其他为未知 -->
 								<c:choose>
@@ -843,8 +843,33 @@
 		realtime_myChart6.setOption(realtime_option6);
 	}
 	
+	//格式化时间的函数
+    Date.prototype.format = function(fmt) { 
+         var o = { 
+            "M+" : this.getMonth()+1,                 //月份 
+            "d+" : this.getDate(),                    //日 
+            "h+" : this.getHours(),                   //小时 
+            "m+" : this.getMinutes(),                 //分 
+            "s+" : this.getSeconds(),                 //秒 
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度 
+            "S"  : this.getMilliseconds()             //毫秒 
+        }; 
+        if(/(y+)/.test(fmt)) {
+                fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
+        }
+         for(var k in o) {
+            if(new RegExp("("+ k +")").test(fmt)){
+                 fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+             }
+         }
+        return fmt; 
+    }
 	
 	
+	
+	//var displayTime = "${newbbes.TIME}";
+	$(".time").empty();
+ 	$(".time").text(new Date("${newbbes.TIME}").format("yyyy-MM-dd hh:mm:ss"));
 	//实时的刷新数据，3秒刷新一次
 	//保存上一次的时间，对比时间可得是否更新
 	var lasttime = "${newbbes.TIME}";
@@ -866,27 +891,7 @@
             var realtime_pressure;
             var realtime_salinity;
             
-            //格式化时间的函数
-            Date.prototype.format = function(fmt) { 
-                 var o = { 
-                    "M+" : this.getMonth()+1,                 //月份 
-                    "d+" : this.getDate(),                    //日 
-                    "h+" : this.getHours(),                   //小时 
-                    "m+" : this.getMinutes(),                 //分 
-                    "s+" : this.getSeconds(),                 //秒 
-                    "q+" : Math.floor((this.getMonth()+3)/3), //季度 
-                    "S"  : this.getMilliseconds()             //毫秒 
-                }; 
-                if(/(y+)/.test(fmt)) {
-                        fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length)); 
-                }
-                 for(var k in o) {
-                    if(new RegExp("("+ k +")").test(fmt)){
-                         fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
-                     }
-                 }
-                return fmt; 
-            }
+            
             
             var bagState = new Array();
             var  pumpState = new Array();
@@ -967,6 +972,9 @@
             		solenoid[i]='<span class="label label-sm label-warning">未知</span>';
             	}
             }
+            
+            $(".time").empty();
+        	$(".time").text(new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"));
             $("#cultivating_bag_1").empty();
         	$("#cultivating_bag_1").html(bag[0]);
         	$("#cultivating_bag_2").empty();
@@ -1054,8 +1062,6 @@
         	
             if ((new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"))==(new Date(lasttime).format("yyyy-MM-dd hh:mm:ss"))){
             	timeflag = timeflag + 3000;
-            	$(".time").empty();
-            	$(".time").text(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"));
             	realtime_volt48 = {
            				name:(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss")),
            				value:[new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"),0]

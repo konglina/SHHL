@@ -100,7 +100,7 @@
 						
 						var states = [];
 						var dataTime = [];
-						for(var i=0;i<spectrographDataList.length;i++){
+						for(var i=(spectrographDataList.length-1);i>=0;i--){
 							states.push(spectrographDataList[i].states);
 							dataTime.push(new Date(spectrographDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 						}
@@ -191,7 +191,7 @@
 						var myChart2 = echarts.init(document.getElementById('shishi_nongdu'));
 						var consistency = [];
 						var dataTime = [];
-						for(var i=0;i<spectrographDataList.length;i++){
+						for(var i=(spectrographDataList.length-1);i>=0;i--){
 							consistency.push(spectrographDataList[i].consistency);
 							dataTime.push(new Date(spectrographDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 						}
