@@ -73,7 +73,7 @@
 				</div>
 					<script type="text/javascript">
 						// 基于准备好的dom，初始化echarts实例
-						var myChart = echarts.init(document.getElementById('shishi_zhuangtai'));
+						var myChart1 = echarts.init(document.getElementById('shishi_zhuangtai'));
 						var spectrographDataList=JSON.parse('<%=request.getAttribute("spectrographDataList")%>');
 						
 						//格式化时间的函数
@@ -98,16 +98,14 @@
 			                return fmt; 
 			            }
 						
-						var data = [];
-						for(var i=0;i<spectrographDataList.length;i++){
-							data.push(spectrographDataList[i].states);
-						}
+						var states = [];
 						var dataTime = [];
 						for(var i=0;i<spectrographDataList.length;i++){
+							states.push(spectrographDataList[i].states);
 							dataTime.push(new Date(spectrographDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 						}
 						// 指定图表的配置项和数据
-						var option = {
+						var option1 = {
 								title: {
 						            text: '近期状态趋势'
 						        },
@@ -160,7 +158,7 @@
 						        series: {
 						            name: 'states',
 						            type: 'line',
-						            data: data,
+						            data: states,
 						            markLine: {
 						                silent: true,
 						                data: [{
@@ -176,7 +174,7 @@
 						        }
 						};
 						// 使用刚指定的配置项和数据显示图表。
-						myChart.setOption(option);
+						myChart1.setOption(option1);
 					</script>
 					<div class="col-sm-6" style="">
 		 			<div class="panel panel-default" >
@@ -190,18 +188,15 @@
 				</div>
 					<script type="text/javascript">
 						// 基于准备好的dom，初始化echarts实例
-						var myChart = echarts.init(document.getElementById('shishi_nongdu'));
-						var data = [];
-						
-						for(var i=0;i<spectrographDataList.length;i++){
-							data.push(spectrographDataList[i].consistency);
-						}
+						var myChart2 = echarts.init(document.getElementById('shishi_nongdu'));
+						var consistency = [];
 						var dataTime = [];
 						for(var i=0;i<spectrographDataList.length;i++){
+							consistency.push(spectrographDataList[i].consistency);
 							dataTime.push(new Date(spectrographDataList[i].tIME).format("yyyy-MM-dd hh:mm:ss"));
 						}
 						// 指定图表的配置项和数据
-						var option = {
+						var option2 = {
 							title : {
 								text:"近期浓度趋势"
 							},
@@ -215,16 +210,21 @@
 						            min:0
 						        },
 							    series: [{
-							        data: data,
+							        data: consistency,
 							        type: 'line',
 							        areaStyle: {},
 							        
 							    }]
 						};
 						// 使用刚指定的配置项和数据显示图表。
-						myChart.setOption(option);
+						myChart2.setOption(option2);
 						
-						//定时刷新,在此处初始化data
+						
+						//实时的刷新数据，3秒刷新一次
+			        	//保存上一次的时间，对比时间可得是否更新
+			        	var lasttime = "${newspectrograph.TIME}";
+			        	var timeflag =0;
+			        	var flag = true;
 						$(document).ready(function () {
 					        setInterval("startRequest()", 3000);//3s一次
 					    });
@@ -248,6 +248,43 @@
 					                 	$("#states").html(statesHtml);
 					                 	$("#consistency").empty();
 					                 	$("#consistency").text(realtime[0].consistency);
+					                 	
+					                 	//如果时间时间没变，那么数据未更新
+					                 	if((new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"))==(new Date(lasttime).format("yyyy-MM-dd hh:mm:ss"))){
+			        	            		timeflag = timeflag + 3000;
+			        	            		states.push(0);
+			        	            		consistency.push(0);
+			        	            		dataTime.push(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"));
+			        	            	}else{
+			        	            		states.push(realtime[0].states);
+			        	            		consistency.push(realtime[0].consistency);
+			        	            		dataTime.push(new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"));
+			        	            		lasttime=realtime[0].tIME;
+			        	                	timeflag = 0;
+			        	            	}
+					                 	states.shift();
+					                 	consistency.shift();
+					                 	dataTime.shift();
+					                 	
+					                 	myChart1.setOption({
+			        	            		xAxis: {
+			        	                	    type: 'category',
+			        	                	    data: dataTime
+			        	                	   },
+			        	        	        series: [{
+			        	        	            data: states
+			        	        	        }]
+			        	        	    });
+					                 	
+					                 	myChart2.setOption({
+			        	            		xAxis: {
+			        	                	    type: 'category',
+			        	                	    data: dataTime
+			        	                	   },
+			        	        	        series: [{
+			        	        	            data: consistency
+			        	        	        }]
+			        	        	    });
 						            },
 						            error : function(jqXHR) {
 						                alert("发生错误：" + jqXHR.status);

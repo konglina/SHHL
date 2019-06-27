@@ -73,6 +73,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		TIME, Cultivating_bag_1, Cultivating_bag_2, Cultivating_bag_3, Cultivating_bag_4, Cultivating_bag_5,Cultivating_bag_6,
 		Cultivating_bag_7,Cultivating_bag_8,Cultivating_bag_9,Cultivating_bag_10,Cultivating_bag_11,Cultivating_bag_12
 	</sql>
+	
 	<!--查询数据库中最新的100条数据--> 
 	<select id="getList" parameterType="Map" resultMap="BbesDataResult">
 		select * from bbes_data order by TIME DESC limit 100

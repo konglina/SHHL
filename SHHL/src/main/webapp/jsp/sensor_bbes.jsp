@@ -24,7 +24,6 @@
 	.table tbody tr td{
             vertical-align: middle;
         }
-        
 </style>
 </head>
 <body>
@@ -46,7 +45,6 @@
 		</ul><!-- .breadcrumb -->					
 </div>
 
-<!-- <h5 class="page-header alert alert-info" style="padding:10px; margin:0; margin-bottom:5px;">实时数据</h5> -->
  <div class="row alert alert-info" style="margin:0px; padding:3px">
 		<div class="col-sm-1" style="padding-top:9px;padding-left:3px;">实时数据</div>
 		 <div class="col-sm-5" style="padding-top:5px">
@@ -523,7 +521,7 @@
 	
 	//放入实际的数据
 	var bbesDataList=JSON.parse('<%=request.getAttribute("bbesDataList")%>');
-	for(var i=0;i<bbesDataList.length;i++){
+	for(var i=(bbesDataList.length-1);i>=0;i--){
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].volt48]
@@ -568,7 +566,7 @@
 	};
 	
 	if (realtime_option1 && typeof realtime_option1 === "object") {
-		realtime_myChart1.setOption(realtime_option1, true);
+		realtime_myChart1.setOption(realtime_option1);
 	}
 	
 	
@@ -578,7 +576,7 @@
 	realtime_option2 = null;
 	var abel = [];//电流的数据
 	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
+	for(var i=(bbesDataList.length-1);i>=0;i--){
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].abel48]
@@ -623,7 +621,7 @@
 	};
 	
 	if (realtime_option2 && typeof realtime_option2 === "object") {
-		realtime_myChart2.setOption(realtime_option2, true);
+		realtime_myChart2.setOption(realtime_option2);
 	}
 	
 	//container3
@@ -633,7 +631,7 @@
 	realtime_option3 = null;
 	var temperature = [];
 	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
+	for(var i=(bbesDataList.length-1);i>=0;i--){
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].temperature]
@@ -678,7 +676,7 @@
 	};
 	
 	if (realtime_option3 && typeof realtime_option3 === "object") {
-		realtime_myChart3.setOption(realtime_option3, true);
+		realtime_myChart3.setOption(realtime_option3);
 	}
 	
 	
@@ -689,7 +687,7 @@
 	realtime_option4 = null;
 	var conductivity = [];
 	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
+	for(var i=(bbesDataList.length-1);i>=0;i--){
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].conductivity]
@@ -734,7 +732,7 @@
 	};
 	
 	if (realtime_option4 && typeof realtime_option4 === "object") {
-	    realtime_myChart4.setOption(realtime_option4, true);
+	    realtime_myChart4.setOption(realtime_option4);
 	}
 	//container5
 	var realtime_dom5 = document.getElementById("pressure_container");
@@ -743,7 +741,7 @@
 	realtime_option5 = null;
 	var pressure = [];
 	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
+	for(var i=(bbesDataList.length-1);i>=0;i--){
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].pressure]
@@ -788,7 +786,7 @@
 	};
 	
 	if (realtime_option5 && typeof realtime_option5 === "object") {
-		realtime_myChart5.setOption(realtime_option5, true);
+		realtime_myChart5.setOption(realtime_option5);
 	}
 	//container6
 	var realtime_dom6 = document.getElementById("salinity_container");
@@ -797,7 +795,7 @@
 	realtime_option6 = null;
 	var salinity = [];
 	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
+	for(var i=(bbesDataList.length-1);i>=0;i--){
 		var bbes = {
 				name:bbesDataList[i].tIME,
 				value:[bbesDataList[i].tIME,bbesDataList[i].salinity]
@@ -842,7 +840,7 @@
 	};
 	
 	if (realtime_option6 && typeof realtime_option6 === "object") {
-		realtime_myChart6.setOption(realtime_option6, true);
+		realtime_myChart6.setOption(realtime_option6);
 	}
 	
 	
@@ -1054,18 +1052,17 @@
         	$("#solenoid24").empty();
         	$("#solenoid24").html(solenoid[23]);
         	
-        	
-            if (realtime[0].tIME==lasttime){
+            if ((new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"))==(new Date(lasttime).format("yyyy-MM-dd hh:mm:ss"))){
             	timeflag = timeflag + 3000;
             	$(".time").empty();
             	$(".time").text(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"));
             	realtime_volt48 = {
-           				name:realtime[0].tIME+timeflag,
-           				value:[realtime[0].tIME+timeflag,0]
+           				name:(new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss")),
+           				value:[new Date(realtime[0].tIME+timeflag).format("yyyy-MM-dd hh:mm:ss"),0]
             		}
             	realtime_abel48={
-                		name:realtime[0].tIME+timeflag,
-                		value:[realtime[0].tIME+timeflag,0]
+                		name:(realtime[0].tIME+timeflag),
+                		value:[(realtime[0].tIME+timeflag),0]
                 }
             	realtime_temperature={
             			name:realtime[0].tIME+timeflag,
@@ -1161,339 +1158,6 @@
             },
         });
     }
- </script>
-  
-<script type="text/javascript">
-	//container1
-	var dom1 = document.getElementById("container1");
-	var myChart = echarts.init(dom1);
-	option1 = null;
-	var volt = [];
-	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
-		var bbes = {
-				name:bbesDataList[i].tIME,
-				value:[bbesDataList[i].tIME,bbesDataList[i].volt48]
-		}
-		volt.push(bbes);
-	}
-	option1 = {
-	    title: {
-	        text: '近期趋势'
-	    },
-	    tooltip: {
-	        trigger: 'axis',
-	        formatter: function (params) {
-	            params = params[0];
-	            var date = new Date(params.name);
-	            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-	        },
-	        axisPointer: {
-	            animation: false
-	        }
-	    },
-	    xAxis: {
-	        type: 'time',
-	        splitLine: {
-	            show: false
-	        }
-	    },
-	    yAxis: {
-	        type: 'value',
-	        boundaryGap: [0, '100%'],
-	        splitLine: {
-	            show: false
-	        }
-	    },
-	    series: [{
-	        name: '模拟数据',
-	        type: 'line',
-	        showSymbol: false,
-	        hoverAnimation: false,
-	        data: volt
-	    }]
-	};
-	
-	if (option1 && typeof option1 === "object") {
-	    myChart.setOption(option1, true);
-	}
-	
-	
-	//container2
-	var dom2 = document.getElementById("container2");
-	var myChart2 = echarts.init(dom2);
-	option2 = null;
-	var abel = [];
-	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
-		var bbes = {
-				name:bbesDataList[i].tIME,
-				value:[bbesDataList[i].tIME,bbesDataList[i].abel48]
-		}
-		abel.push(bbes);
-	}
-	option2 = {
-		    title: {
-		        text: '近期趋势'
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        formatter: function (params) {
-		            params = params[0];
-		            var date = new Date(params.name);
-		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-		        },
-		        axisPointer: {
-		            animation: false
-		        }
-		    },
-		    xAxis: {
-		        type: 'time',
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    yAxis: {
-		        type: 'value',
-		        boundaryGap: [0, '100%'],
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    series: [{
-		        name: '模拟数据',
-		        type: 'line',
-		        showSymbol: false,
-		        hoverAnimation: false,
-		        data: abel
-		    }]
-		};
-	
-	if (option2 && typeof option2 === "object") {
-	    myChart2.setOption(option2, true);
-	}
-	
-	
-	//container3
-	var dom3 = document.getElementById("container3");
-	var myChart3 = echarts.init(dom3);
-	option3 = null;
-	var temperature = [];
-	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
-		var bbes = {
-				name:bbesDataList[i].tIME,
-				value:[bbesDataList[i].tIME,bbesDataList[i].temperature]
-		}
-		temperature.push(bbes);
-	}
-	option3 = {
-		    title: {
-		        text: '近期趋势'
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        formatter: function (params) {
-		            params = params[0];
-		            var date = new Date(params.name);
-		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-		        },
-		        axisPointer: {
-		            animation: false
-		        }
-		    },
-		    xAxis: {
-		        type: 'time',
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    yAxis: {
-		        type: 'value',
-		        boundaryGap: [0, '100%'],
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    series: [{
-		        name: '模拟数据',
-		        type: 'line',
-		        showSymbol: false,
-		        hoverAnimation: false,
-		        data: temperature
-		    }]
-		};
-	
-	if (option3 && typeof option3 === "object") {
-	    myChart3.setOption(option3, true);
-	}
-	
-	
-	//container4
-	var dom4 = document.getElementById("container4");
-	var myChart4 = echarts.init(dom4);
-	
-	option4 = null;
-	var conductivity = [];//电导率
-	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
-		var bbes = {
-				name:bbesDataList[i].tIME,
-				value:[bbesDataList[i].tIME,bbesDataList[i].conductivity]
-		}
-		conductivity.push(bbes);
-	}
-	option4 = {
-		    title: {
-		        text: '近期趋势'
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        formatter: function (params) {
-		            params = params[0];
-		            var date = new Date(params.name);
-		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-		        },
-		        axisPointer: {
-		            animation: false
-		        }
-		    },
-		    xAxis: {
-		        type: 'time',
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    yAxis: {
-		        type: 'value',
-		        boundaryGap: [0, '100%'],
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    series: [{
-		        name: '模拟数据',
-		        type: 'line',
-		        showSymbol: false,
-		        hoverAnimation: false,
-		        data: conductivity
-		    }]
-		};
-	
-	if (option4 && typeof option4 === "object") {
-	    myChart4.setOption(option4, true);
-	}
-	
-	//container5
-	var dom5 = document.getElementById("container5");
-	var myChart5 = echarts.init(dom5);
-	
-	option5 = null;
-	var pressure = [];//压力
-	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
-		var bbes = {
-				name:bbesDataList[i].tIME,
-				value:[bbesDataList[i].tIME,bbesDataList[i].pressure]
-		}
-		pressure.push(bbes);
-	}
-	option5 = {
-		    title: {
-		        text: '近期趋势'
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        formatter: function (params) {
-		            params = params[0];
-		            var date = new Date(params.name);
-		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-		        },
-		        axisPointer: {
-		            animation: false
-		        }
-		    },
-		    xAxis: {
-		        type: 'time',
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    yAxis: {
-		        type: 'value',
-		        boundaryGap: [0, '100%'],
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    series: [{
-		        name: '模拟数据',
-		        type: 'line',
-		        showSymbol: false,
-		        hoverAnimation: false,
-		        data: pressure
-		    }]
-		};
-	
-	if (option5 && typeof option5 === "object") {
-	    myChart5.setOption(option5, true);
-	}
-	
-	
-	//container6
-	var dom6 = document.getElementById("container6");
-	var myChart6 = echarts.init(dom6);
-	
-	option6 = null;
-	var salinity = [];//盐度
-	//放入实际的数据
-	for(var i=0;i<bbesDataList.length;i++){
-		var bbes = {
-				name:bbesDataList[i].tIME,
-				value:[bbesDataList[i].tIME,bbesDataList[i].salinity]
-		}
-		salinity.push(bbes);
-	}
-	option6 = {
-		    title: {
-		        text: '近期趋势'
-		    },
-		    tooltip: {
-		        trigger: 'axis',
-		        formatter: function (params) {
-		            params = params[0];
-		            var date = new Date(params.name);
-		            return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear() + ' : ' + params.value[1];
-		        },
-		        axisPointer: {
-		            animation: false
-		        }
-		    },
-		    xAxis: {
-		        type: 'time',
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    yAxis: {
-		        type: 'value',
-		        boundaryGap: [0, '100%'],
-		        splitLine: {
-		            show: false
-		        }
-		    },
-		    series: [{
-		        name: '模拟数据',
-		        type: 'line',
-		        showSymbol: false,
-		        hoverAnimation: false,
-		        data: salinity
-		    }]
-		};
-	
-	if (option6 && typeof option6 === "object") {
-	    myChart6.setOption(option6, true);
-	}
  </script>
 
  <script>

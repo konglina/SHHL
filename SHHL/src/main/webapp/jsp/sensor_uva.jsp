@@ -173,7 +173,7 @@
         	            success: function (data) {
         	            	var realtime=JSON.parse(data);//最新的数据
         	            	//如果时间时间没变，那么数据未更新
-        	            	if(realtime[0].tIME==lasttime){
+        	            	if((new Date(realtime[0].tIME).format("yyyy-MM-dd hh:mm:ss"))==(new Date(lasttime).format("yyyy-MM-dd hh:mm:ss"))){
         	            		timeflag = timeflag + 3000;
         	            		voltage.push(0);
         	            		current.push(0);
