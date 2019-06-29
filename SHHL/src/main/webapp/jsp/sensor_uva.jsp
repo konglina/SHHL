@@ -39,9 +39,6 @@
 			<li class="active">UVA</li>
 		</ul><!-- .breadcrumb -->					
 </div>
-
-
-<form action="${pageContext.request.contextPath}/system/add.do" method="post" class="form-horizontal">
 	<!-- 实时数据 -->
 	<div>
 		 <div class="row alert alert-info" style="margin:0px; padding:3px">
@@ -54,15 +51,56 @@
 		   	<button type="button" class="btn btn-success" onClick="javascript:window.location='${pageContext.request.contextPath}/jsp/sensor_uva_history.jsp'">查看历史数据</button>
 		 </div>
 	</div>
-		<div class="col-sm-5">
-			<label class="col-sm-2 control-label">系统时间:</label>
+
+<div class="row">
+	<div class="col-sm-6">
+		<label class="col-sm-2 control-label">时间:</label>
             <div class="col-sm-3 control-label" id="time">
             ${newuva.TIME}
         	</div>
-        </div>
-		<!-- 电压波形 -->
+	</div>
+	<div class="col-sm-5">
+	</div>
+	<div class="col-sm-1">
+		
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-10">
 		<div id="dianya_shishi" style="width:100%;height:310px"></div>
-		<script type="text/javascript">
+	</div>
+	<div class="col-sm-1">
+		
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-1">
+	</div>
+	<div class="col-sm-10">
+		<div id="dianliu_shishi" style="width:100%;height:310px"></div>
+	</div>
+	<div class="col-sm-1">
+		
+	</div>
+</div>
+	
+ <script>
+//执行一个laydate实例
+laydate.render({
+	elem: '#startTime',//指定元素
+	type:'datetime',
+	format:'yyyy-MM-dd HH:mm:ss'
+});
+laydate.render({
+	elem: '#endTime', //指定元素
+	type:'datetime',
+	format:'yyyy-MM-dd HH:mm:ss'
+	});
+</script>
+<script type="text/javascript">
 			var uvaDataList=JSON.parse('<%=request.getAttribute("uvaDataList")%>');
         	// 基于准备好的dom，初始化echarts实例
         	var myChart1 = echarts.init(document.getElementById('dianya_shishi'));
@@ -118,12 +156,8 @@
         	};
         	// 使用刚指定的配置项和数据显示图表。
         	myChart1.setOption(option1);
-    	</script>
-    	<!-- 电压波形结束 -->
-    	
-    	<!-- 电流波形 -->
-		<div id="dianliu_shishi" style="width:100%;height:310px"></div>
-		<script type="text/javascript">
+</script>
+<script type="text/javascript">
         	// 基于准备好的dom，初始化echarts实例
         	var myChart2 = echarts.init(document.getElementById('dianliu_shishi'));
 			var current = [];
@@ -218,23 +252,6 @@
         	            },
         	        });
         	    }
-    	</script>
-    	<!-- 电流波形结束 -->
-	</div>
-	<!-- 实时数据结束 -->
-</form>
- <script>
-//执行一个laydate实例
-laydate.render({
-	elem: '#startTime',//指定元素
-	type:'datetime',
-	format:'yyyy-MM-dd HH:mm:ss'
-});
-laydate.render({
-	elem: '#endTime', //指定元素
-	type:'datetime',
-	format:'yyyy-MM-dd HH:mm:ss'
-	});
 </script>
 </body>
 </html>

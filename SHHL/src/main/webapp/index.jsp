@@ -21,9 +21,11 @@
 
 			<div class="navbar-container" id="navbar-container">
 				<div class="navbar-header pull-left">
-					<a href="#" class="navbar-brand">
+					<a href="#" class="navbar-brand" style="padding-top:3px;padding-bottom:1px;">
 						<small>
-							<i class="icon-leaf"></i>
+						<img alt="" src="${pageContext.request.contextPath}/static/image/logo.png" style="height:40px;width:40px;">
+						<!-- 	<i class="icon-leaf"></i> -->
+							<!-- <i class="icon-globe"></i> -->
 							深海所近岸观测站
 						</small>
 					</a><!-- /.brand -->

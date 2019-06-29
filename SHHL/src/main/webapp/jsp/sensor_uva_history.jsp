@@ -276,9 +276,9 @@
             	for(var i=0;i<datas.length;i++){
             		content += '<tr>';
             		content += '<th>'+new Date(datas[i].time).format("yyyy-MM-dd hh:mm:ss")+'</th>';
-            		content += '<th>'+datas[i].pt1000_Temperature+'</th>';
-            		content += '<th>'+datas[i].voltage+'</th>';
-            		content += '<th>'+datas[i].current+'</th>';
+            		content += '<td>'+datas[i].pt1000_Temperature+'</td>';
+            		content += '<td>'+datas[i].voltage+'</td>';
+            		content += '<td>'+datas[i].current+'</td>';
             		content +='</tr>';
             	}
             	 $("#dataBody").html(content);

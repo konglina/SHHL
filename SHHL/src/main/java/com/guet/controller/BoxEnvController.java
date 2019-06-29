@@ -47,7 +47,7 @@ public class BoxEnvController {
 
 		con = dbUtil.getCon();
 		BoxEnv boxEnv = boxEnvDao2.getNewest(con);
-		System.out.println("boxEnv=" + boxEnv);
+		//System.out.println("boxEnv=" + boxEnv);
 		dbUtil.closeCon(con);
 		if(boxEnv != null){
 			result.setSuccess(true);

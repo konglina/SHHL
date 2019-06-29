@@ -294,24 +294,24 @@
                      		$("#outCurrent8").text(boxEnv.outCurrent8.toFixed(2));
                      		
                      		var voltageData = [];
-	      	               	 voltageData.push(boxEnv.outVoltage1);
-	      	                 voltageData.push(boxEnv.outVoltage2);
-	      	                 voltageData.push(boxEnv.outVoltage3);
-	      	                 voltageData.push(boxEnv.outVoltage4);
-	      	                 voltageData.push(boxEnv.outVoltage5);
-	      	                 voltageData.push(boxEnv.outVoltage6);
-	      	                 voltageData.push(boxEnv.outVoltage7);
-	      	                 voltageData.push(boxEnv.outVoltage8);
+	      	               	 voltageData.push(boxEnv.outVoltage1.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage2.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage3.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage4.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage5.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage6.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage7.toFixed(2));
+	      	                 voltageData.push(boxEnv.outVoltage8.toFixed(2));
 	      	                 var currentData = [];
       	         			
-	      	         		 currentData.push(boxEnv.outCurrent1);
-	      	         		 currentData.push(boxEnv.outCurrent2);
-	      	         		 currentData.push(boxEnv.outCurrent3);
-	      	         		 currentData.push(boxEnv.outCurrent4);
-	      	         		 currentData.push(boxEnv.outCurrent5);
-	      	         		 currentData.push(boxEnv.outCurrent6);
-	      	         		 currentData.push(boxEnv.outCurrent7);
-	      	         		 currentData.push(boxEnv.outCurrent8);
+	      	         		 currentData.push(boxEnv.outCurrent1.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent2.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent3.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent4.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent5.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent6.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent7.toFixed(2));
+	      	         		 currentData.push(boxEnv.outCurrent8.toFixed(2));
 	      	         		  myChart.setOption({
 	                      	        series: [{
 	                      	            data: voltageData
@@ -338,9 +338,6 @@
     </script>
     </div>
     </div>
-    
-   
-
 </body>
 <script type="text/javascript">
 
